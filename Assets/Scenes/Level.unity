@@ -471,9 +471,21 @@ PrefabInstance:
       propertyPath: buttontext
       value: 
       objectReference: {fileID: 67376083}
+    - target: {fileID: 3262286622864982275, guid: 1b623d68597e67f44a9ad1d446f7b349, type: 3}
+      propertyPath: products.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262286622864982275, guid: 1b623d68597e67f44a9ad1d446f7b349, type: 3}
+      propertyPath: products.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3c86b49cbf0ec6c42a01652fb17fe392, type: 2}
     - target: {fileID: 3262286622864982287, guid: 1b623d68597e67f44a9ad1d446f7b349, type: 3}
       propertyPath: m_Name
       value: Market
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262286623733320642, guid: 1b623d68597e67f44a9ad1d446f7b349, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23.9
       objectReference: {fileID: 0}
     - target: {fileID: 3262286623979085446, guid: 1b623d68597e67f44a9ad1d446f7b349, type: 3}
       propertyPath: m_SizeDelta.x

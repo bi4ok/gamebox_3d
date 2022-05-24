@@ -12,13 +12,15 @@ public class MarketInfo : MonoBehaviour
     [SerializeField] private Button buttonbuy;
     private ProductScript currentproduct;
     [SerializeField] private PlayerController playercontroller;
+    private Item item;
     public void UpdateInfo(ProductScript products)
     {
         nametext.text = products.name;
-        chtext.text = products.health.ToString() + "\n" + products.attack.ToString() + "\n" + products.attackspeed.ToString() + "\n" + products.movespeed.ToString() + "\n" + products.cost.ToString();
+        chtext.text = products.health_plus.ToString() + "\n" + products.attack_plus.ToString() + "\n" + products.attackspeed_plus.ToString() + "\n" + products.movespeed_plus.ToString() + "\n" + products.cost.ToString();
         mainimage.sprite = products.artwork;
         buttontext.text = products.isbought == true ? products.ischoosen == true ? "Choosen" : "Choose" : "Buy";
         currentproduct = products;
+       
     }
     public void Buy()
     {
@@ -30,6 +32,7 @@ public class MarketInfo : MonoBehaviour
     }
     public void Choose()
     {
+        
         if(currentproduct.ischoosen == true)
         {
             //Убавляем статы или вынимаем предмет
