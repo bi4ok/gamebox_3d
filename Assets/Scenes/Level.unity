@@ -347,7 +347,7 @@ MonoBehaviour:
   chtext: {fileID: 820586292}
   mainimage: {fileID: 1679870856}
   buttonbuy: {fileID: 1499556608}
-  playercontroller: {fileID: 2098236440}
+  playercontroller: {fileID: 0}
 --- !u!1001 &232062167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -355,6 +355,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1443029083}
     m_Modifications:
+    - target: {fileID: 2428466567320079080, guid: 1b623d68597e67f44a9ad1d446f7b349, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 157.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3262286622213211268, guid: 1b623d68597e67f44a9ad1d446f7b349, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -63.2

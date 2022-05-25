@@ -11,12 +11,12 @@ public class MarketInfo : MonoBehaviour
     [SerializeField] private Image mainimage;
     [SerializeField] private Button buttonbuy;
     private ProductScript currentproduct;
-    [SerializeField] private PlayerController playercontroller;
+    [SerializeField] private PlayerController3dt playercontroller;
     private Item item;
     public void UpdateInfo(ProductScript products)
     {
-        nametext.text = products.name;
-        chtext.text = products.health_plus.ToString() + "\n" + products.attack_plus.ToString() + "\n" + products.attackspeed_plus.ToString() + "\n" + products.movespeed_plus.ToString() + "\n" + products.cost.ToString();
+        nametext.text = products.nameofProduct;
+        chtext.text = products.healthPlus.ToString() + "\n" + products.damagePlus.ToString() + "\n" + products.attackSpeedPlus.ToString() + "\n" + products.movementSpeedPlus.ToString() + "\n" + products.cost.ToString();
         mainimage.sprite = products.artwork;
         buttontext.text = products.isbought == true ? products.ischoosen == true ? "Choosen" : "Choose" : "Buy";
         currentproduct = products;
@@ -32,15 +32,20 @@ public class MarketInfo : MonoBehaviour
     }
     public void Choose()
     {
-        
+        item = new Item(currentproduct.damagePlus, currentproduct.damagePercent = 0,
+         currentproduct.attackSpeedPlus = 0, currentproduct.attackSpeedPercent = 0,
+         currentproduct.attackRangePlus = 0, currentproduct.attackRangePercent = 0,
+                   currentproduct.healthPlus = 0, currentproduct.healthPercent = 0,
+         currentproduct.movementSpeedPlus = 0, currentproduct.movementSpeedPercent = 0);
+       
         if(currentproduct.ischoosen == true)
         {
-            //Убавляем статы или вынимаем предмет
+            playercontroller.UnequipProduct(item);
             currentproduct.ischoosen = false;
         }
         else
         {
-            //Прибавляем статы
+            playercontroller.EquipProduct(item);
             currentproduct.ischoosen = true;
         }
         UpdateInfo(currentproduct);
