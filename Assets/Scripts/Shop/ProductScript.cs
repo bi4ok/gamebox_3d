@@ -7,10 +7,16 @@ public class ProductScript : ScriptableObject
 {
     public  string nameofProduct;
     public int cost;
-    public int attack;
-    public int health;
-    public int attackspeed;
-    public int movespeed;
+    public int damagePlus;
+    public int damagePercent;
+    public int attackSpeedPlus;
+    public int attackSpeedPercent;
+    public int attackRangePlus;
+    public int attackRangePercent;
+    public int healthPlus;
+    public int healthPercent;
+    public int movementSpeedPlus;
+    public int movementSpeedPercent;
     public Sprite artwork;
     public bool isbought;
     public bool ischoosen;

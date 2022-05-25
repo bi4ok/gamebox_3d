@@ -439,4 +439,12 @@ public class PlayerController3dt : MonoBehaviour, IDamageAble, IDamageDealer<Gam
     {
         return _characterInside.statsOut["health"].Value;
     }
+    public void EquipProduct(Item item)
+    {
+        item.Equip(_characterInside);
+    }
+    public void UnequipProduct(Item item)
+    {
+        item.Unequip(_characterInside);
+    }
 }
