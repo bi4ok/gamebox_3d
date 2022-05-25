@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     private GameObject gun;
     [SerializeField]
     private GameObject bulletPrefab;
+    [SerializeField]
+    private Weapon gunScript;
 
     [SerializeField]
     private GameObject gameManager;
@@ -65,6 +67,8 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         _characterInside = new Character(startHealth, damageValue, energyValue, shieldPower, attackRange, attackSpeed, movementSpeed, tag);
         _playerAnimator = GetComponent<Animator>();
         _meeleAttackCoolDown = 1/attackSpeed;
+        //gunScript = gun.GetComponent<Weapon>();
+        gunScript.OnEquip(damageValue, attackSpeed);
 
     }
 
@@ -76,25 +80,19 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         {
             AimOnMouse();
 
-            if (Time.time > _nextAttackTime)
+                
+            if (Input.GetButton("Fire1"))
             {
-                
-
-                if (Input.GetButtonDown("Fire1") && Time.time > _nextRangeAttackTime)
-                {
-                    Shoot();
-                    _nextRangeAttackTime = Time.time + 1 / _characterInside.statsOut["attackSpeed"].Value - _attackCoolDown;
-                    _nextAttackTime = Time.time + _attackCoolDown;
-                }
-                else if (Input.GetButtonDown("Fire2") && Time.time > _nextMeeleAttackTime)
-                {
-                    MeeleAttack();
-                    _nextMeeleAttackTime = Time.time + 1 / _meeleAttackCoolDown - _attackCoolDown;
-                    _nextAttackTime = Time.time + _attackCoolDown;
-                }
-
-                
+                gunScript.Shoot(bulletPrefab);
+                _nextAttackTime = Time.time + _attackCoolDown;
             }
+            else if (Input.GetButton("Fire2") && Time.time > _nextAttackTime && Time.time > _meeleAttackCoolDown)
+            {
+                MeeleAttack();
+                _nextMeeleAttackTime = Time.time + 1 / _meeleAttackCoolDown - _attackCoolDown;
+                _nextAttackTime = Time.time + _attackCoolDown;
+            }
+
 
 
         }
@@ -175,17 +173,6 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
             print(enemy.name);
             Attack(enemy.gameObject);
         }
-    }
-
-    private void Shoot()
-    {
-        print("RANGE ATTACK!!!" + attackRange);
-        GameObject bullet = Instantiate(bulletPrefab, pointOfAttack.position, pointOfAttack.rotation);
-        Rigidbody bulletBody = bullet.GetComponent<Rigidbody>();
-        Bullet bulletInside = bullet.GetComponent<Bullet>();
-        bulletInside.damage = _characterInside.statsOut["damage"].Value;
-        bulletBody.AddForce(pointOfAttack.forward * _characterInside.statsOut["attackSpeed"].Value, ForceMode.Impulse);
-        audioSource.PlayOneShot(blasterSound, 0.1f);
     }
 
     private void OnDrawGizmos()

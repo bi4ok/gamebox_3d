@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\Character\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerStat.cs" />
     <Compile Include="Assets\Scripts\GameHandler.cs" />
+    <Compile Include="Assets\Prefabs\hit\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Bonus\BombController.cs" />
     <Compile Include="Assets\Scripts\Factory.cs" />
     <Compile Include="Assets\Scripts\MarketScript.cs" />
@@ -88,7 +89,10 @@
     <Compile Include="Assets\PlayerController3D.cs" />
     <Compile Include="Assets\Scripts\Bonus\Bonus.cs" />
     <Compile Include="Assets\Scripts\Bonus\BonusController.cs" />
-    <Compile Include="Assets\Prefabs\hit\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\Character\Rifle.cs" />
+    <Compile Include="Assets\Scripts\Character\ShotGun.cs" />
+    <Compile Include="Assets\Scripts\Character\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Character\Flamethrower.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
