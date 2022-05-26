@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName ="New Product",menuName ="ProductforMarket" )]
+[CreateAssetMenu(fileName ="New Product",menuName ="ProductforMarket/Armor" )]
 public class ProductScript : ScriptableObject
 {
+    public string type = "Armor";
     public  string nameofProduct;
     public int cost;
     public int damagePlus;

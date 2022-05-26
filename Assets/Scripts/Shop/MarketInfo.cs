@@ -11,12 +11,16 @@ public class MarketInfo : MonoBehaviour
     [SerializeField] private Image mainimage;
     [SerializeField] private Button buttonbuy;
     private ProductScript currentproduct;
-    [SerializeField] private PlayerController3dt playercontroller;
+    [SerializeField] private PlayerController playercontroller;
     private Item item;
     public void UpdateInfo(ProductScript products)
     {
         nametext.text = products.nameofProduct;
-        chtext.text = products.healthPlus.ToString() + "\n" + products.damagePlus.ToString() + "\n" + products.attackSpeedPlus.ToString() + "\n" + products.movementSpeedPlus.ToString() + "\n" + products.cost.ToString();
+        chtext.text = products.healthPlus.ToString() + "," + "+"+ products.healthPercent.ToString() + "%" +
+        "\n" + products.damagePlus.ToString()        + "," + "+" + products.damagePercent.ToString() + "%" +
+        "\n" + products.attackSpeedPlus.ToString()   + "," + "+" + products.attackSpeedPercent.ToString() + "%" +
+        "\n" + products.movementSpeedPlus.ToString() + "," + "+" + products.movementSpeedPercent.ToString() + "%" +
+        "\n" + products.cost.ToString();
         mainimage.sprite = products.artwork;
         buttontext.text = products.isbought == true ? products.ischoosen == true ? "Choosen" : "Choose" : "Buy";
         currentproduct = products;
