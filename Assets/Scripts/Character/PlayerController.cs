@@ -261,5 +261,13 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         yield return new WaitForSeconds(seconds);
         item.Unequip(_characterInside);
     }
+    public void UnequipProduct(Item item)
+    {
+        item.Unequip(_characterInside);
+    }
+    public void EquipProduct(Item item)
+    {
+        item.Equip(_characterInside);
+    }
 
 }
