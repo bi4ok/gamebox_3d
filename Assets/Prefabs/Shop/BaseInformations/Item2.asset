@@ -12,12 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d6aa0942fcfda440a5108c6951abc8d, type: 3}
   m_Name: Item2
   m_EditorClassIdentifier: 
+  type: Armor
   nameofProduct: fish
   cost: 3
-  attack: 5
-  health: 4
-  attackspeed: 5
-  movespeed: 2
+  damagePlus: 3
+  damagePercent: 6
+  attackSpeedPlus: 4
+  attackSpeedPercent: 5
+  attackRangePlus: 3
+  attackRangePercent: 6
+  healthPlus: 6
+  healthPercent: 3
+  movementSpeedPlus: 3
+  movementSpeedPercent: 4
   artwork: {fileID: 21300000, guid: 2708bfa4d272416499fa663d5ae2d1e5, type: 3}
   isbought: 0
   ischoosen: 0

@@ -10,10 +10,10 @@ public class MarketScript : MonoBehaviour
     int f;
     [SerializeField] private ProductScript[] products;
     [SerializeField] private GameObject marketinfobj;
-    private MarketInfo marketinf;
+   [SerializeField] private MarketInfo marketinf;
     private void Awake()
     {
-        marketinf = marketinfobj.GetComponent<MarketInfo>();
+      //  marketinf = marketinfobj.GetComponent<MarketInfo>();
         Slotssort();
     }
 
