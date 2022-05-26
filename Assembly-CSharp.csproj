@@ -57,42 +57,48 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\NavMeshComponents\Scripts\NavMeshSurface.cs" />
-    <Compile Include="Assets\Scripts\MenuScript.cs" />
+    <Compile Include="Assets\Scripts\Shop\Slot.cs" />
+    <Compile Include="Assets\Scripts\Menu\MenuScript.cs" />
     <Compile Include="Assets\Scripts\StatModifier.cs" />
-    <Compile Include="Assets\Scripts\ProductScript.cs" />
+    <Compile Include="Assets\Scripts\Shop\ProductScript.cs" />
     <Compile Include="Assets\Scripts\Bonus\BuffsFactory.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Shop\MarketInfo.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerStat.cs" />
     <Compile Include="Assets\Scripts\GameHandler.cs" />
     <Compile Include="Assets\Prefabs\hit\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Bonus\BombController.cs" />
     <Compile Include="Assets\Scripts\Factory.cs" />
-    <Compile Include="Assets\Scripts\MarketScript.cs" />
+    <Compile Include="Assets\Scripts\Shop\MarketScript.cs" />
     <Compile Include="Assets\CastleController.cs" />
-    <Compile Include="Assets\Scripts\LeaderboardText.cs" />
+    <Compile Include="Assets\Scripts\Menu\LeaderboardText.cs" />
     <Compile Include="Assets\Scripts\NavMeshComponents\Scripts\NavMeshModifierVolume.cs" />
     <Compile Include="Assets\Scripts\Bonus\ScrapBonus.cs" />
+    <Compile Include="Assets\Scripts\TowerCellController.cs" />
+    <Compile Include="Assets\Scripts\Character\Flamethrower.cs" />
     <Compile Include="Assets\Scripts\IDamageAble.cs" />
     <Compile Include="Assets\Scripts\Bonus\BoomEffectTimeline.cs" />
+    <Compile Include="Assets\Scripts\TowerController.cs" />
     <Compile Include="Assets\Scripts\IDamageDealer.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
+    <Compile Include="Assets\Scripts\Character\Weapon.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterController.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Character\ShotGun.cs" />
     <Compile Include="Assets\Scripts\Bonus\BoomApplyScript.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterFactory.cs" />
     <Compile Include="Assets\Scripts\NavMeshComponents\Scripts\NavMeshLink.cs" />
     <Compile Include="Assets\Scripts\NavMeshComponents\Scripts\NavMeshModifier.cs" />
     <Compile Include="Assets\Scripts\Bonus\MedPackBonus.cs" />
+    <Compile Include="Assets\Scripts\Character\Rifle.cs" />
+    <Compile Include="Assets\Scripts\CloseOpen.cs" />
     <Compile Include="Assets\Scripts\Character\Character.cs" />
     <Compile Include="Assets\Scripts\Bonus\TimeStopBonus.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerSpawner.cs" />
     <Compile Include="Assets\PlayerController3D.cs" />
     <Compile Include="Assets\Scripts\Bonus\Bonus.cs" />
     <Compile Include="Assets\Scripts\Bonus\BonusController.cs" />
-    <Compile Include="Assets\Scripts\Character\Rifle.cs" />
-    <Compile Include="Assets\Scripts\Character\ShotGun.cs" />
-    <Compile Include="Assets\Scripts\Character\Weapon.cs" />
-    <Compile Include="Assets\Scripts\Character\Flamethrower.cs" />
+    <Compile Include="Assets\TowerAttackControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

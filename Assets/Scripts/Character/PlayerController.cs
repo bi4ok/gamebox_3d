@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     private Weapon gunScript;
 
     [SerializeField]
-    private GameObject gameManager;
+    private GameHandler gameManager;
     [SerializeField]
     private AudioClip blasterSound;
     [SerializeField]
@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
                 
             if (Input.GetButton("Fire1"))
             {
+                gameManager.PlayerTryWasteScrap("red", 1);
                 gunScript.Shoot(bulletPrefab);
                 _nextAttackTime = Time.time + _attackCoolDown;
             }
