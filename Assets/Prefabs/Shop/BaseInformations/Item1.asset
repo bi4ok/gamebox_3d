@@ -14,17 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: Armor
   nameofProduct: Health
-  cost: 2
+  cost_red: 0
+  cost_brown: 0
+  cost_blue: 0
   damagePlus: 1
-  damagePercent: 1
-  attackSpeedPlus: 1
-  attackSpeedPercent: 1
-  attackRangePlus: 1
-  attackRangePercent: 1
-  healthPlus: 1
-  healthPercent: 1
-  movementSpeedPlus: 1
-  movementSpeedPercent: 1
+  damagePercent: 0
+  attackSpeedPlus: 0
+  attackSpeedPercent: 0
+  attackRangePlus: 0
+  attackRangePercent: 0
+  healthPlus: 9
+  healthPercent: 0
+  movementSpeedPlus: 999
+  movementSpeedPercent: 0
   artwork: {fileID: 21300000, guid: c33f0ab456fc86345b395d4b30f0b61a, type: 3}
-  isbought: 0
-  ischoosen: 0
+  isbought: 1
+  ismax: 1
+  levelsCount: 3
+  CurrentLevel: 1

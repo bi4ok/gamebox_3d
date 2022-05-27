@@ -20,11 +20,13 @@ public class MarketInfo : MonoBehaviour
         "\n" + products.damagePlus.ToString()        + "," + "+" + products.damagePercent.ToString() + "%" +
         "\n" + products.attackSpeedPlus.ToString()   + "," + "+" + products.attackSpeedPercent.ToString() + "%" +
         "\n" + products.movementSpeedPlus.ToString() + "," + "+" + products.movementSpeedPercent.ToString() + "%" +
-        "\n" + products.cost.ToString();
+        "\n" + products.cost_red.ToString() +
+        "\n" + products.cost_blue.ToString() +
+        "\n" + products.cost_brown.ToString();
         mainimage.sprite = products.artwork;
-        buttontext.text = products.isbought == true ? products.ischoosen == true ? "Choosen" : "Choose" : "Buy";
+        buttontext.text = products.isbought == true ? products.ismax == true ? "Max" : "Upgrade" : "Buy";
         currentproduct = products;
-       
+        buttonbuy.interactable = true;
     }
     public void Buy()
     {
@@ -33,25 +35,28 @@ public class MarketInfo : MonoBehaviour
         //Вычитаем монеты
         buttonbuy.onClick.AddListener(() => Choose());
         UpdateInfo(currentproduct);
+        
     }
     public void Choose()
     {
-        item = new Item(currentproduct.damagePlus, currentproduct.damagePercent = 0,
-         currentproduct.attackSpeedPlus = 0, currentproduct.attackSpeedPercent = 0,
-         currentproduct.attackRangePlus = 0, currentproduct.attackRangePercent = 0,
-                   currentproduct.healthPlus = 0, currentproduct.healthPercent = 0,
-         currentproduct.movementSpeedPlus = 0, currentproduct.movementSpeedPercent = 0);
+        item = new Item(currentproduct.damagePlus, currentproduct.damagePercent ,
+         currentproduct.attackSpeedPlus , currentproduct.attackSpeedPercent ,
+         currentproduct.attackRangePlus , currentproduct.attackRangePercent ,
+                   currentproduct.healthPlus , currentproduct.healthPercent ,
+         currentproduct.movementSpeedPlus , currentproduct.movementSpeedPercent );
        
-        if(currentproduct.ischoosen == true)
+        if(currentproduct.CurrentLevel != currentproduct.levelsCount)
         {
-            playercontroller.UnequipProduct(item);
-            currentproduct.ischoosen = false;
+            //Вычитаем монеты
+            playercontroller.EquipProduct(item);
+            currentproduct.CurrentLevel++;
         }
         else
         {
-            playercontroller.EquipProduct(item);
-            currentproduct.ischoosen = true;
+            buttonbuy.interactable = false;
+            currentproduct.ismax = true;
         }
         UpdateInfo(currentproduct);
     }
 }
+

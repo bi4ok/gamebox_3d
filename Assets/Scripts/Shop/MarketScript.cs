@@ -7,7 +7,6 @@ public class MarketScript : MonoBehaviour
 {
     [SerializeField] private GameObject slot;
     [SerializeField] private GameObject parentslot;
-    int f;
     [SerializeField] private ProductScript[] products;
     [SerializeField] private GameObject marketinfobj;
    [SerializeField] private MarketInfo marketinf;
@@ -25,7 +24,6 @@ public class MarketScript : MonoBehaviour
             Slot slotscript = newproducts.GetComponent<Slot>();
             slotscript.OnCreate(productscr);
             Button buttonSlots = newproducts.GetComponentInChildren<Button>();
-            print(buttonSlots.name);
             marketinf.UpdateInfo(productscr);
             buttonSlots.onClick.AddListener(() => marketinf.UpdateInfo(productscr));
 
