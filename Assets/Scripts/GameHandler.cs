@@ -124,4 +124,18 @@ public class GameHandler : MonoBehaviour
             print(colorName + " такого ошмётка нету в перечне");
         }
     }
+
+    public bool PlayerTryWasteScrap(string colorName, float scrapValue)
+    {
+        if (scrapStorage.ContainsKey(colorName) && scrapStorage[colorName] >= scrapValue)
+        {
+            scrapStorage[colorName] -= scrapValue;
+            return true;
+        }
+        else
+        {
+            print($"Не хватает ошмётков цвета {colorName}");
+            return false;
+        }
+    }
 }
