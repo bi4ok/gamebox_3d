@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\NavMeshComponents\Scripts\NavMeshSurface.cs" />
     <Compile Include="Assets\Scripts\Shop\Slot.cs" />
+    <Compile Include="Assets\TowerAttackControl.cs" />
     <Compile Include="Assets\Scripts\Menu\MenuScript.cs" />
     <Compile Include="Assets\Scripts\StatModifier.cs" />
     <Compile Include="Assets\Scripts\Shop\ProductScript.cs" />
@@ -74,9 +75,11 @@
     <Compile Include="Assets\Scripts\Menu\LeaderboardText.cs" />
     <Compile Include="Assets\Scripts\NavMeshComponents\Scripts\NavMeshModifierVolume.cs" />
     <Compile Include="Assets\Scripts\Bonus\ScrapBonus.cs" />
+    <Compile Include="Assets\Scripts\TowerCellController.cs" />
     <Compile Include="Assets\Scripts\Character\Flamethrower.cs" />
     <Compile Include="Assets\Scripts\IDamageAble.cs" />
     <Compile Include="Assets\Scripts\Bonus\BoomEffectTimeline.cs" />
+    <Compile Include="Assets\Scripts\TowerController.cs" />
     <Compile Include="Assets\Scripts\IDamageDealer.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\Character\Weapon.cs" />
@@ -96,6 +99,7 @@
     <Compile Include="Assets\PlayerController3D.cs" />
     <Compile Include="Assets\Scripts\Bonus\Bonus.cs" />
     <Compile Include="Assets\Scripts\Bonus\BonusController.cs" />
+    <Compile Include="Assets\Scripts\MechanicManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

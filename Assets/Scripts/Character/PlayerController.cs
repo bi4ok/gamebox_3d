@@ -28,7 +28,8 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     private GameObject bulletPrefab;
     [SerializeField]
     private Weapon gunScript;
-
+    [SerializeField]
+    private MechanicManager mechanicManager;
     [SerializeField]
     private GameHandler gameManager;
     [SerializeField]
@@ -67,9 +68,9 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         _characterInside = new Character(startHealth, damageValue, energyValue, shieldPower, attackRange, attackSpeed, movementSpeed, tag);
         _playerAnimator = GetComponent<Animator>();
         _meeleAttackCoolDown = 1/attackSpeed;
-        //gunScript = gun.GetComponent<Weapon>();
+       // gunScript = gun.GetComponent<Weapon>();
         gunScript.OnEquip(damageValue, attackSpeed);
-
+        mechanicManager = FindObjectOfType<MechanicManager>();
     }
 
 
@@ -206,6 +207,10 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         {
             if (deathEffect)
             {
+                if (mechanicManager.GunPowder())
+                {
+                    MeeleAttack();
+                }
                 GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
                 SpriteRenderer effectSprite = effect.GetComponent<SpriteRenderer>();
                 Destroy(effect, 3f);
