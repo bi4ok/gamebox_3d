@@ -118,6 +118,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
             _playerRigidBody.MovePosition(currentMoveVector);
             _playerRigidBody.velocity = Vector3.zero;
         }
+        
 
     }
 
@@ -207,9 +208,10 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         {
             if (deathEffect)
             {
-                if (mechanicManager.GunPowder())
+                if (PlayerPrefs.GetInt("gunpowder") != 0)
                 {
                     MeeleAttack();
+                    //≈ффект взрыва
                 }
                 GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
                 SpriteRenderer effectSprite = effect.GetComponent<SpriteRenderer>();

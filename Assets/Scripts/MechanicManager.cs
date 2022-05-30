@@ -14,10 +14,9 @@ public class MechanicManager : MonoBehaviour
     {
         pudofsoltgmObj.SetActive(true);
     }
-   
-    public bool GunPowder()
+   public void GunPowder()
     {
-
-        return true;
+        PlayerPrefs.SetInt("gunpowder", 1);
     }
+   
 }
