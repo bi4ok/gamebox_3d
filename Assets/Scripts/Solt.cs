@@ -10,4 +10,9 @@ public class Solt : MonoBehaviour
         monsterController = other.GetComponent<MonsterController>();
         if (monsterController != null) monsterController.TakeDamage(1f, "Solt", false);
     }
+   public IEnumerator Lifetime( float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        Destroy(gameObject);
+    }
 }
