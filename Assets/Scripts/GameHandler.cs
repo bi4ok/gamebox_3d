@@ -23,6 +23,12 @@ public class GameHandler : MonoBehaviour
     private Image MPBar;
     [SerializeField]
     private Sprite[] mpSprites;
+    [SerializeField]
+    private Text red_scrtxt;
+    [SerializeField]
+    private Text blue_scrtxt;
+    [SerializeField]
+    private Text brown_scrtxt;
 
     [SerializeField]
     private GameObject player;
@@ -48,6 +54,12 @@ public class GameHandler : MonoBehaviour
     private void Update()
     {
         UpdateBars();
+    }
+    private void UpdateInfo()
+    {
+        red_scrtxt.text = scrapStorage["red"].ToString();
+        blue_scrtxt.text = scrapStorage["blue"].ToString();
+        brown_scrtxt.text = scrapStorage["yellow"].ToString();
     }
 
     private void UpdateBars()
@@ -118,6 +130,7 @@ public class GameHandler : MonoBehaviour
         {
             scrapStorage[colorName] += scrapValue;
             print(scrapStorage + " обновлён счётчик, добавлено " + scrapValue + " цвета " + colorName);
+            UpdateInfo();
         }
         else
         {
@@ -130,7 +143,10 @@ public class GameHandler : MonoBehaviour
         if (scrapStorage.ContainsKey(colorName) && scrapStorage[colorName] >= scrapValue)
         {
             scrapStorage[colorName] -= scrapValue;
+            UpdateInfo();
             return true;
+           
+            
         }
         else
         {
@@ -138,4 +154,5 @@ public class GameHandler : MonoBehaviour
             return false;
         }
     }
+   
 }
