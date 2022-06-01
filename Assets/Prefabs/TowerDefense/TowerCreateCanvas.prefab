@@ -320,7 +320,7 @@ RectTransform:
   m_Children:
   - {fileID: 4240650445410882631}
   m_Father: {fileID: 4240650446072233888}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -572,6 +572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allTowerObjects: []
   scrollMenu: {fileID: 0}
+  gameHandler: {fileID: 0}
 --- !u!1 &4240650445410882630
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,8 +756,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
-  - {fileID: 4240650444963161991}
   - {fileID: 4240650446327930023}
+  - {fileID: 4240650444963161991}
   m_Father: {fileID: 4240650445347680559}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1002,7 +1003,7 @@ RectTransform:
   - {fileID: 4240650444509025226}
   - {fileID: 4240650444536365254}
   m_Father: {fileID: 4240650446072233888}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
