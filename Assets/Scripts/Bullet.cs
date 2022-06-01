@@ -30,7 +30,6 @@ public class Bullet : MonoBehaviour
     {
         if(!collision.CompareTag(attackerTag) && !collision.CompareTag("Bonus") && !collision.CompareTag("Bullet"))
         {
-            Debug.Log(collision.name);
             BlastHim(collision);
             StartCoroutine(BlastEffect(0f));
             Destroy(gameObject, 0.1f);

@@ -41,7 +41,7 @@ public class GameHandler : MonoBehaviour
     private InputField.SubmitEvent submitEvent;
     private bool _nameEntered=false;
 
-    private void Start()
+    private void Awake()
     {
         _bonusHandler = GetComponent<BonusController>();
         inGameCanvas.SetActive(true);
@@ -150,7 +150,7 @@ public class GameHandler : MonoBehaviour
         }
         else
         {
-            print($"Не хватает ошмётков цвета {colorName}");
+            //print($"Не хватает ошмётков цвета {colorName}");
             return false;
         }
     }

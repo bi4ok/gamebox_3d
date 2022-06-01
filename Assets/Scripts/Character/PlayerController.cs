@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         _meeleAttackCoolDown = 1/attackSpeed;
        // gunScript = gun.GetComponent<Weapon>();
         gunScript.OnEquip(damageValue, attackSpeed);
-        mechanicManager = FindObjectOfType<MechanicManager>();
+        //mechanicManager = FindObjectOfType<MechanicManager>();
     }
 
 
@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     {
         _movementAxes.x = Input.GetAxisRaw("Horizontal");
         _movementAxes.z = Input.GetAxisRaw("Vertical");
-        return transform.position + _movementAxes * movementSpeed * Time.fixedDeltaTime;
+        return transform.position + _movementAxes * _characterInside.statsOut["movementSpeed"].Value * Time.fixedDeltaTime;
     }
 
 

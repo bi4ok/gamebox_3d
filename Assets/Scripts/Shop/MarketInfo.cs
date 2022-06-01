@@ -39,12 +39,27 @@ public class MarketInfo : MonoBehaviour
     }
     public void Choose()
     {
-        item = new Item(currentproduct.damagePlus, currentproduct.damagePercent ,
-         currentproduct.attackSpeedPlus , currentproduct.attackSpeedPercent ,
-         currentproduct.attackRangePlus , currentproduct.attackRangePercent ,
-                   currentproduct.healthPlus , currentproduct.healthPercent ,
-         currentproduct.movementSpeedPlus , currentproduct.movementSpeedPercent );
-       
+        print(currentproduct.movementSpeedPlus + "  " + currentproduct.movementSpeedPercent);
+        //item = new Item(currentproduct.damagePlus, currentproduct.damagePercent ,
+        // currentproduct.attackSpeedPlus , currentproduct.attackSpeedPercent ,
+        // currentproduct.attackRangePlus , currentproduct.attackRangePercent ,
+        //           currentproduct.healthPlus , currentproduct.healthPercent ,
+        // currentproduct.movementSpeedPlus , currentproduct.movementSpeedPercent );
+
+        item = new Item(damagePlus: currentproduct.damagePlus,
+            damagePercent: currentproduct.damagePercent,
+            attackSpeedPlus: currentproduct.attackSpeedPlus,
+            attackSpeedPercent: currentproduct.attackSpeedPercent,
+            attackRangePlus: currentproduct.attackRangePlus,
+            attackRangePercent: currentproduct.attackRangePercent,
+            healthPlus: currentproduct.healthPlus,
+            healthPercent: currentproduct.healthPercent,
+            energyPlus: 0, energyPercent: 0,
+            movementSpeedPlus: currentproduct.movementSpeedPlus,
+            movementSpeedPercent: currentproduct.movementSpeedPercent);
+
+        print($"ITEM {item.statsOut["movementSpeed"][0]} + {item.statsOut["movementSpeed"][1]}");
+
         if(currentproduct.CurrentLevel != currentproduct.levelsCount)
         {
             //Вычитаем монеты
