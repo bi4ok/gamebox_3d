@@ -102,6 +102,7 @@
     <Compile Include="Assets\PlayerController3D.cs" />
     <Compile Include="Assets\Scripts\Bonus\Bonus.cs" />
     <Compile Include="Assets\Scripts\Bonus\BonusController.cs" />
+    <Compile Include="Assets\MainMenuScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

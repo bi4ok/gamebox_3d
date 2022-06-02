@@ -43,6 +43,8 @@ public class GameHandler : MonoBehaviour
 
     private void Awake()
     {
+        print(PlayerPrefs.GetFloat("MasterVolume") + " VOLUME! ");
+
         _bonusHandler = GetComponent<BonusController>();
         inGameCanvas.SetActive(true);
         gameOverCanvas.SetActive(false);
@@ -57,9 +59,9 @@ public class GameHandler : MonoBehaviour
     }
     private void UpdateInfo()
     {
-        red_scrtxt.text = scrapStorage["red"].ToString();
-        blue_scrtxt.text = scrapStorage["blue"].ToString();
-        brown_scrtxt.text = scrapStorage["yellow"].ToString();
+        red_scrtxt.text = (scrapStorage["red"] > 999 ? "999" : scrapStorage["red"].ToString());
+        blue_scrtxt.text = (scrapStorage["blue"] > 999 ? "999" : scrapStorage["blue"].ToString());
+        brown_scrtxt.text = (scrapStorage["yellow"] > 999 ? "999" : scrapStorage["yellow"].ToString());
     }
 
     private void UpdateBars()

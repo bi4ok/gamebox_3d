@@ -7,42 +7,47 @@ using UnityEngine.SceneManagement;
 public class MenuScript : MonoBehaviour
 {
     [SerializeField]
-    private GameObject mainMenu;
+    private GameObject combatCanvas;
+
+    [SerializeField]
+    private GameObject buildCanvas;
+
+    [SerializeField]
+    private Text timerText;
 
     [SerializeField]
     private GameObject settingsMenu;
 
     [SerializeField]
-    private GameObject leaderBoardMenu;
+    private GameObject PauseMenu;
 
-    private void Start()
+    [SerializeField]
+    private Slider volumeSlider;
+
+    private void Awake()
     {
-        ChangeToMainMenu();
+        volumeSlider.value = PlayerPrefs.GetFloat("MasterVolume");
+        combatCanvas.SetActive(true);
+        buildCanvas.SetActive(false);
     }
 
     public void ChangeToMainMenu()
     {
-        mainMenu.SetActive(true);
-        settingsMenu.SetActive(false);
-        leaderBoardMenu.SetActive(false);
+        SceneManager.LoadScene(0);
     }
 
     public void ChangeToSettings()
     {
-        mainMenu.SetActive(false);
         settingsMenu.SetActive(true);
-        leaderBoardMenu.SetActive(false);
     }
 
-    public void ChangeToLeaderboard()
+    public void PauseGame()
     {
-        mainMenu.SetActive(false);
-        settingsMenu.SetActive(false);
-        leaderBoardMenu.SetActive(true);
+        PauseMenu.SetActive(true);
     }
 
-    public void StartGameButton()
+    public void ContinueGameButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        PauseMenu.SetActive(false);
     }
 }
