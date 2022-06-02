@@ -23,13 +23,10 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     [SerializeField]
     private Transform pointOfAttack;
     [SerializeField]
-    private GameObject gun;
-    [SerializeField]
     private GameObject bulletPrefab;
     [SerializeField]
     private Weapon gunScript;
-    [SerializeField]
-    private MechanicManager mechanicManager;
+
     [SerializeField]
     private GameHandler gameManager;
     [SerializeField]
@@ -39,6 +36,8 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     [SerializeField]
     private PlayerSpawner playerSpawner;
     [SerializeField]
+    private Animator playerAnimator;
+    [SerializeField]
     private GameObject deathEffect;
 
     [SerializeField]
@@ -47,15 +46,11 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     private Character _characterInside;
     private Rigidbody _playerRigidBody;
     private Vector3 _movementAxes;
-    private Animator _playerAnimator;
 
     private float _valuesRegenCooldown = 5f;
     private float _valuesRegenTimer = 0f;
     private float _meeleAttackCoolDown;
     private float _nextMeeleAttackTime = 0f;
-
-    private float _rangeAttackCoolDown;
-    private float _nextRangeAttackTime = 0f;
 
     private float _nextAttackTime = 0f;
     private float _attackCoolDown = 0.1f;
@@ -66,11 +61,12 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     {
         _playerRigidBody = GetComponent<Rigidbody>();
         _characterInside = new Character(startHealth, damageValue, energyValue, shieldPower, attackRange, attackSpeed, movementSpeed, tag);
-        _playerAnimator = GetComponent<Animator>();
-        _meeleAttackCoolDown = 1/attackSpeed;
-       // gunScript = gun.GetComponent<Weapon>();
+        _meeleAttackCoolDown = 1 / attackSpeed;
+        print(_meeleAttackCoolDown);
         gunScript.OnEquip(damageValue, attackSpeed);
-        //mechanicManager = FindObjectOfType<MechanicManager>();
+        playerAnimator.SetFloat("MovementSpeed", movementSpeed / 10);
+        playerAnimator.SetFloat("AttackSpeed", attackSpeed);
+
     }
 
 
@@ -81,17 +77,19 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         {
             AimOnMouse();
 
-                
+
             if (Input.GetButton("Fire1"))
             {
+                playerAnimator.SetTrigger("Shoot");
                 gameManager.PlayerTryWasteScrap("red", 1);
                 gunScript.Shoot(bulletPrefab);
                 _nextAttackTime = Time.time + _attackCoolDown;
             }
-            else if (Input.GetButton("Fire2") && Time.time > _nextAttackTime && Time.time > _meeleAttackCoolDown)
+            else if (Input.GetButton("Fire2") && Time.time > _nextAttackTime && Time.time > _nextMeeleAttackTime)
             {
                 MeeleAttack();
-                _nextMeeleAttackTime = Time.time + 1 / _meeleAttackCoolDown - _attackCoolDown;
+                playerAnimator.SetTrigger("Hit");
+                _nextMeeleAttackTime = Time.time + _meeleAttackCoolDown - _attackCoolDown;
                 _nextAttackTime = Time.time + _attackCoolDown;
             }
 
@@ -118,7 +116,6 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
             _playerRigidBody.MovePosition(currentMoveVector);
             _playerRigidBody.velocity = Vector3.zero;
         }
-        
 
     }
 
@@ -127,7 +124,10 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     {
         _movementAxes.x = Input.GetAxisRaw("Horizontal");
         _movementAxes.z = Input.GetAxisRaw("Vertical");
-        return transform.position + _movementAxes * _characterInside.statsOut["movementSpeed"].Value * Time.fixedDeltaTime;
+        playerAnimator.SetFloat("CurrentSpeed", _movementAxes.magnitude);
+        playerAnimator.SetFloat("Horizontal", _movementAxes.x * transform.right.normalized.x);
+        playerAnimator.SetFloat("Vertical", _movementAxes.z * transform.forward.normalized.z);
+        return transform.position + _movementAxes * movementSpeed * Time.fixedDeltaTime;
     }
 
 
@@ -168,12 +168,10 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
 
     private void MeeleAttack()
     {
-        print("MEELEE ATTACK!!!" + attackRange);
-        
+
         Collider[] hitEnemies = Physics.OverlapSphere(pointOfAttack.position, attackRange, LayerMask.GetMask("Enemy"));
-        foreach(var enemy in hitEnemies)
+        foreach (var enemy in hitEnemies)
         {
-            print(enemy.name);
             Attack(enemy.gameObject);
         }
     }
@@ -190,7 +188,6 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     {
         if (alive)
         {
-            _playerAnimator.SetTrigger("Hitted");
             _characterInside.TakeDamage(damageAmount, damageFrom);
             DiedByDamage();
         }
@@ -208,11 +205,6 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         {
             if (deathEffect)
             {
-                if (PlayerPrefs.GetInt("gunpowder") != 0)
-                {
-                    MeeleAttack();
-                    //≈ффект взрыва
-                }
                 GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
                 SpriteRenderer effectSprite = effect.GetComponent<SpriteRenderer>();
                 Destroy(effect, 3f);
