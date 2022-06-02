@@ -39,12 +39,7 @@ public class MarketInfo : MonoBehaviour
     }
     public void Choose()
     {
-        print(currentproduct.movementSpeedPlus + "  " + currentproduct.movementSpeedPercent);
-        //item = new Item(currentproduct.damagePlus, currentproduct.damagePercent ,
-        // currentproduct.attackSpeedPlus , currentproduct.attackSpeedPercent ,
-        // currentproduct.attackRangePlus , currentproduct.attackRangePercent ,
-        //           currentproduct.healthPlus , currentproduct.healthPercent ,
-        // currentproduct.movementSpeedPlus , currentproduct.movementSpeedPercent );
+        
 
         item = new Item(damagePlus: currentproduct.damagePlus,
             damagePercent: currentproduct.damagePercent,
