@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Bonus\BuffsFactory.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Shop\MarketInfo.cs" />
+    <Compile Include="Assets\MainMenuScript.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerStat.cs" />
     <Compile Include="Assets\Scripts\GameHandler.cs" />
     <Compile Include="Assets\Prefabs\hit\TutorialInfo\Scripts\Readme.cs" />
@@ -102,7 +103,7 @@
     <Compile Include="Assets\PlayerController3D.cs" />
     <Compile Include="Assets\Scripts\Bonus\Bonus.cs" />
     <Compile Include="Assets\Scripts\Bonus\BonusController.cs" />
-    <Compile Include="Assets\MainMenuScript.cs" />
+    <Compile Include="Assets\PortalManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

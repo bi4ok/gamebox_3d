@@ -17,21 +17,23 @@ public class MonsterFactory : Factory
     [SerializeField]
     private GameObject bonusHandler;
 
-    protected override IEnumerator SpawnObject(float interval, ObjToSpawn spawnObject)
+    protected override IEnumerator SpawnObject(float interval, List<ObjToSpawn> spawnObjects)
     {
-
-        for (int i = 0; i < spawnObject.count; i++)
+        foreach (var spawnObject in spawnObjects)
         {
-            yield return new WaitForSeconds(interval);
-            GameObject objFromPrefab = Instantiate(spawnObject.objectPrefab, transform.position + Vector3.up, Quaternion.identity);
-            objFromPrefab.SetActive(true);
-            var objScript = objFromPrefab.GetComponent<MonsterController>();
-            if (targetToFollow != null)
+            for (int i = 0; i < spawnObject.count; i++)
             {
-                objScript.OnCreate(targetToAttack, targetToFollow, changeTargetRange, bonusHandler, spawnObject.scrapPrefab);
+                yield return new WaitForSeconds(interval);
+                GameObject objFromPrefab = Instantiate(spawnObject.objectPrefab, transform.position + Vector3.up, Quaternion.identity);
+                objFromPrefab.SetActive(true);
+                var objScript = objFromPrefab.GetComponent<MonsterController>();
+                if (targetToFollow != null)
+                {
+                    objScript.OnCreate(targetToAttack, targetToFollow, changeTargetRange, bonusHandler, spawnObject.scrapPrefab);
+                }
+
+
             }
-
-
         }
 
 

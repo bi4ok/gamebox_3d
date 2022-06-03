@@ -11,25 +11,21 @@ public class BuffsFactory : Factory
     [SerializeField]
     private GameObject bonusHandler;
 
-    protected override IEnumerator SpawnObject(float interval, ObjToSpawn spawnObject)
+    protected override IEnumerator SpawnObject(float interval, List<ObjToSpawn> spawnObjects)
     {
-
-        for (int i = 0; i < spawnObject.count; i++)
+        foreach (var spawnObject in spawnObjects)
         {
-            yield return new WaitForSeconds(interval);
-            var placeForSpawn = transform.position + Vector3.up;
-            GameObject objFromPrefab = Instantiate(spawnObject.objectPrefab, placeForSpawn, Quaternion.identity);
-            
-            var objScript = objFromPrefab.GetComponent<Bonus>();
-            objScript.aliveBonusTimer = timeToBonusLive;
-            objScript.bonusHandler = bonusHandler;
-            objFromPrefab.SetActive(true);
-            
-            
+            for (int i = 0; i < spawnObject.count; i++)
+            {
+                yield return new WaitForSeconds(interval);
+                var placeForSpawn = transform.position + Vector3.up;
+                GameObject objFromPrefab = Instantiate(spawnObject.objectPrefab, placeForSpawn, Quaternion.identity);
 
-
+                var objScript = objFromPrefab.GetComponent<Bonus>();
+                objScript.aliveBonusTimer = timeToBonusLive;
+                objScript.bonusHandler = bonusHandler;
+                objFromPrefab.SetActive(true);
+            }
         }
-
-
     }
 }

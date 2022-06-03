@@ -16,54 +16,147 @@ public abstract class Factory : MonoBehaviour
 
     }
 
+    [System.Serializable]
+    public class WaveOfObjects
+    {
+        public int order;
+        public string name;
+        public List<ObjToSpawn> allSpawnObjects;
+        public float timeToNextWave;
+        public bool lastWave;
+
+    }
+
     [SerializeField]
-    private List<ObjToSpawn> allSpawnObjects;
+    private List<WaveOfObjects> allWaves;
+
+    [SerializeField]
+    private bool loopWave;
+
+    [SerializeField]
+    private bool isMonsters;
 
     [SerializeField]
     private float interval;
 
-    private List<ObjToSpawn> currentSpawnObjects;
-    private float _startTime=0;
+    [SerializeField]
+    private GameHandler gameHandler;
 
-    private void Start()
+    private List<ObjToSpawn> currentSpawnObjects;
+    private int waveOrder;
+    private WaveOfObjects currentWave;
+    private int maxWaveOrder;
+    private bool fightPhase;
+    private float nextWaveTime=0;
+    private bool currentWaveInProcess;
+
+    private void Awake()
     {
         currentSpawnObjects = new List<ObjToSpawn>();
-        WhoToSpawnUpdate();
-        SpawnObjects();
-
+        waveOrder = 0;
+        maxWaveOrder = allWaves.Capacity;
+        fightPhase = true;
+        currentWaveInProcess = true;
 
     }
 
     private void Update()
     {
-        _startTime += Time.deltaTime;
-        WhoToSpawnUpdate();
-        SpawnObjects();
+        if (allWaves.Count > 0)
+        {
+            if (fightPhase)
+            {
+                WhoToSpawnUpdate();
+                StartCoroutine(SpawnObjects());
+                fightPhase = false;
+                print("¬ÂÏˇ Û‚ÂÎË˜ËÎÓÒ¸");
+
+            }
+            else
+            {
+                if (Time.time > nextWaveTime && !currentWaveInProcess)
+                {
+                    fightPhase = ChooseNextWave();
+                }
+            }
+        }
+        else if(currentWaveInProcess)
+        {
+            currentWaveInProcess = false;
+        }
+
+
+    }
+
+    private bool ChooseNextWave()
+    {
+        
+
+
+        if (waveOrder + 1 < maxWaveOrder)
+        {
+            waveOrder += 1;
+        }
+        else if (loopWave)
+        {
+            waveOrder = 0;
+        }
+        else
+        {
+
+            return false;
+        }
+
+        currentWaveInProcess = true;
+
+        return true;
     }
 
     private void WhoToSpawnUpdate()
     {
-        currentSpawnObjects.Clear();
-        foreach (ObjToSpawn obj in allSpawnObjects)
+        currentWave = allWaves[waveOrder];
+        currentSpawnObjects = currentWave.allSpawnObjects;
+
+        if (isMonsters)
         {
-            if (_startTime >= obj.spawnTimeFrom && !obj.spawned)
-            {
-                currentSpawnObjects.Add(obj);
-
-            }
+            print("ÃŒ¡Œ¬ ¬ ¬ŒÀÕ≈ ƒŒ¡¿¬À≈ÕŒ " + currentSpawnObjects.Count);
+            gameHandler.CountMonstersInGame(currentSpawnObjects.Count);
         }
-
     }
 
-    private void SpawnObjects()
+    private IEnumerator SpawnObjects()
     {
-        foreach (ObjToSpawn obj in currentSpawnObjects)
-        {
-            StartCoroutine(SpawnObject(interval, obj));
-            obj.spawned = true;
-        }
+
+        yield return SpawnObject(interval, currentSpawnObjects);
+        
+        nextWaveTime = Time.time + currentWave.timeToNextWave;
+        currentWaveInProcess = false;
+        
     }
 
-    protected abstract IEnumerator SpawnObject(float interval, ObjToSpawn spawnObject);
+    public bool GetWaveStatus()
+    {
+        return currentWaveInProcess;
+    }
+
+    public float TimeToNextWave()
+    {
+        return nextWaveTime - Time.time;
+    }
+
+    public bool HaveNextWave()
+    {
+        if (currentWave != null)
+        {
+            return !currentWave.lastWave;
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+
+    protected abstract IEnumerator SpawnObject(float interval, List<ObjToSpawn> spawnObjectst);
 
 }

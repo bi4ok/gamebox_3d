@@ -13,6 +13,9 @@ public class MenuScript : MonoBehaviour
     private GameObject buildCanvas;
 
     [SerializeField]
+    private GameObject gameOverCanvas;
+
+    [SerializeField]
     private Text timerText;
 
     [SerializeField]
@@ -23,6 +26,17 @@ public class MenuScript : MonoBehaviour
 
     [SerializeField]
     private Slider volumeSlider;
+
+    [SerializeField]
+    private BonusController bonusHandler;
+
+    [SerializeField]
+    private Text scoreText;
+
+    [SerializeField]
+    private InputField inputField;
+
+    private bool _nameEntered = false;
 
     private void Awake()
     {
@@ -49,5 +63,47 @@ public class MenuScript : MonoBehaviour
     public void ContinueGameButton()
     {
         PauseMenu.SetActive(false);
+    }
+
+    public void ChangeStateToFight()
+    {
+        combatCanvas.SetActive(true);
+        buildCanvas.SetActive(false);
+    }
+
+    public void ChangeStateToBuild()
+    {
+        combatCanvas.SetActive(false);
+        buildCanvas.SetActive(true);
+    }
+
+    public void EndGame()
+    {
+        combatCanvas.SetActive(false);
+        buildCanvas.SetActive(false);
+        //Time.timeScale = 0f;
+        gameOverCanvas.SetActive(true);
+        ShowScoreOnEnd();
+
+    }
+
+    private void ShowScoreOnEnd()
+    {
+        float currentScore = bonusHandler.GetCurrentScore();
+        scoreText.text = $"{currentScore}";
+        var submitEvent = new InputField.SubmitEvent();
+        submitEvent.AddListener(SubmitName);
+        inputField.onEndEdit = submitEvent;
+    }
+
+    private void SubmitName(string name)
+    {
+        if (name.Length > 0 && !_nameEntered)
+        {
+            _nameEntered = true;
+            Debug.Log(name);
+            bonusHandler.WriteScoreRowInTable(name);
+        }
+
     }
 }

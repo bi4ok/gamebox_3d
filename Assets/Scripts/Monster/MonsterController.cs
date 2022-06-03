@@ -221,6 +221,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
             {
                 gameHandler.EndGame();
             }
+            gameHandler.MonsterIsDead();
             Destroy(gameObject);
         }
         return true;

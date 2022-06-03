@@ -7,14 +7,9 @@ using UnityEngine.SceneManagement;
 public class GameHandler : MonoBehaviour
 {
     [SerializeField]
-    private GameObject inGameCanvas;
+    private MenuScript menuScript;
     [SerializeField]
-    private GameObject gameOverCanvas;
-    [SerializeField]
-    private InputField inputField;
-    [SerializeField]
-    private Text scoreText;
-
+    private GameObject portalManagerHandler;
     [SerializeField]
     private Image HPBar;
     [SerializeField]
@@ -29,6 +24,11 @@ public class GameHandler : MonoBehaviour
     private Text blue_scrtxt;
     [SerializeField]
     private Text brown_scrtxt;
+    [SerializeField]
+    private Text gameStateText;
+
+    [SerializeField]
+    private Text nextWaveText;
 
     [SerializeField]
     private GameObject player;
@@ -36,32 +36,70 @@ public class GameHandler : MonoBehaviour
     private Dictionary<string, float> scrapStorage; 
 
     private PlayerController playerInfo;
-
-    private BonusController _bonusHandler;
-    private InputField.SubmitEvent submitEvent;
-    private bool _nameEntered=false;
+    private PortalManager portalManager;
+    
+    private int monstersInGame;
+    private bool waveInProcess;
+    private bool gameStateFight;
+    private float timeToNextWave;
+    private bool gameEnd = false;
 
     private void Awake()
     {
         print(PlayerPrefs.GetFloat("MasterVolume") + " VOLUME! ");
-
-        _bonusHandler = GetComponent<BonusController>();
-        inGameCanvas.SetActive(true);
-        gameOverCanvas.SetActive(false);
+        monstersInGame = 0;
+        waveInProcess = true;
+        gameStateFight = true;
         playerInfo = player.GetComponent<PlayerController>();
-
+        portalManager = portalManagerHandler.GetComponent<PortalManager>();
         scrapStorage = new Dictionary<string, float>() { { "red", 0 }, { "blue", 0 }, { "yellow", 0 } };
     }
 
     private void Update()
     {
         UpdateBars();
+        CheckGameState();
+        if (!gameStateFight)
+        {
+            nextWaveText.text = ((int)timeToNextWave).ToString();
+        }
+        if (gameEnd)
+        {
+            EndGame();
+        }
+        
     }
     private void UpdateInfo()
     {
         red_scrtxt.text = (scrapStorage["red"] > 999 ? "999" : scrapStorage["red"].ToString());
         blue_scrtxt.text = (scrapStorage["blue"] > 999 ? "999" : scrapStorage["blue"].ToString());
         brown_scrtxt.text = (scrapStorage["yellow"] > 999 ? "999" : scrapStorage["yellow"].ToString());
+    }
+
+    private void CheckGameState()
+    {
+
+        if (monstersInGame > 0 || waveInProcess)
+        {
+            if (!gameStateFight)
+            {
+                gameStateFight = true;
+                menuScript.ChangeStateToFight();
+            }
+
+        }
+        else
+        {
+            if (gameStateFight)
+            {
+                gameStateFight = false;
+                gameEnd = portalManager.GameFinished();
+                menuScript.ChangeStateToBuild();
+            }
+            
+        }
+        gameStateText.text = gameStateFight.ToString() + " " + monstersInGame.ToString() + " " + waveInProcess.ToString();
+
     }
 
     private void UpdateBars()
@@ -92,36 +130,12 @@ public class GameHandler : MonoBehaviour
 
     public void EndGame()
     {
-        inGameCanvas.SetActive(false);
-        Time.timeScale = 0f;
-        gameOverCanvas.SetActive(true);
-        ShowScoreOnEnd();
-
-    }
-
-    private void ShowScoreOnEnd()
-    {
-        float currentScore = _bonusHandler.GetCurrentScore();
-        scoreText.text = $"{currentScore}";
-        var submitEvent = new InputField.SubmitEvent();
-        submitEvent.AddListener(SubmitName);
-        inputField.onEndEdit = submitEvent;
-    }
-
-    private void SubmitName(string name)
-    {
-        if (name.Length > 0 && !_nameEntered)
-        {
-            _nameEntered = true;
-            Debug.Log(name);
-            _bonusHandler.WriteScoreRowInTable(name);
-        }
-        
+        menuScript.EndGame();
     }
 
     public void BackToMenuButton()
     {
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
         SceneManager.LoadScene(0);
         
     }
@@ -157,4 +171,21 @@ public class GameHandler : MonoBehaviour
         }
     }
    
+
+    public void CountMonstersInGame(int count)
+    {
+        monstersInGame += count;
+    }
+
+    public void WaveStateChange((bool, float) waveState)
+    {
+        waveInProcess = waveState.Item1;
+        timeToNextWave = waveState.Item2;
+
+    }
+
+    public void MonsterIsDead()
+    {
+        monstersInGame -= 1;
+    }
 }
