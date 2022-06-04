@@ -119,8 +119,12 @@ public abstract class Factory : MonoBehaviour
 
         if (isMonsters)
         {
-            print("лнанб б бнкме днаюбкемн " + currentSpawnObjects.Count);
-            gameHandler.CountMonstersInGame(currentSpawnObjects.Count);
+            
+            foreach (var mob in currentSpawnObjects)
+            {
+                gameHandler.CountMonstersInGame(mob.count);
+            }
+            
         }
     }
 

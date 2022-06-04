@@ -32,6 +32,10 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
     [SerializeField]
     private GameObject scrap;
     [SerializeField]
+    private float scrapValueMin;
+    [SerializeField]
+    private float scrapValueMax;
+    [SerializeField]
     private GameObject bulletPrefab;
     [SerializeField]
     private GameObject bonusHandler;
@@ -49,7 +53,8 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
     private Vector3 _castleTargetPosition;
     private GameObject _castle;
     private float _changeTargetRange;
-    private bool locked=false;
+    private bool locked = false;
+    private bool dead = false;
 
     public void OnCreate(GameObject target, GameObject castle, float changeTargetRange, GameObject bonus, GameObject scrapPrefab)
     {
@@ -58,7 +63,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         gameHandler = bonusHandler.GetComponent<GameHandler>();
         scrap = scrapPrefab;
         
-        _changeTargetRange = changeTargetRange;
+        _changeTargetRange = changeTargetRange + attackRange;
         targetToAttack = target;
         _castleTargetPosition =  castle.transform.position + Random.insideUnitSphere*attackRange;
         _castle = castle;
@@ -194,8 +199,9 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
 
     public bool DiedByDamage()
     {
-        if (_monsterInside.DiedByDamage())
+        if (_monsterInside.DiedByDamage() && !dead)
         {
+            dead = true;
             if (deathEffect)
             {
                 GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
@@ -206,7 +212,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
             {
                 GameObject scrapObj = Instantiate(scrap, transform.position, Quaternion.identity);
                 var scrapBonus = scrapObj.GetComponent<ScrapBonus>();
-                scrapBonus.SetGameHandler(gameHandler);
+                scrapBonus.SetStats(gameHandler, (int)Random.Range(scrapValueMin, scrapValueMax));
                 var objScript = scrapObj.GetComponent<Bonus>();
                 objScript.aliveBonusTimer = scrapBonus.ReturnAliveTime();
                 objScript.bonusHandler = bonusHandler;

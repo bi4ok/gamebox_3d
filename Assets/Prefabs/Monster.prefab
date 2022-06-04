@@ -193,11 +193,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824bc477b3e65ac48b01acc638cff12b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 100
-  damageValue: 100
+  startHealth: 30
+  damageValue: 10
   energyValue: 0
   shieldPower: 0
-  movementSpeed: 5
+  movementSpeed: 4
   attackRange: 5
   attackSpeed: 1
   scoreForKill: 10
@@ -205,6 +205,8 @@ MonoBehaviour:
   targetToAttack: {fileID: 0}
   deathEffect: {fileID: 0}
   scrap: {fileID: 0}
+  scrapValueMin: 2
+  scrapValueMax: 6
   bulletPrefab: {fileID: 0}
   bonusHandler: {fileID: 0}
   agent: {fileID: 1267757254681358821}

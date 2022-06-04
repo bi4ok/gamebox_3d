@@ -9,11 +9,13 @@ public class Bullet : MonoBehaviour
 
     private string attackerTag="Player";
     public float damage;
+    public float range;
+    public bool knockback;
 
     private void Start()
     {
-        Destroy(gameObject, 2f);
-        StartCoroutine(BlastEffect(1.9f));
+        Destroy(gameObject, range);
+        StartCoroutine(BlastEffect(range-0.1f));
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -55,7 +57,7 @@ public class Bullet : MonoBehaviour
         IDamageAble enemy = collision.GetComponent<IDamageAble>();
         if (enemy != null)
         {
-            enemy.TakeDamage(damage, gameObject.tag);
+            enemy.TakeDamage(damage, gameObject.tag, knockback);
         }
         
 

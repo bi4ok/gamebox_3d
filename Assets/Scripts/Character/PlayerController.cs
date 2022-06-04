@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     private GameObject bulletPrefab;
     [SerializeField]
     private Weapon gunScript;
+    [SerializeField] 
+    private Weapon[] weapons;
 
     [SerializeField]
     private GameHandler gameManager;
@@ -54,6 +56,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
 
     private float _nextAttackTime = 0f;
     private float _attackCoolDown = 0.1f;
+    private int _currentWeaponIndex = 0;
 
     public bool alive = true;
 
@@ -62,8 +65,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         _playerRigidBody = GetComponent<Rigidbody>();
         _characterInside = new Character(startHealth, damageValue, energyValue, shieldPower, attackRange, attackSpeed, movementSpeed, tag);
         _meeleAttackCoolDown = 1 / attackSpeed;
-        print(_meeleAttackCoolDown);
-        gunScript.OnEquip(damageValue, attackSpeed);
+        gunScript.OnEquip(damageValue, attackSpeed, gameObject);
         playerAnimator.SetFloat("MovementSpeed", movementSpeed / 10);
         playerAnimator.SetFloat("AttackSpeed", attackSpeed);
 
@@ -80,9 +82,10 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
 
             if (Input.GetButton("Fire1"))
             {
+                
                 playerAnimator.SetTrigger("Shoot");
-                gameManager.PlayerTryWasteScrap("red", 1);
                 gunScript.Shoot(bulletPrefab);
+                
                 _nextAttackTime = Time.time + _attackCoolDown;
             }
             else if (Input.GetButton("Fire2") && Time.time > _nextAttackTime && Time.time > _nextMeeleAttackTime)
@@ -93,10 +96,28 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
                 _nextAttackTime = Time.time + _attackCoolDown;
             }
 
+            if (Input.mouseScrollDelta.y != 0)
+            {
+                int newWeaponIndex = (_currentWeaponIndex + (int)Input.mouseScrollDelta.y) % weapons.Length;
+                newWeaponIndex = newWeaponIndex < 0 ? weapons.Length - 1 : newWeaponIndex;
+                ChangeWeapon(_currentWeaponIndex, newWeaponIndex);
+                _currentWeaponIndex = newWeaponIndex;
+            }
+
 
 
         }
 
+    }
+
+    private void ChangeWeapon(int from, int to)
+    {
+        //weapons[from].SetActive(false);
+        //weapons[to].SetActive(true);
+        gunScript.UnEquip();
+        gunScript = weapons[to];
+        gunScript.OnEquip(damageValue, attackSpeed, gameObject);
+        print(gunScript.name);
     }
 
     private void FixedUpdate()

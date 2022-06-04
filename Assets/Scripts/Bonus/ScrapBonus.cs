@@ -5,9 +5,6 @@ using UnityEngine;
 public class ScrapBonus : Bonus
 {
     [SerializeField]
-    private float scrapValue;
-
-    [SerializeField]
     private string scrapColor;
 
     [SerializeField]
@@ -16,8 +13,9 @@ public class ScrapBonus : Bonus
     [SerializeField]
     private float aliveTime;
 
+    private float scrapValue;
 
-    private void Start()
+    private void Awake()
     {
         base.OnCreate();
     }
@@ -30,9 +28,10 @@ public class ScrapBonus : Bonus
 
     }
 
-    public void SetGameHandler(GameHandler gameHandelrOut)
+    public void SetStats(GameHandler gameHandelrOut, float value)
     {
         gameHandler = gameHandelrOut;
+        scrapValue = value;
     }
 
     public float ReturnAliveTime()

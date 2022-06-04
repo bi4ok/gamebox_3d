@@ -46,13 +46,13 @@ public class GameHandler : MonoBehaviour
 
     private void Awake()
     {
-        print(PlayerPrefs.GetFloat("MasterVolume") + " VOLUME! ");
         monstersInGame = 0;
         waveInProcess = true;
         gameStateFight = true;
         playerInfo = player.GetComponent<PlayerController>();
         portalManager = portalManagerHandler.GetComponent<PortalManager>();
-        scrapStorage = new Dictionary<string, float>() { { "red", 0 }, { "blue", 0 }, { "yellow", 0 } };
+        scrapStorage = new Dictionary<string, float>() { { "red", 0 }, { "blue", 100 }, { "yellow", 10 } };
+        UpdateInfo();
     }
 
     private void Update()
@@ -166,7 +166,7 @@ public class GameHandler : MonoBehaviour
         }
         else
         {
-            //print($"Не хватает ошмётков цвета {colorName}");
+            print($"Не хватает ошмётков цвета {colorName}");
             return false;
         }
     }
