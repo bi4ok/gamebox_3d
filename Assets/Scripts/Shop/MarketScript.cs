@@ -5,11 +5,16 @@ using UnityEngine.UI;
 
 public class MarketScript : MonoBehaviour
 {
-    [SerializeField] private GameObject slot;
-    [SerializeField] private GameObject parentslot;
-    [SerializeField] private ProductScript[] products;
-    [SerializeField] private GameObject marketinfobj;
-   [SerializeField] private MarketInfo marketinf;
+    [SerializeField] 
+    private GameObject slot;
+    [SerializeField] 
+    private GameObject parentslot;
+    [SerializeField] 
+    private ProductScript[] products;
+    [SerializeField] 
+    private GameObject marketinfobj;
+    [SerializeField] 
+    private MarketInfo marketinf;
     private void Awake()
     {
       //  marketinf = marketinfobj.GetComponent<MarketInfo>();

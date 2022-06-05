@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     private LayerMask groundMask;
 
     private Character _characterInside;
+    private Dictionary<string, Item> _inventory;
     private Rigidbody _playerRigidBody;
     private Vector3 _movementAxes;
 
@@ -68,6 +69,14 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         gunScript.OnEquip(damageValue, attackSpeed, gameObject);
         playerAnimator.SetFloat("MovementSpeed", movementSpeed / 10);
         playerAnimator.SetFloat("AttackSpeed", attackSpeed);
+
+        _inventory = new Dictionary<string, Item>() { 
+            {"шапка", null },
+            {"сапоги", null },
+            {"земля", null },
+            {"кольчуга", null },
+            {"гиря", null}
+        };
 
     }
 
