@@ -40,6 +40,7 @@ public class MenuScript : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1; 
         volumeSlider.value = PlayerPrefs.GetFloat("MasterVolume");
         combatCanvas.SetActive(true);
         buildCanvas.SetActive(false);
@@ -53,16 +54,20 @@ public class MenuScript : MonoBehaviour
     public void ChangeToSettings()
     {
         settingsMenu.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void PauseGame()
     {
         PauseMenu.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void ContinueGameButton()
     {
+        Time.timeScale = 1;
         PauseMenu.SetActive(false);
+        
     }
 
     public void ChangeStateToFight()
@@ -79,9 +84,9 @@ public class MenuScript : MonoBehaviour
 
     public void EndGame()
     {
+        Time.timeScale = 0;
         combatCanvas.SetActive(false);
         buildCanvas.SetActive(false);
-        //Time.timeScale = 0f;
         gameOverCanvas.SetActive(true);
         ShowScoreOnEnd();
 
