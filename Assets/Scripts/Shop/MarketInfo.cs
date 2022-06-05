@@ -5,41 +5,68 @@ using UnityEngine.UI;
 
 public class MarketInfo : MonoBehaviour
 {
-    [SerializeField]  private Text buttontext;
-    [SerializeField] private Text nametext;
-    [SerializeField] private Text chtext;
-    [SerializeField] private Image mainimage;
-    [SerializeField] private Button buttonbuy;
+    [SerializeField] 
+    private Text buttontext;
+    [SerializeField] 
+    private Text nametext;
+    [SerializeField] 
+    private Text chtext;
+    [SerializeField] 
+    private Image mainimage;
+    [SerializeField] 
+    private Button buttonbuy;
+    [SerializeField]
+    private PlayerController playercontroller;
+
     private ProductScript currentproduct;
-    [SerializeField] private PlayerController playercontroller;
+    private Slot currentSlot;
+
     private Item item;
-    public void UpdateInfo(ProductScript products)
+    public void UpdateInfo(ProductScript products, Slot slotScript)
     {
+        print(this.name);
         nametext.text = products.nameofProduct;
-        chtext.text = products.healthPlus.ToString() + "," + "+"+ products.healthPercent.ToString() + "%" +
-        "\n" + products.damagePlus.ToString()        + "," + "+" + products.damagePercent.ToString() + "%" +
-        "\n" + products.attackSpeedPlus.ToString()   + "," + "+" + products.attackSpeedPercent.ToString() + "%" +
-        "\n" + products.movementSpeedPlus.ToString() + "," + "+" + products.movementSpeedPercent.ToString() + "%" +
-        "\n" + products.cost_red.ToString() +
-        "\n" + products.cost_blue.ToString() +
-        "\n" + products.cost_brown.ToString();
+        //chtext.text = products.healthPlus.ToString() + "," + "+"+ products.healthPercent.ToString() + "%" +
+        //"\n" + products.damagePlus.ToString()        + "," + "+" + products.damagePercent.ToString() + "%" +
+        //"\n" + products.attackSpeedPlus.ToString()   + "," + "+" + products.attackSpeedPercent.ToString() + "%" +
+        //"\n" + products.movementSpeedPlus.ToString() + "," + "+" + products.movementSpeedPercent.ToString() + "%" +
+        //"\n" + products.cost_red.ToString() +
+        //"\n" + products.cost_blue.ToString() +
+        //"\n" + products.cost_brown.ToString();
+        chtext.text = GetProductInfo(products);
+
         mainimage.sprite = products.artwork;
-        buttontext.text = products.isbought == true ? products.ismax == true ? "Max" : "Upgrade" : "Buy";
         currentproduct = products;
-        buttonbuy.interactable = true;
+        currentSlot = slotScript;
+        buttonbuy.interactable = currentSlot.CanIBuyIt();
+        print(currentproduct + "UPDATE");
     }
+
+    private string GetProductInfo(ProductScript products)
+    {
+        string productInfo = "Описание товара:" + 
+            "\n" + products.productInfo + 
+            "\n" + "Характеристики:" +
+            "\n\n" + "Здоровье:" +
+            "+" + products.healthPlus.ToString() + "," + "+" + products.healthPercent.ToString() + "%" +
+            "\n\n" + "Урон:" +
+            "+" + products.damagePlus.ToString() + "," + "+" + products.damagePercent.ToString() + "%" +
+            "\n\n" + "Скорость бега:" +
+            "+" + products.movementSpeedPlus.ToString() + "," + "+" + products.movementSpeedPercent.ToString() + "%" +
+            "\n\n" + "Стоимость в ошмётках:" + 
+            "\n" + "красные: " + products.cost_red.ToString() +
+            "\n" + "синие: " + products.cost_blue.ToString() +
+            "\n" + "жёлтые: " + products.cost_brown.ToString();
+        ;
+
+        return productInfo;
+    }
+
     public void Buy()
     {
-        
-        currentproduct.isbought = true;
+        print(currentproduct);
         //Вычитаем монеты
-        buttonbuy.onClick.AddListener(() => Choose());
-        UpdateInfo(currentproduct);
-        
-    }
-    public void Choose()
-    {
-        
+        print("CHOOSE");
 
         item = new Item(damagePlus: currentproduct.damagePlus,
             damagePercent: currentproduct.damagePercent,
@@ -53,20 +80,20 @@ public class MarketInfo : MonoBehaviour
             movementSpeedPlus: currentproduct.movementSpeedPlus,
             movementSpeedPercent: currentproduct.movementSpeedPercent);
 
-        print($"ITEM {item.statsOut["movementSpeed"][0]} + {item.statsOut["movementSpeed"][1]}");
-
-        if(currentproduct.CurrentLevel != currentproduct.levelsCount)
+        if (true)
         {
             //Вычитаем монеты
-            playercontroller.EquipProduct(item);
-            currentproduct.CurrentLevel++;
+            playercontroller.EquipProduct(item, currentproduct.type);
+            print(item.statsOut["movementSpeed"][1]);
+            print("INTERCASDT ");
+            currentproduct.isbought = true;
         }
-        else
-        {
-            buttonbuy.interactable = false;
-            currentproduct.ismax = true;
-        }
-        UpdateInfo(currentproduct);
+        UpdateInfo(currentproduct, currentSlot);
+        
+    }
+    public void Choose()
+    {
+
     }
 }
 

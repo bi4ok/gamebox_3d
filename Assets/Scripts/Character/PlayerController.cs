@@ -149,7 +149,6 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
 
     }
 
-
     private Vector3 CalculateMovementVector()
     {
         _movementAxes.x = Input.GetAxisRaw("Horizontal");
@@ -159,7 +158,6 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         playerAnimator.SetFloat("Vertical", _movementAxes.z * transform.forward.normalized.z);
         return transform.position + _movementAxes * movementSpeed * Time.fixedDeltaTime;
     }
-
 
     private void AimOnMouse()
     {
@@ -173,8 +171,6 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         }
 
     }
-
-
 
     private (bool succsess, Vector3 position) GetMousePosition()
     {
@@ -249,7 +245,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
 
     public float CheckStats(string stat)
     {
-        return _characterInside.statsOut["health"].Value;
+        return _characterInside.statsOut[stat].Value;
     }
 
     public float[] ShowCurrentStatus()
@@ -290,13 +286,30 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         yield return new WaitForSeconds(seconds);
         item.Unequip(_characterInside);
     }
-    public void UnequipProduct(Item item)
+    public void UnequipProduct(Item item, string type)
     {
+
         item.Unequip(_characterInside);
     }
-    public void EquipProduct(Item item)
+    public void EquipProduct(Item item, string type)
     {
-        item.Equip(_characterInside);
+        Item currentItem;
+        if (_inventory.TryGetValue(type, out currentItem))
+        {
+            if(_inventory[type] != null)
+            {
+                print("Снимаем старье - " + _inventory[type]);
+                _inventory[type].Unequip(_characterInside);
+            }
+            print("Надеваем новье - " + item);
+            print(CheckStats("movementSpeed"));
+            item.Equip(_characterInside);
+
+            print(CheckStats("movementSpeed"));
+            _inventory[type] = item;
+
+        }
+        
     }
 
 }

@@ -6,7 +6,8 @@ using UnityEngine;
 public class ProductScript : ScriptableObject
 {
     public string type;
-    public  string nameofProduct;
+    public string nameofProduct;
+    public string productInfo;
     public int cost_red;
     public int cost_brown;
     public int cost_blue;
@@ -22,8 +23,6 @@ public class ProductScript : ScriptableObject
     public int movementSpeedPercent;
     public Sprite artwork;
     public bool isbought;
-    public bool ismax;
-    public int levelsCount;
-    public int CurrentLevel;
+    public ProductScript check;
 
 }

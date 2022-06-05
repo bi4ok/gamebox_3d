@@ -1,5 +1,98 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2111307159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2111307160}
+  - component: {fileID: 2111307161}
+  m_Layer: 6
+  m_Name: Point Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2111307160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111307159}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.034, y: 0.213, z: 0.058}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 296036679241440320}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &2111307161
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111307159}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 0.93442965, b: 0, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 2
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &24535027640540543
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +213,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296036679241440326}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -28.76, y: 0, z: -22.46}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
@@ -129,6 +222,7 @@ Transform:
   - {fileID: 296036679945632148}
   - {fileID: 3563034680854222893}
   - {fileID: 6099573399814443308}
+  - {fileID: 2111307160}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -290,21 +384,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 100
-  damageValue: 100
+  damageValue: 10
   energyValue: 0
   shieldPower: 0
-  movementSpeed: 4
-  attackRange: 0.5
-  attackSpeed: 0.5
+  movementSpeed: 5
+  attackRange: 2
+  attackSpeed: 1
   pointOfAttack: {fileID: 296036680349442296}
   bulletPrefab: {fileID: 8171511646293749693, guid: d1c4de684a456474f88b801b94c4046d, type: 3}
-  gunScript: {fileID: 4276082554384512952}
+  gunScript: {fileID: 8357544810936285809}
+  weapons:
+  - {fileID: 8357544810936285809}
+  - {fileID: 4276082554384512952}
+  - {fileID: 3940766560176834014}
   gameManager: {fileID: 0}
   blasterSound: {fileID: 8300000, guid: 5747405c106f3b4478c60be67396aad9, type: 3}
   audioSource: {fileID: 296036679241440322}
   playerSpawner: {fileID: 0}
   playerAnimator: {fileID: 296036679241440327}
-  deathEffect: {fileID: 919132149155446097, guid: 35bec6d6cb19841488157773ab804f56, type: 3}
+  deathEffect: {fileID: 6309696766750554938, guid: 4c0644e29ef46f148be84d81b240025e, type: 3}
   groundMask:
     serializedVersion: 2
     m_Bits: 311
@@ -326,7 +424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &296036679945632148
 Transform:
   m_ObjectHideFlags: 0
@@ -355,9 +453,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointOfAttack: {fileID: 296036680349442296}
-  rangeAttackCoolDown: 0.5
+  rangeAttackCoolDown: 1
+  weaponDamage: 100
+  weaponRange: 4
+  knockback: 0
+  glowEffect: {fileID: 2111307161}
+  glowColor: {r: 0.97558546, g: 1, b: 0, a: 0}
+  scrapName: yellow
   blasterSound: {fileID: 8300000, guid: 5747405c106f3b4478c60be67396aad9, type: 3}
   audioSource: {fileID: 1912147768530145321}
+  gameHandler: {fileID: 0}
 --- !u!82 &1912147768530145321
 AudioSource:
   m_ObjectHideFlags: 0
@@ -898,7 +1003,7 @@ GameObject:
   - component: {fileID: 4043164888096838155}
   m_Layer: 6
   m_Name: Nakladka_2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1041,7 +1146,7 @@ GameObject:
   - component: {fileID: 1958491382227373989}
   m_Layer: 6
   m_Name: pCylinder5
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1122,7 +1227,7 @@ GameObject:
   - component: {fileID: 1665906485682925409}
   m_Layer: 6
   m_Name: Osnova
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1302,7 +1407,7 @@ GameObject:
   - component: {fileID: 450382039898911312}
   m_Layer: 6
   m_Name: pCylinder7
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1414,7 +1519,7 @@ GameObject:
   - component: {fileID: 8078716812878314023}
   m_Layer: 6
   m_Name: pCylinder2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1525,7 +1630,7 @@ GameObject:
   - component: {fileID: 1158153830693346603}
   m_Layer: 6
   m_Name: pCube1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1737,7 +1842,7 @@ GameObject:
   - component: {fileID: 7270858521203193999}
   m_Layer: 6
   m_Name: pCylinder3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1947,9 +2052,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointOfAttack: {fileID: 3563034682329481537}
-  rangeAttackCoolDown: 10
+  rangeAttackCoolDown: 50
+  weaponDamage: 1
+  weaponRange: 0.45
+  knockback: 1
+  glowEffect: {fileID: 2111307161}
+  glowColor: {r: 0, g: 0.21829796, b: 1, a: 0}
+  scrapName: blue
   blasterSound: {fileID: 8300000, guid: 5747405c106f3b4478c60be67396aad9, type: 3}
   audioSource: {fileID: 3449927339760693648}
+  gameHandler: {fileID: 0}
 --- !u!1 &3563034682329481542
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,7 +2136,7 @@ GameObject:
   - component: {fileID: 3551740362853221962}
   m_Layer: 6
   m_Name: pCylinder1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2105,7 +2217,7 @@ GameObject:
   - component: {fileID: 4288622573354054451}
   m_Layer: 6
   m_Name: Dulo_1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2339,7 +2451,7 @@ GameObject:
   - component: {fileID: 3290444136092448952}
   m_Layer: 6
   m_Name: Dulo_2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2961,8 +3073,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointOfAttack: {fileID: 6099573400484661312}
   rangeAttackCoolDown: 1
+  weaponDamage: 8
+  weaponRange: 2
+  knockback: 1
+  glowEffect: {fileID: 2111307161}
+  glowColor: {r: 1, g: 0, b: 0, a: 0}
+  scrapName: red
   blasterSound: {fileID: 8300000, guid: 5747405c106f3b4478c60be67396aad9, type: 3}
   audioSource: {fileID: 5347147395135322257}
+  gameHandler: {fileID: 0}
 --- !u!1 &6099573400484661319
 GameObject:
   m_ObjectHideFlags: 0
@@ -3037,7 +3156,7 @@ GameObject:
   - component: {fileID: 2315267493858954406}
   m_Layer: 6
   m_Name: Nakladka
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3394,7 +3513,7 @@ GameObject:
   - component: {fileID: 3304835993910985184}
   m_Layer: 6
   m_Name: pCylinder6
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3475,7 +3594,7 @@ GameObject:
   - component: {fileID: 3170364444191835991}
   m_Layer: 6
   m_Name: Otverstie
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3619,7 +3738,7 @@ GameObject:
   - component: {fileID: 5621031547091446749}
   m_Layer: 6
   m_Name: pCylinder4
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

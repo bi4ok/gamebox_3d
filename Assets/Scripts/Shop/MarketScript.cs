@@ -12,12 +12,10 @@ public class MarketScript : MonoBehaviour
     [SerializeField] 
     private ProductScript[] products;
     [SerializeField] 
-    private GameObject marketinfobj;
-    [SerializeField] 
     private MarketInfo marketinf;
     private void Awake()
     {
-      //  marketinf = marketinfobj.GetComponent<MarketInfo>();
+        //marketinf = marketinfobj.GetComponent<MarketInfo>();
         Slotssort();
     }
 
@@ -29,8 +27,8 @@ public class MarketScript : MonoBehaviour
             Slot slotscript = newproducts.GetComponent<Slot>();
             slotscript.OnCreate(productscr);
             Button buttonSlots = newproducts.GetComponentInChildren<Button>();
-            marketinf.UpdateInfo(productscr);
-            buttonSlots.onClick.AddListener(() => marketinf.UpdateInfo(productscr));
+            //marketinf.UpdateInfo(productscr);
+            buttonSlots.onClick.AddListener(() => marketinf.UpdateInfo(productscr, slotscript));
 
         }
 

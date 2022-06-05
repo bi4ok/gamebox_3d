@@ -12,23 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d6aa0942fcfda440a5108c6951abc8d, type: 3}
   m_Name: Item2
   m_EditorClassIdentifier: 
-  type: Armor
-  nameofProduct: fish
+  type: "\u0441\u0430\u043F\u043E\u0433\u0438"
+  nameofProduct: "\u0421\u0430\u043F\u043E\u0433\u0438-\u0441\u043A\u043E\u0440\u043E\u0445\u043E\u0434\u044B
+    Lvl.2"
+  productInfo: "\u0423\u0441\u043A\u043E\u0440\u044F\u0435\u0442 \u0433\u0435\u0440\u043E\u044F
+    \u0434\u043E 150% \u043E\u0442 \u0441\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u043E\u0439
+    \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0438."
   cost_red: 0
   cost_brown: 0
   cost_blue: 0
-  damagePlus: 3
-  damagePercent: 6
-  attackSpeedPlus: 4
-  attackSpeedPercent: 5
-  attackRangePlus: 3
-  attackRangePercent: 6
-  healthPlus: 6
-  healthPercent: 3
-  movementSpeedPlus: 3
-  movementSpeedPercent: 4
-  artwork: {fileID: 21300000, guid: 2708bfa4d272416499fa663d5ae2d1e5, type: 3}
-  isbought: 1
-  ismax: 1
-  levelsCount: 3
-  CurrentLevel: 3
+  damagePlus: 0
+  damagePercent: 0
+  attackSpeedPlus: 0
+  attackSpeedPercent: 0
+  attackRangePlus: 0
+  attackRangePercent: 0
+  healthPlus: 0
+  healthPercent: 0
+  movementSpeedPlus: 0
+  movementSpeedPercent: 50
+  artwork: {fileID: 21300000, guid: 029f3580b7d13554f843b485348269e0, type: 3}
+  isbought: 0
+  check: {fileID: 11400000, guid: 9ac5125f823942f4e804a90835b2c4b3, type: 2}

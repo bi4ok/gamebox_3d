@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d6aa0942fcfda440a5108c6951abc8d, type: 3}
   m_Name: Item3
   m_EditorClassIdentifier: 
-  type: Armor
-  nameofProduct: Item3
+  type: "\u0441\u0430\u043F\u043E\u0433\u0438"
+  nameofProduct: "\u0421\u0430\u043F\u043E\u0433\u0438-\u0441\u043A\u043E\u0440\u043E\u0445\u043E\u0434\u044B
+    Lvl.3"
+  productInfo: "\u0423\u0441\u043A\u043E\u0440\u044F\u0435\u0442 \u0433\u0435\u0440\u043E\u044F
+    \u0434\u043E 200% \u043E\u0442 \u0441\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u043E\u0439
+    \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0438."
   cost_red: 0
   cost_brown: 0
   cost_blue: 0
@@ -26,9 +30,7 @@ MonoBehaviour:
   healthPlus: 0
   healthPercent: 0
   movementSpeedPlus: 0
-  movementSpeedPercent: 0
-  artwork: {fileID: 21300000, guid: 588faf60847a5c24bb77dd1d1d2a8516, type: 3}
+  movementSpeedPercent: 100
+  artwork: {fileID: 21300000, guid: ef598933cd881784080c5718d8dd904e, type: 3}
   isbought: 0
-  ismax: 0
-  levelsCount: 3
-  CurrentLevel: 0
+  check: {fileID: 11400000, guid: 0a7a7dbd523550b43afdfbe9a0df618c, type: 2}

@@ -5,14 +5,35 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
-    public ProductScript productScript;
-   [SerializeField] private Image slotimage;
+    [SerializeField] 
+    private Image slotimage;
 
-   
+    public ProductScript productScript;
+
     public void OnCreate(ProductScript product)
     {
         productScript = product;
         slotimage.sprite = product.artwork;
+ 
+    }
+
+    public bool CanIBuyIt()
+    {
+        bool slotActive;
+        if (productScript.isbought)
+        {
+            return false;
+        }
+
+        if (productScript.check != null)
+        {
+            slotActive = productScript.check.isbought;
+        }
+        else
+        { 
+            slotActive = true;
+        }
+        return slotActive;
     }
 
 }

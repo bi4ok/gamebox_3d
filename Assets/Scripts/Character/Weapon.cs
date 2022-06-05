@@ -60,7 +60,7 @@ public abstract class Weapon : MonoBehaviour
     {
         if (Time.time > _nextRangeAttackTime)
         {
-            if (gameHandler.PlayerTryWasteScrap(scrapName, 1))
+            if (gameHandler != null && gameHandler.PlayerTryWasteScrap(scrapName, 1))
             {
                 BulletSpawn(bullet, weaponDamage, attackSpeed, weaponRange, knockback, pointOfAttack);
                 audioSource.PlayOneShot(blasterSound, 0.1f);
