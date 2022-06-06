@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     private float attackRange = 0.5f;
     [SerializeField]
     private float attackSpeed = 1f;
+    [SerializeField]
+    private float baseTimeToRespawn = 5f;
 
     [SerializeField]
     private Transform pointOfAttack;
@@ -60,6 +62,9 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     private int _currentWeaponIndex = 0;
 
     public bool alive = true;
+    private float _timeToRespawn;
+    private bool thorns = false;
+    private bool scrapBonus = false;
 
     void Awake()
     {
@@ -69,7 +74,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         gunScript.OnEquip(damageValue, attackSpeed, gameObject);
         playerAnimator.SetFloat("MovementSpeed", movementSpeed / 10);
         playerAnimator.SetFloat("AttackSpeed", attackSpeed);
-
+        _timeToRespawn = baseTimeToRespawn;
         _inventory = new Dictionary<string, Item>() { 
             {"шапка", null },
             {"сапоги", null },
@@ -83,6 +88,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
             {"пробитие", null},
 
         };
+
 
     }
 
@@ -162,7 +168,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         playerAnimator.SetFloat("CurrentSpeed", _movementAxes.magnitude);
         playerAnimator.SetFloat("Horizontal", _movementAxes.x * transform.right.normalized.x);
         playerAnimator.SetFloat("Vertical", _movementAxes.z * transform.forward.normalized.z);
-        return transform.position + _movementAxes * movementSpeed * Time.fixedDeltaTime;
+        return transform.position + _movementAxes * _characterInside.statsOut["movementSpeed"].Value * Time.fixedDeltaTime;
     }
 
     private void AimOnMouse()
@@ -242,7 +248,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
                 Destroy(effect, 3f);
             }
             alive = false;
-            playerSpawner.StartRespawn();
+            playerSpawner.StartRespawn(_timeToRespawn);
         }
 
         return false;
@@ -252,6 +258,16 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     public float CheckStats(string stat)
     {
         return _characterInside.statsOut[stat].Value;
+    }
+
+    public bool CheckThorns()
+    {
+        return thorns;
+    }
+
+    public bool CheckBonusScrap()
+    {
+        return scrapBonus;
     }
 
     public float[] ShowCurrentStatus()
@@ -292,12 +308,12 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         yield return new WaitForSeconds(seconds);
         item.Unequip(_characterInside);
     }
-    public void UnequipProduct(Item item, string type)
+    public void UnequipProduct(Item item, string type, int level = 0)
     {
-
         item.Unequip(_characterInside);
+        ItemEffeectApply(type, level, false);
     }
-    public void EquipProduct(Item item, string type)
+    public void EquipProduct(Item item, string type, int level = 0)
     {
         Item currentItem;
         if (_inventory.TryGetValue(type, out currentItem))
@@ -310,9 +326,10 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
             print("Надеваем новье - " + item);
             print(CheckStats("movementSpeed"));
             item.Equip(_characterInside);
-
+            ItemEffeectApply(type, level, true);
             print(CheckStats("movementSpeed"));
             _inventory[type] = item;
+
 
         }
         
