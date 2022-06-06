@@ -64,9 +64,6 @@ public class MarketInfo : MonoBehaviour
 
     public void Buy()
     {
-        print(currentproduct);
-        //Вычитаем монеты
-        print("CHOOSE");
 
         item = new Item(damagePlus: currentproduct.damagePlus,
             damagePercent: currentproduct.damagePercent,
@@ -83,9 +80,7 @@ public class MarketInfo : MonoBehaviour
         if (true)
         {
             //Вычитаем монеты
-            playercontroller.EquipProduct(item, currentproduct.type);
-            print(item.statsOut["movementSpeed"][1]);
-            print("INTERCASDT ");
+            playercontroller.EquipProduct(item, currentproduct.type, currentproduct.level);
             currentproduct.isbought = true;
         }
         UpdateInfo(currentproduct, currentSlot);

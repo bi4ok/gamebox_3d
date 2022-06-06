@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     private float attackRange = 0.5f;
     [SerializeField]
     private float attackSpeed = 1f;
+    [SerializeField]
+    private float baseTimeToRespawn = 5f;
 
     [SerializeField]
     private Transform pointOfAttack;
@@ -58,6 +60,8 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     private float _nextAttackTime = 0f;
     private float _attackCoolDown = 0.1f;
     private int _currentWeaponIndex = 0;
+    private float _timeToRespawn;
+    private bool thorns = false;
 
     public bool alive = true;
 
@@ -69,7 +73,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         gunScript.OnEquip(damageValue, attackSpeed, gameObject);
         playerAnimator.SetFloat("MovementSpeed", movementSpeed / 10);
         playerAnimator.SetFloat("AttackSpeed", attackSpeed);
-
+        _timeToRespawn = baseTimeToRespawn;
         _inventory = new Dictionary<string, Item>() { 
             {"шапка", null },
             {"сапоги", null },
@@ -236,7 +240,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
                 Destroy(effect, 3f);
             }
             alive = false;
-            playerSpawner.StartRespawn();
+            playerSpawner.StartRespawn(_timeToRespawn);
         }
 
         return false;
@@ -246,6 +250,11 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     public float CheckStats(string stat)
     {
         return _characterInside.statsOut[stat].Value;
+    }
+
+    public bool ChecThorns()
+    {
+        return thorns;
     }
 
     public float[] ShowCurrentStatus()
@@ -286,12 +295,13 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         yield return new WaitForSeconds(seconds);
         item.Unequip(_characterInside);
     }
-    public void UnequipProduct(Item item, string type)
+    public void UnequipProduct(Item item, string type, int level=0)
     {
-
         item.Unequip(_characterInside);
+        ItemEffeectApply(type, level, false);
+
     }
-    public void EquipProduct(Item item, string type)
+    public void EquipProduct(Item item, string type, int level=0)
     {
         Item currentItem;
         if (_inventory.TryGetValue(type, out currentItem))
@@ -302,14 +312,33 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
                 _inventory[type].Unequip(_characterInside);
             }
             print("Надеваем новье - " + item);
-            print(CheckStats("movementSpeed"));
             item.Equip(_characterInside);
-
-            print(CheckStats("movementSpeed"));
+            ItemEffeectApply(type, level, true);
             _inventory[type] = item;
 
         }
         
+    }
+
+    private void ItemEffeectApply(string itemName, int level, bool equip)
+    {
+        switch (itemName)
+        {
+            case "земля":
+                if (level == 1)
+                {
+                    _timeToRespawn = baseTimeToRespawn / 2;
+                }
+                else if (level == 2)
+                {
+                    _timeToRespawn = baseTimeToRespawn / 4;
+                }
+                break;
+            case "шипы":
+                thorns = equip;
+                break;
+
+        }
     }
 
 }

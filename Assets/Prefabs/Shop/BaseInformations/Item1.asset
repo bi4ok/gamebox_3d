@@ -21,13 +21,13 @@ MonoBehaviour:
   cost_red: 0
   cost_brown: 0
   cost_blue: 0
-  damagePlus: 1
+  damagePlus: 0
   damagePercent: 0
   attackSpeedPlus: 0
   attackSpeedPercent: 0
   attackRangePlus: 0
   attackRangePercent: 0
-  healthPlus: 9
+  healthPlus: 0
   healthPercent: 0
   movementSpeedPlus: 0
   movementSpeedPercent: 25

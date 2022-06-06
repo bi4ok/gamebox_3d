@@ -56,9 +56,10 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Shop\ProductScript.cs" />
+    <Compile Include="Assets\Scripts\Soundmessegemanager.cs" />
     <Compile Include="Assets\Scripts\Shop\Slot.cs" />
     <Compile Include="Assets\Scripts\Menu\MenuScript.cs" />
-    <Compile Include="Assets\Scripts\Shop\ProductScript.cs" />
     <Compile Include="Assets\MainMenuScript.cs" />
     <Compile Include="Assets\Scripts\GameHandler.cs" />
     <Compile Include="Assets\Scripts\Factory.cs" />
@@ -75,7 +76,6 @@
     <Compile Include="Assets\Scripts\Character\Rifle.cs" />
     <Compile Include="Assets\Scripts\Bonus\TimeStopBonus.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerSpawner.cs" />
-    <Compile Include="Assets\PlayerController3D.cs" />
     <Compile Include="Assets\Scripts\MechanicManager.cs" />
     <Compile Include="Assets\Scripts\NavMeshComponents\Scripts\NavMeshSurface.cs" />
     <Compile Include="Assets\TowerAttackControl.cs" />
@@ -104,7 +104,6 @@
     <Compile Include="Assets\Scripts\Character\Character.cs" />
     <Compile Include="Assets\Scripts\Bonus\Bonus.cs" />
     <Compile Include="Assets\Scripts\Bonus\BonusController.cs" />
-    <Compile Include="Assets\Scripts\Soundmessegemanager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
