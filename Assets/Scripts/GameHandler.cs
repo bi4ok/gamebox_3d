@@ -11,11 +11,11 @@ public class GameHandler : MonoBehaviour
     [SerializeField]
     private GameObject portalManagerHandler;
     [SerializeField]
-    private Image HPBar;
+    private Text HPBar;
     [SerializeField]
     private Sprite[] hpSprites;
     [SerializeField]
-    private Image MPBar;
+    private Text MPBar;
     [SerializeField]
     private Sprite[] mpSprites;
     [SerializeField]
@@ -106,11 +106,11 @@ public class GameHandler : MonoBehaviour
     {
         var hpAndEnergy = playerInfo.ShowCurrentStatus();
 
-        int indexOfHpSprite = GetIndexFromValue(hpAndEnergy[0]);
-        HPBar.sprite = hpSprites[indexOfHpSprite];
-
-        int indexOfMpSprite = GetIndexFromValue(hpAndEnergy[1]);
-        MPBar.sprite = mpSprites[indexOfMpSprite];
+        // int indexOfHpSprite = GetIndexFromValue(hpAndEnergy[0]);
+        HPBar.text = playerInfo.CurrentHpcheck().ToString();
+        
+       // int indexOfMpSprite = GetIndexFromValue(hpAndEnergy[1]);
+      //  MPBar.sprite = mpSprites[indexOfMpSprite];
 
     }
 

@@ -45,6 +45,10 @@ public class MenuScript : MonoBehaviour
         combatCanvas.SetActive(true);
         buildCanvas.SetActive(false);
     }
+    public void FixedUpdate()
+    {
+        PauseGame();
+    }
 
     public void ChangeToMainMenu()
     {
@@ -59,8 +63,11 @@ public class MenuScript : MonoBehaviour
 
     public void PauseGame()
     {
-        PauseMenu.SetActive(true);
-        Time.timeScale = 0;
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            PauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     public void ContinueGameButton()
