@@ -311,5 +311,8 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         }
         
     }
-
+    public float CurrentHpcheck()
+    {
+        return _characterInside.health;
+    }
 }
