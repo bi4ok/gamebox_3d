@@ -5,7 +5,7 @@ using UnityEngine;
 public class Rifle : Weapon
 {
 
-    protected override void BulletSpawn(GameObject bullet, float damage, float speed, float range, bool knockback, Transform pointOfAttack)
+    protected override void BulletSpawn(GameObject bullet, float damage, float speed, float range, bool knockback, bool upgrade, Transform pointOfAttack)
     {
         GameObject bulletObject = Instantiate(bullet, pointOfAttack.position, pointOfAttack.rotation);
         Rigidbody bulletBody = bulletObject.GetComponent<Rigidbody>();
@@ -13,6 +13,7 @@ public class Rifle : Weapon
         bulletInside.damage = damage;
         bulletInside.range = range;
         bulletInside.knockback = knockback;
+        bulletInside.through = upgrade;
         bulletBody.AddForce(pointOfAttack.forward * speed, ForceMode.Impulse);
     }
 

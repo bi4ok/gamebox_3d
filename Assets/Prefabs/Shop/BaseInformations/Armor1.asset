@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d6aa0942fcfda440a5108c6951abc8d, type: 3}
   m_Name: Armor1
   m_EditorClassIdentifier: 
-  type: "\u0448\u0438\u043F\u044B"
+  type: "\u043A\u043E\u043B\u044C\u0447\u0443\u0433\u0430"
   level: 1
   nameofProduct: "\u041A\u043E\u043B\u044C\u0447\u0443\u0433\u0430 LVL 1"
   productInfo: "\u0423\u0440\u043E\u043D \u043D\u0430\u043D\u043E\u0441\u0438\u043C\u044B\u0439

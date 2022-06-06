@@ -5,20 +5,27 @@ using UnityEngine;
 public class Flamethrower : Weapon
 {
 
-    protected override void BulletSpawn(GameObject bullet, float damage, float speed, float range, bool knockback, Transform pointOfAttack)
+    protected override void BulletSpawn(GameObject bullet, float damage, float speed, float range, bool knockback, bool upgrade, Transform pointOfAttack)
     {
-
-        var x = Random.Range(-30f, 30f);
-        var bulletRotation = Quaternion.Euler(x, 0, 0);
-        print(bulletRotation);
-        GameObject bulletObject = Instantiate(bullet, pointOfAttack.position, bulletRotation);
+        var newPoint = pointOfAttack;
+        
+        var delta = upgrade ? 21 : 3;
+        print(upgrade + " " + delta);
+        var deltaAngle = Random.Range(-delta, delta);
+        var newAngle = Quaternion.AngleAxis(deltaAngle, Vector3.one);
+        var test = newPoint.rotation;
+        newPoint.rotation = Quaternion.Euler(
+            newPoint.rotation.eulerAngles.x + newAngle.eulerAngles.x,
+            newPoint.rotation.eulerAngles.y + newAngle.eulerAngles.y,
+            newPoint.rotation.eulerAngles.z + newAngle.eulerAngles.z);
+        GameObject bulletObject = Instantiate(bullet, newPoint.position, newPoint.rotation);
         Rigidbody bulletBody = bulletObject.GetComponent<Rigidbody>();
         Bullet bulletInside = bulletObject.GetComponent<Bullet>();
         bulletInside.damage = damage;
         bulletInside.range = range;
         bulletInside.knockback = knockback;
-        var newPoint = pointOfAttack;
-        bulletBody.AddForce(pointOfAttack.forward * speed, ForceMode.Impulse);
+        bulletBody.AddForce(newPoint.forward * speed, ForceMode.Impulse);
+        newPoint.rotation = test;
     }
 
 }

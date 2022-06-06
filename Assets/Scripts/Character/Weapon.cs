@@ -41,6 +41,7 @@ public abstract class Weapon : MonoBehaviour
     private float attackSpeed;
     private float _nextRangeAttackTime = 0f;
     private GameObject glow;
+    private bool _isUpgrade;
 
     public void OnEquip(float damage, float speed, GameObject player)
     {
@@ -54,7 +55,7 @@ public abstract class Weapon : MonoBehaviour
         Destroy(glow);
     }
 
-    protected abstract void BulletSpawn(GameObject bullet, float damage, float speed, float range, bool knockback, Transform pointOfAttack);
+    protected abstract void BulletSpawn(GameObject bullet, float damage, float speed, float range, bool knockback, bool upgrade, Transform pointOfAttack);
 
     public void Shoot(GameObject bullet)
     {
@@ -62,7 +63,7 @@ public abstract class Weapon : MonoBehaviour
         {
             if (gameHandler != null && gameHandler.PlayerTryWasteScrap(scrapName, 1))
             {
-                BulletSpawn(bullet, weaponDamage, attackSpeed, weaponRange, knockback, pointOfAttack);
+                BulletSpawn(bullet, weaponDamage, attackSpeed, weaponRange, knockback, _isUpgrade, pointOfAttack);
                 audioSource.PlayOneShot(blasterSound, 0.1f);
                 _nextRangeAttackTime = Time.time + 1 / rangeAttackCoolDown;
             }
@@ -73,5 +74,10 @@ public abstract class Weapon : MonoBehaviour
     public string CheckWeaponColor()
     {
         return scrapName;
+    }
+
+    public void UpgradeWeapon()
+    {
+        _isUpgrade = true;
     }
 }

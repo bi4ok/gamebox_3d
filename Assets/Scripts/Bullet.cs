@@ -8,12 +8,15 @@ public class Bullet : MonoBehaviour
     private GameObject hitEffect;
 
     private string attackerTag="Player";
+    private string targetOfAttack;
     public float damage;
     public float range;
     public bool knockback;
+    public bool through = false;
 
     private void Start()
     {
+        targetOfAttack = attackerTag == "Player" ? "Monster" : "Player";
         Destroy(gameObject, range);
         StartCoroutine(BlastEffect(range-0.1f));
     }
@@ -34,7 +37,16 @@ public class Bullet : MonoBehaviour
         {
             BlastHim(collision);
             StartCoroutine(BlastEffect(0f));
-            Destroy(gameObject, 0.1f);
+            if (collision.CompareTag(attackerTag))
+            {
+                if (!through)
+                    Destroy(gameObject, 0.01f);
+            }
+            else
+            {
+                Destroy(gameObject, 0.01f);
+            }
+            
 
         }
 

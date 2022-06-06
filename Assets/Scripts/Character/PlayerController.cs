@@ -84,6 +84,8 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
             {"бонус", null},
             {"шипы", null},
             {"балалайка", null},
+            {"брызги", null},
+            {"пробитие", null},
 
         };
 
@@ -335,6 +337,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
 
     private void ItemEffeectApply(string itemName, int level, bool equip)
     {
+        print(itemName + " ITEM APPLY");
         switch (itemName)
         {
             case "земля":
@@ -359,7 +362,13 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
             case "сапоги":
                 playerAnimator.SetFloat("MovementSpeed", _characterInside.statsOut["movementSpeed"].Value / 10);
                 break;
-
+            case "брызги":
+                print("UPGRADE ПРОИЗОШЁЛ");
+                weapons[1].UpgradeWeapon();
+                break;
+            case "пробитие":
+                weapons[0].UpgradeWeapon();
+                break;
 
         }
     }

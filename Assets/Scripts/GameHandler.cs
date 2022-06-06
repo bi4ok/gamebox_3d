@@ -51,7 +51,7 @@ public class GameHandler : MonoBehaviour
         gameStateFight = true;
         playerInfo = player.GetComponent<PlayerController>();
         portalManager = portalManagerHandler.GetComponent<PortalManager>();
-        scrapStorage = new Dictionary<string, float>() { { "red", 0 }, { "blue", 100 }, { "yellow", 10 } };
+        scrapStorage = new Dictionary<string, float>() { { "red", 10 }, { "blue", 1000 }, { "yellow", 10 } };
         UpdateInfo();
     }
 
