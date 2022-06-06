@@ -6,6 +6,7 @@ using UnityEngine;
 public class ProductScript : ScriptableObject
 {
     public string type;
+    public int level;
     public string nameofProduct;
     public string productInfo;
     public int cost_red;

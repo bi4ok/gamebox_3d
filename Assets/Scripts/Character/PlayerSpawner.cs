@@ -6,8 +6,6 @@ public class PlayerSpawner : MonoBehaviour
 {
     [SerializeField] 
     private GameObject player;
-    [SerializeField] 
-    private float respawnKD;
     [SerializeField]
     private Cinemachine.CinemachineVirtualCamera playerCam;
     [SerializeField]
@@ -25,14 +23,14 @@ public class PlayerSpawner : MonoBehaviour
         print(playerController.CheckStats("health"));
     }
 
-    public IEnumerator Respawn()
+    public IEnumerator Respawn(float timeToSpawn)
     {   //Анимация смерти
         //player.SetActive(false);
         dieTarget.transform.position = player.transform.position;
         playerCam.m_LookAt = dieTarget.transform;
         playerCam.m_Follow = dieTarget.transform;
         player.transform.position = hell.transform.position;
-        yield return new WaitForSeconds(respawnKD);
+        yield return new WaitForSeconds(timeToSpawn);
         player.transform.position = respawnTarget.transform.position;
         playerController.TakeHeal(playerController.CheckStats("health"));
         playerController.alive = true;
@@ -41,8 +39,8 @@ public class PlayerSpawner : MonoBehaviour
         //player.SetActive(true);
 
     }
-    public void StartRespawn()
+    public void StartRespawn(float timeToSpawn)
     {
-        StartCoroutine(Respawn());
+        StartCoroutine(Respawn(timeToSpawn));
     }
 }

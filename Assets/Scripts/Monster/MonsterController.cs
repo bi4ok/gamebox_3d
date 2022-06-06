@@ -144,6 +144,13 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
             // Запускаем анимацию атаки
             _monsterAnimator.SetTrigger("Attack");
 
+            var player = target.GetComponent<PlayerController>();
+            if (player != null && player.CheckThorns())
+            {
+                print("МОБ БЬЁТ САМ СЕБЯ!!!");
+                TakeDamage(_monsterInside.statsOut["damage"].Value, "self");
+            }
+
             // Ищем цель и наносим урон
             if (bulletPrefab)
             {
