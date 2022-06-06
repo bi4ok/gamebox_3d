@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     private int _currentWeaponIndex = 0;
     private float _timeToRespawn;
     private bool thorns = false;
+    private bool scrapBonus = false;
 
     public bool alive = true;
 
@@ -79,7 +80,11 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
             {"Ò‡ÔÓ„Ë", null },
             {"ÁÂÏÎˇ", null },
             {"ÍÓÎ¸˜Û„‡", null },
-            {"„Ëˇ", null}
+            {"„Ëˇ", null},
+            {"·ÓÌÛÒ", null},
+            {"¯ËÔ˚", null},
+            {"·‡Î‡Î‡ÈÍ‡", null},
+
         };
 
     }
@@ -160,7 +165,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         playerAnimator.SetFloat("CurrentSpeed", _movementAxes.magnitude);
         playerAnimator.SetFloat("Horizontal", _movementAxes.x * transform.right.normalized.x);
         playerAnimator.SetFloat("Vertical", _movementAxes.z * transform.forward.normalized.z);
-        return transform.position + _movementAxes * movementSpeed * Time.fixedDeltaTime;
+        return transform.position + _movementAxes * _characterInside.statsOut["movementSpeed"].Value * Time.fixedDeltaTime;
     }
 
     private void AimOnMouse()
@@ -194,6 +199,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         var targetType = target.GetComponent<IDamageAble>();
         if (targetType == null) return;
         targetType.TakeDamage(_characterInside.statsOut["damage"].Value, tag, knockback: true);
+        print("Ã»À» ¿“¿ ¿ Õ¿Õ≈—À¿ " + _characterInside.statsOut["damage"].Value);
     }
 
     private void MeeleAttack()
@@ -240,6 +246,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
                 Destroy(effect, 3f);
             }
             alive = false;
+            print("–ÂÒÔ‡ÛÌ ˜ÂÂÁ " + _timeToRespawn);
             playerSpawner.StartRespawn(_timeToRespawn);
         }
 
@@ -252,9 +259,14 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         return _characterInside.statsOut[stat].Value;
     }
 
-    public bool ChecThorns()
+    public bool CheckThorns()
     {
         return thorns;
+    }
+
+    public bool CheckBonusScrap()
+    {
+        return scrapBonus;
     }
 
     public float[] ShowCurrentStatus()
@@ -303,6 +315,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     }
     public void EquipProduct(Item item, string type, int level=0)
     {
+        print(" ÛÔÎÂÌ ÔÂ‰ÏÂÚ " + type);
         Item currentItem;
         if (_inventory.TryGetValue(type, out currentItem))
         {
@@ -328,15 +341,25 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
                 if (level == 1)
                 {
                     _timeToRespawn = baseTimeToRespawn / 2;
+                    print("–≈—œ¿”Õ “≈œ≈–‹ ‚ 2 –¿«¿ Ã≈Õ‹ÿ≈");
                 }
                 else if (level == 2)
                 {
                     _timeToRespawn = baseTimeToRespawn / 4;
+                    print("–≈—œ¿”Õ “≈œ≈–‹ ‚ 4 –¿«¿ Ã≈Õ‹ÿ≈");
                 }
                 break;
             case "¯ËÔ˚":
                 thorns = equip;
+                print("ÿ»œ€ Ì‡‰ÂÚ˚ - " + CheckThorns());
                 break;
+            case "·ÓÌÛÒ":
+                scrapBonus = equip;
+                break;
+            case "Ò‡ÔÓ„Ë":
+                playerAnimator.SetFloat("MovementSpeed", _characterInside.statsOut["movementSpeed"].Value / 10);
+                break;
+
 
         }
     }

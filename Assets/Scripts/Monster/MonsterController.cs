@@ -145,8 +145,9 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
             _monsterAnimator.SetTrigger("Attack");
 
             var player = target.GetComponent<PlayerController>();
-            if (player != null && player.ChecThorns())
+            if (player != null && player.CheckThorns())
             {
+                print("ÃŒ¡ ¡‹®“ —¿Ã —≈¡ﬂ!!!");
                 TakeDamage(_monsterInside.statsOut["damage"].Value, "self");
             }
 

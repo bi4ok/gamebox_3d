@@ -144,7 +144,12 @@ public class GameHandler : MonoBehaviour
     {
         if (scrapStorage.ContainsKey(colorName))
         {
-            scrapStorage[colorName] += scrapValue;
+            if (playerInfo.CheckBonusScrap())
+            {
+                print("БОЛЬШЕ ОШМЁТКОВ, ОФИГЕТЬ!!!");
+                scrapValue *= 1.25f;
+            }
+            scrapStorage[colorName] += (int)scrapValue;
             print(scrapStorage + " обновлён счётчик, добавлено " + scrapValue + " цвета " + colorName);
             UpdateInfo();
         }

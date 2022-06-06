@@ -60,10 +60,10 @@
     <Compile Include="Assets\Scripts\Soundmessegemanager.cs" />
     <Compile Include="Assets\Scripts\Shop\Slot.cs" />
     <Compile Include="Assets\Scripts\Menu\MenuScript.cs" />
-    <Compile Include="Assets\MainMenuScript.cs" />
+    <Compile Include="Assets\Scripts\MainMenuScript.cs" />
     <Compile Include="Assets\Scripts\GameHandler.cs" />
     <Compile Include="Assets\Scripts\Factory.cs" />
-    <Compile Include="Assets\CastleController.cs" />
+    <Compile Include="Assets\Scripts\CastleController.cs" />
     <Compile Include="Assets\Scripts\NavMeshComponents\Scripts\NavMeshModifierVolume.cs" />
     <Compile Include="Assets\Scripts\InstatiateSolt.cs" />
     <Compile Include="Assets\Scripts\TowerCellController.cs" />
@@ -78,7 +78,7 @@
     <Compile Include="Assets\Scripts\Character\PlayerSpawner.cs" />
     <Compile Include="Assets\Scripts\MechanicManager.cs" />
     <Compile Include="Assets\Scripts\NavMeshComponents\Scripts\NavMeshSurface.cs" />
-    <Compile Include="Assets\TowerAttackControl.cs" />
+    <Compile Include="Assets\Scripts\TowerAttackControl.cs" />
     <Compile Include="Assets\Scripts\StatModifier.cs" />
     <Compile Include="Assets\Scripts\Bonus\BuffsFactory.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerController.cs" />
@@ -94,7 +94,7 @@
     <Compile Include="Assets\Scripts\Bonus\BoomEffectTimeline.cs" />
     <Compile Include="Assets\Scripts\TowerController.cs" />
     <Compile Include="Assets\Scripts\IDamageDealer.cs" />
-    <Compile Include="Assets\PortalManager.cs" />
+    <Compile Include="Assets\Scripts\PortalManager.cs" />
     <Compile Include="Assets\Scripts\Character\Weapon.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterController.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
