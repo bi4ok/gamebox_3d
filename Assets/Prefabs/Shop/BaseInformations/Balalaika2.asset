@@ -33,5 +33,5 @@ MonoBehaviour:
   movementSpeedPlus: 0
   movementSpeedPercent: 0
   artwork: {fileID: 21300000, guid: f24dfabee004aae45bb8fe59229d8b52, type: 3}
-  isbought: 1
+  isbought: 0
   check: {fileID: 11400000, guid: 41fc6e8e955ff6046a1bade09e936ba1, type: 2}
