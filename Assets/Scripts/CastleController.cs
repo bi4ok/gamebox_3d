@@ -25,7 +25,6 @@ public class CastleController : MonoBehaviour, IDamageAble
     {
         if (_alive)
         {
-            print("TAKE DAMAGE" + damageAmount + damageFrom);
             _stats.TakeDamage(damageAmount, damageFrom);
             DiedByDamage();
         }
@@ -49,5 +48,15 @@ public class CastleController : MonoBehaviour, IDamageAble
 
         return false;
 
+    }
+
+    public void Upgrade()
+    {
+        Item hpBoost = new Item(healthPercent:50);
+        print("дн сксвьемхъ - " + _stats.health);
+        hpBoost.Equip(_stats);
+        _stats.TakeHeal(_stats.statsOut["health"].Value - _stats.health);
+        print(_stats.statsOut["health"].Value);
+        print("оняке сксвьемхъ - " + _stats.health);
     }
 }

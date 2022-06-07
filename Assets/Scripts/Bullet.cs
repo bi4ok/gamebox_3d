@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        targetOfAttack = attackerTag == "Player" ? "Monster" : "Player";
+        targetOfAttack = (attackerTag == "Player" || attackerTag == "Tower") ? "Monster" : "Player";
         Destroy(gameObject, range);
         StartCoroutine(BlastEffect(range-0.1f));
     }
@@ -33,8 +33,12 @@ public class Bullet : MonoBehaviour
 
     private void ApplyDamage(Collider collision)
     {
-        if(!collision.CompareTag(attackerTag) && !collision.CompareTag("Bonus") && !collision.CompareTag("Bullet"))
+        if(!collision.CompareTag(attackerTag) 
+            && !collision.CompareTag("Bonus") 
+            && !collision.CompareTag("Bullet")
+            && !collision.CompareTag("Tower"))
         {
+            print("BULLET ALIVE " + collision.name + " " + collision.tag);
             BlastHim(collision);
             StartCoroutine(BlastEffect(0f));
             if (collision.CompareTag(attackerTag))

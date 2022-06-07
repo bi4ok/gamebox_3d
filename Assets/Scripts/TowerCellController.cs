@@ -40,6 +40,7 @@ public class TowerCellController : MonoBehaviour
         {
             Destroy(_currentTower);
         }
-        _currentTower = Instantiate(towerPrefab, transform.position, transform.rotation);
+        _currentTower = Instantiate(towerPrefab, transform.position, transform.rotation, gameObject.transform);
+        
     }
 }

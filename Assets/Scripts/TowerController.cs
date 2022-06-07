@@ -5,41 +5,74 @@ using UnityEngine.UI;
 
 public class TowerController : MonoBehaviour
 {
-    [System.Serializable]
-    public class TowerToBuy
-    {
-        public string name;
-        public GameObject prefabTowerInGame;
-        public GameObject prefabTowerInUI;
-        public Sprite imgOfTower;
-        public int cost;
-
-    }
 
     [SerializeField]
-    private List<TowerToBuy> allTowerObjects;
+    private List<TowerObjectScript> allTowerObjects;
     [SerializeField]
     private GameObject scrollMenu;
     [SerializeField]
     private GameHandler gameHandler;
 
+    [SerializeField]
+    private Text towerInfoText;
+
+    [SerializeField]
+    private Button buttonBuy;
+
     private GameObject _currentCell;
 
     private void Start()
     {
-        foreach(TowerToBuy tower in allTowerObjects)
+        
+        foreach (TowerObjectScript tower in allTowerObjects)
         {
-            GameObject newTowerUI = Instantiate(tower.prefabTowerInUI, scrollMenu.transform);
-            Button buyTowerButton = newTowerUI.GetComponentInChildren<Button>();
-            buyTowerButton.onClick.AddListener(() => BuyTower(tower.prefabTowerInGame, tower.cost, _currentCell));
+            GameObject newTowerUI = Instantiate(tower.prefabInUI, scrollMenu.transform);
+            print(newTowerUI);
+            Button checkTowerButton = newTowerUI.GetComponentInChildren<Button>();
+            checkTowerButton.image.sprite = tower.imgOfTower;
+            checkTowerButton.onClick.AddListener(() => TowerInfo(tower));
+
+        }
+        buttonBuy.interactable = false;
+        //buttonBuy.onClick.AddListener(() => BuyTower(tower.prefabInGame, tower, _currentCell));
+    }
+
+    private void TowerInfo(TowerObjectScript tower)
+    {
+        string info = 
+            $"Башня {tower.name}:\n" +
+            $"{tower.towerInfo}";
+
+        towerInfoText.text = info;
+
+        print(tower.check);
+
+        if ((tower.check == null || (tower.check != null && tower.check.isBougth)) && !tower.isBougth)
+        {
+            if (tower.check != null)
+                print(tower.check + " " + tower.check.isBougth);
+            else
+                print(null);
+            buttonBuy.interactable = true;
+            buttonBuy.onClick.AddListener(() => BuyTower(tower.prefabInGame, tower, _currentCell));
+        }
+        else
+        {
+            buttonBuy.interactable = false;
         }
     }
 
-    private void BuyTower(GameObject towerPrefab, float cost, GameObject cellForTower)
+    private void BuyTower(GameObject towerPrefab, TowerObjectScript cost, GameObject cellForTower)
     {
-        if (gameHandler.PlayerTryWasteScrap("red", cost))
+        var finalCost = new Dictionary<string, float>() { 
+            { "red", cost.costRed },
+            { "blue", cost.costBlue },
+            { "yellow", cost.costBrown },
+        };
+        if (gameHandler.PlayerTryWasteScrap(finalCost))
         {
             cellForTower.GetComponent<TowerCellController>().MakeNewTower(towerPrefab);
+            cost.isBougth = true;
         }
         else
         {

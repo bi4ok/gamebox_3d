@@ -21,7 +21,7 @@ MonoBehaviour:
     \u043E\u0448\u043C\u0451\u0442\u043A\u0430\u043C\u0438."
   cost_red: 0
   cost_brown: 0
-  cost_blue: 0
+  cost_blue: 20000
   damagePlus: 0
   damagePercent: 0
   attackSpeedPlus: 0

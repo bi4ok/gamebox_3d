@@ -20,7 +20,7 @@ MonoBehaviour:
     \u0431\u043E\u044E \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
     \u0434\u043E 30"
   cost_red: 0
-  cost_brown: 0
+  cost_brown: 100
   cost_blue: 0
   damagePlus: 20
   damagePercent: 0

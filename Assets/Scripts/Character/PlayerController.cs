@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameObject>
@@ -45,6 +46,9 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     private GameObject deathEffect;
 
     [SerializeField]
+    private CastleController castle;
+
+    [SerializeField]
     private LayerMask groundMask;
 
     private Character _characterInside;
@@ -86,6 +90,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
             {"балалайка", null},
             {"брызги", null},
             {"пробитие", null},
+            {"база", null},
 
         };
 
@@ -98,15 +103,16 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     {
         if (Time.timeScale > 0)
         {
-            AimOnMouse();
+            bool aimSucsess = AimOnMouse();
 
 
             if (Input.GetButton("Fire1"))
             {
-                
-                playerAnimator.SetTrigger("Shoot");
-                gunScript.Shoot(bulletPrefab);
-                
+                if (aimSucsess)
+                {
+                    playerAnimator.SetTrigger("Shoot");
+                    gunScript.Shoot(bulletPrefab);
+                }
                 _nextAttackTime = Time.time + _attackCoolDown;
             }
             else if (Input.GetButton("Fire2") && Time.time > _nextAttackTime && Time.time > _nextMeeleAttackTime)
@@ -171,7 +177,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         return transform.position + _movementAxes * _characterInside.statsOut["movementSpeed"].Value * Time.fixedDeltaTime;
     }
 
-    private void AimOnMouse()
+    private bool AimOnMouse()
     {
         var (success, position) = GetMousePosition();
         if (success)
@@ -180,14 +186,17 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
             direction.y = 0;
             transform.forward = direction;
             Debug.DrawLine(transform.position, direction);
+            return true;
         }
+        return false;
 
     }
 
     private (bool succsess, Vector3 position) GetMousePosition()
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, groundMask))
+
+        if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, groundMask) && !EventSystem.current.IsPointerOverGameObject())
         {
             return (succsess: true, position: hitInfo.point);
         }
@@ -373,6 +382,11 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
             case "пробитие":
                 weapons[0].UpgradeWeapon();
                 break;
+            case "база":
+                print("UPGRADE БАЗЫ ");
+                castle.Upgrade();
+                break;
+
 
         }
     }

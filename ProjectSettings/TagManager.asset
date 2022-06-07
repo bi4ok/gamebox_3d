@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - Earth
   - Castle
+  - Tower
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Enemy
   - Earth
   - Castle
-  - 
+  - Tower
   - 
   - 
   - 

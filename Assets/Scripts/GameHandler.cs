@@ -33,6 +33,9 @@ public class GameHandler : MonoBehaviour
     [SerializeField]
     private GameObject player;
 
+    [SerializeField]
+    private MedPackCellContoller medPackFactory;
+
     private Dictionary<string, float> scrapStorage; 
 
     private PlayerController playerInfo;
@@ -51,7 +54,7 @@ public class GameHandler : MonoBehaviour
         gameStateFight = true;
         playerInfo = player.GetComponent<PlayerController>();
         portalManager = portalManagerHandler.GetComponent<PortalManager>();
-        scrapStorage = new Dictionary<string, float>() { { "red", 10 }, { "blue", 1000 }, { "yellow", 10 } };
+        scrapStorage = new Dictionary<string, float>() { { "red", 9999 }, { "blue", 99999 }, { "yellow", 9999 } };
         UpdateInfo();
     }
 
@@ -85,6 +88,8 @@ public class GameHandler : MonoBehaviour
             {
                 gameStateFight = true;
                 menuScript.ChangeStateToFight();
+                print("MED PACKS SUMMON!! ");
+                medPackFactory.OnWaveMedPackSpawn();
             }
 
         }
@@ -175,7 +180,27 @@ public class GameHandler : MonoBehaviour
             return false;
         }
     }
-   
+
+    public bool PlayerTryWasteScrap(Dictionary<string, float> cost)
+    {
+        foreach (KeyValuePair<string, float> scrap in cost)
+        {
+            if (scrapStorage.ContainsKey(scrap.Key) && scrapStorage[scrap.Key] < scrap.Value)
+                return false;
+        }
+
+
+        foreach (KeyValuePair<string, float> scrap in cost)
+        {
+            if (scrapStorage.ContainsKey(scrap.Key))
+            {
+                scrapStorage[scrap.Key] -= scrap.Value;
+            }
+        }
+        return true;
+
+    }
+
 
     public void CountMonstersInGame(int count)
     {

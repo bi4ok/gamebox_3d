@@ -31,7 +31,7 @@ public class TowerAttackControl : MonoBehaviour
     {
         attackCooldown = 1 / attackSpeed;
         nextAttackTime = attackCooldown;
-        gunScript.OnEquip(damageValue, attackSpeed, gameObject);
+        gunScript.OnEquip(damageValue, attackSpeed*2, gameObject);
     }
     private void Update()
     {
@@ -71,6 +71,7 @@ public class TowerAttackControl : MonoBehaviour
         if (monsters.Length > 0)
         {
             target = ChooseNearestTarget();
+            
         }
     }
 

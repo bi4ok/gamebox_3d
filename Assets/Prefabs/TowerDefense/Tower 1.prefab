@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 634167776312306492}
   - component: {fileID: 634167776312306495}
   - component: {fileID: 634167776312306493}
-  m_Layer: 6
-  m_Name: Tower
-  m_TagString: Player
+  m_Layer: 2
+  m_Name: Tower 1
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,9 +64,10 @@ MonoBehaviour:
   gunScript: {fileID: 50585828346242332}
   bullet: {fileID: 8171511646293749693, guid: d1c4de684a456474f88b801b94c4046d, type: 3}
   attackRange: 10
-  damageValue: 50
+  damageValue: 10
   attackSpeed: 1
   aimForwardOffset: 0
+  poinOfAttack: {fileID: 8598492063615287186}
   mobSearch: {fileID: 634167776312306492}
 --- !u!54 &634167776312306493
 Rigidbody:
@@ -95,7 +96,7 @@ GameObject:
   - component: {fileID: 634167776312661104}
   - component: {fileID: 634167776313467724}
   - component: {fileID: 634167776314491434}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: Tower_Base_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +177,7 @@ GameObject:
   - component: {fileID: 634167776312684900}
   - component: {fileID: 634167776313352344}
   - component: {fileID: 634167776314847966}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: Tower_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 634167776312587094}
   - component: {fileID: 634167776319897510}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: Tower_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +310,7 @@ GameObject:
   - component: {fileID: 634167776312671982}
   - component: {fileID: 634167776313356246}
   - component: {fileID: 634167776314470398}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: Tower_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 634167776312682956}
   - component: {fileID: 634167776319857854}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: Tower_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +444,7 @@ GameObject:
   - component: {fileID: 634167776312583006}
   - component: {fileID: 634167776313415318}
   - component: {fileID: 634167776314832686}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: Shield_Big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -524,7 +525,7 @@ GameObject:
   - component: {fileID: 634167776312586594}
   - component: {fileID: 634167776313371200}
   - component: {fileID: 634167776314478530}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: Tower_Top_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,101 +595,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &8598492063129081506
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8598492063129081509}
-  - component: {fileID: 8598492063129081510}
-  - component: {fileID: 8598492063129081511}
-  - component: {fileID: 8598492063129081508}
-  m_Layer: 6
-  m_Name: GunSprite
-  m_TagString: Player
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8598492063129081509
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8598492063129081506}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.598}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.27359}
-  m_Children: []
-  m_Father: {fileID: 8598492065092740857}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8598492063129081510
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8598492063129081506}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8598492063129081511
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8598492063129081506}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8598492063129081508
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8598492063129081506}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8598492063615287186
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,7 +604,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8598492063615287189}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: PointOfAttack
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -713,7 +619,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8598492063615287186}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.95}
+  m_LocalPosition: {x: 0, y: -5.84, z: 0.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8598492065092740857}
@@ -730,7 +636,7 @@ GameObject:
   - component: {fileID: 8598492065092740857}
   - component: {fileID: 50585828346242332}
   - component: {fileID: 7620391221486194500}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: Gun
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -749,7 +655,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8598492063615287189}
-  - {fileID: 8598492063129081509}
   m_Father: {fileID: 634167776312663224}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -767,8 +672,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointOfAttack: {fileID: 8598492063615287189}
   rangeAttackCoolDown: 1
+  weaponDamage: 10
+  weaponRange: 1
+  knockback: 0
+  glowEffect: {fileID: 0}
+  glowColor: {r: 0, g: 0, b: 0, a: 0}
+  scrapName: tower
   blasterSound: {fileID: 8300000, guid: 5747405c106f3b4478c60be67396aad9, type: 3}
   audioSource: {fileID: 7620391221486194500}
+  gameHandler: {fileID: 0}
 --- !u!82 &7620391221486194500
 AudioSource:
   m_ObjectHideFlags: 0

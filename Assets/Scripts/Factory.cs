@@ -69,7 +69,6 @@ public abstract class Factory : MonoBehaviour
                 WhoToSpawnUpdate();
                 StartCoroutine(SpawnObjects());
                 fightPhase = false;
-                print("Время увеличилось");
 
             }
             else

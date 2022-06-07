@@ -47,7 +47,8 @@ public abstract class Weapon : MonoBehaviour
     {
         baseDamage = damage;
         attackSpeed = speed;
-        glowEffect.color = glowColor;
+        if (glowEffect)
+            glowEffect.color = glowColor;
     }
 
     public void UnEquip()
@@ -61,7 +62,7 @@ public abstract class Weapon : MonoBehaviour
     {
         if (Time.time > _nextRangeAttackTime)
         {
-            if (gameHandler != null && gameHandler.PlayerTryWasteScrap(scrapName, 1))
+            if (scrapName == "tower" || (gameHandler != null && gameHandler.PlayerTryWasteScrap(scrapName, 1)))
             {
                 BulletSpawn(bullet, weaponDamage, attackSpeed, weaponRange, knockback, _isUpgrade, pointOfAttack);
                 audioSource.PlayOneShot(blasterSound, 0.1f);

@@ -58,7 +58,6 @@ public class PortalManager : MonoBehaviour
         {
             if (portal.GetWaveStatus() == true)
             {
-                print(portal.name + " TRUE!!! ");
                 waveInProcess = true;
             }
             else
