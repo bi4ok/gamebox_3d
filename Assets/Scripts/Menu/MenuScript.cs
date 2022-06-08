@@ -23,6 +23,7 @@ public class MenuScript : MonoBehaviour
 
     [SerializeField]
     private GameObject PauseMenu;
+   
 
     [SerializeField]
     private Slider volumeSlider;
