@@ -10,6 +10,7 @@ TagManager:
   - Earth
   - Castle
   - Tower
+  - devil
   layers:
   - Default
   - TransparentFX

@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 296036679241440320, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.53809
+      value: -23.11
       objectReference: {fileID: 0}
     - target: {fileID: 296036679241440320, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 296036679241440320, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.050097823
+      value: -20.96
       objectReference: {fileID: 0}
     - target: {fileID: 296036679241440320, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
       propertyPath: m_LocalRotation.w
@@ -59,9 +59,17 @@ PrefabInstance:
       propertyPath: playerSpawner
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 296036679241440321, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
+      propertyPath: groundMask.m_Bits
+      value: 307
+      objectReference: {fileID: 0}
     - target: {fileID: 296036679241440326, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
       propertyPath: m_Name
       value: Ded
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277354470160507432, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.003
       objectReference: {fileID: 0}
     - target: {fileID: 3940766560176834014, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
       propertyPath: gameHandler

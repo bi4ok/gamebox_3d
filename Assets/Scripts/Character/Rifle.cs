@@ -14,6 +14,7 @@ public class Rifle : Weapon
         bulletInside.range = range;
         bulletInside.knockback = knockback;
         bulletInside.through = upgrade;
+        bulletInside.bounce = false;
         bulletBody.AddForce(pointOfAttack.forward * speed, ForceMode.Impulse);
     }
 

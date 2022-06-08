@@ -10,7 +10,6 @@ public class Flamethrower : Weapon
         var newPoint = pointOfAttack;
         
         var delta = upgrade ? 21 : 3;
-        print(upgrade + " " + delta);
         var deltaAngle = Random.Range(-delta, delta);
         var newAngle = Quaternion.AngleAxis(deltaAngle, Vector3.one);
         var test = newPoint.rotation;
@@ -24,6 +23,7 @@ public class Flamethrower : Weapon
         bulletInside.damage = damage;
         bulletInside.range = upgrade ? range * 2 : range;
         bulletInside.knockback = knockback;
+        bulletInside.bounce = false;
         bulletBody.AddForce(newPoint.forward * speed, ForceMode.Impulse);
         newPoint.rotation = test;
     }

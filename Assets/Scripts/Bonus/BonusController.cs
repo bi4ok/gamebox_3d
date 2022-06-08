@@ -25,12 +25,10 @@ public class BonusController : MonoBehaviour
     public void PlayerScoresUp()
     {
         playerScore += bonusScoreValue;
-        Debug.Log("рейсыхе нвйх - " + playerScore);
     }
 
     public void PlayerScoresUp(float monsterScore, string damageFrom)
     {
-        Debug.Log(monsterScore + " " + damageFrom);
         if (damageFrom == "Bullet")
         {
             playerScore += monsterScore;
@@ -39,7 +37,6 @@ public class BonusController : MonoBehaviour
         {
             playerScore += monsterScore * bombScoreCoef;
         }
-        Debug.Log("рейсыхе нвйх - " + playerScore);
         
     }
 

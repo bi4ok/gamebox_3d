@@ -186,7 +186,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
             var direction = position - transform.position;
             direction.y = 0;
             transform.forward = direction;
-            Debug.DrawLine(transform.position, direction);
+            Debug.DrawRay(transform.position, direction);
             return true;
         }
         return false;

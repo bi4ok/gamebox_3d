@@ -41,6 +41,12 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
     private GameObject bonusHandler;
     [SerializeField]
     private NavMeshAgent agent;
+    [SerializeField]
+    private ParticleSystem shieldEffect;
+    [SerializeField]
+    private bool buffer = false;
+    [SerializeField]
+    private float shieldRange;
 
     private GameHandler gameHandler;
 
@@ -55,6 +61,11 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
     private float _changeTargetRange;
     private bool locked = false;
     private bool dead = false;
+    private bool devilShield = true;
+    private float shieldCD = 1f;
+    private float nextShieldCastTime = 0f;
+    private float timeToAttackCastle = 0f;
+    
 
     public void OnCreate(GameObject target, GameObject castle, float changeTargetRange, GameObject bonus, GameObject scrapPrefab)
     {
@@ -72,15 +83,32 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         _monsterInside = new Character(startHealth, damageValue, energyValue, shieldPower, attackRange, attackSpeed, movementSpeed, tag);
         agent.speed = movementSpeed;
         agent.stoppingDistance = 1;
-        _monsterAnimator.speed = movementSpeed;
+        _monsterAnimator.speed = movementSpeed/3;
         _vectorToTarget = targetToAttack.transform.position - transform.position;
         _attackCoolDownTimer = 0;
+        if (shieldEffect != null)
+            shieldEffect.Stop();
     }
 
     private void FixedUpdate()
     {
 
         CalculateMovementVector();
+
+        if (buffer)
+        {
+            CastShieldOnMonsters();
+        }
+
+        if (shieldEffect != null && shieldEffect.isPlaying)
+        {
+            devilShield = true;
+        }
+        else
+        {
+            devilShield = false;
+        }
+
         if (!locked)
         {
             GetTarget();
@@ -106,6 +134,34 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
 
     }
 
+    private void CastShieldOnMonsters()
+    {
+        if (Time.time > nextShieldCastTime)
+        {
+            print("CAST THIS SHIELD");
+            Collider[] monstersAround = Physics.OverlapSphere(transform.position, shieldRange, LayerMask.GetMask("Enemy"));
+            _monsterAnimator.SetTrigger("Attack");
+            foreach (var monster in monstersAround)
+            {
+                print(monster.name);
+                MonsterController mobScript = monster.GetComponent<MonsterController>();
+                if (mobScript != null)
+                {
+                    StartCoroutine(mobScript.ShieldSelf());
+                }
+            }
+            nextShieldCastTime += shieldCD;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        // Set the color of Gizmos to green
+        Gizmos.color = Color.green;
+
+        Gizmos.DrawWireSphere(transform.position, shieldRange);
+    }
+
     private void GetTarget()
     {
         if ((_castleTargetPosition - transform.position).magnitude <= attackRange)
@@ -113,6 +169,39 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
             locked = true;
             agent.isStopped = true;
             agent.SetDestination(_castleTargetPosition);
+            return;
+        }
+
+        if (buffer)
+        {
+            print("BUFFER get target");
+
+            
+            if (Time.time > timeToAttackCastle)
+            {
+                print(timeToAttackCastle);
+                transform.LookAt(_castleTargetPosition);
+                agent.SetDestination(_castleTargetPosition);
+            }
+            else
+            {
+                Transform startTransform = transform;
+                transform.rotation = Quaternion.LookRotation(transform.position - targetToAttack.transform.position);
+                Vector3 runTo = transform.position + transform.forward * 5;
+                NavMeshHit hit;
+                NavMesh.SamplePosition(runTo, out hit, 5, 1 << NavMesh.GetNavMeshLayerFromName("Default"));
+                transform.position = startTransform.position;
+                transform.rotation = startTransform.rotation;
+                agent.SetDestination(hit.position);
+                //var awayFromAttacker = (transform.position + (transform.position - targetToAttack.transform.position));
+                //print(targetToAttack.transform.position);
+                //awayFromAttacker.Normalize();
+                //Debug.DrawRay(transform.position, awayFromAttacker);
+                //Debug.DrawRay(transform.position, (-1) * awayFromAttacker, Color.red);
+                //print("RUN AWAY");
+                //transform.LookAt(awayFromAttacker);
+                //agent.SetDestination(awayFromAttacker);
+            }
             return;
         }
 
@@ -194,14 +283,33 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
     public void TakeDamage(float damageAmount, string damageFrom, bool knockback=false)
     {
         _monsterAnimator.SetTrigger("Hitted");
-        _monsterInside.TakeDamage(damageAmount, damageFrom);
+        if (!devilShield)
+        {
+            _monsterInside.TakeDamage(damageAmount, damageFrom);
+        }
+
+        if (buffer)
+        {
+            timeToAttackCastle = Time.time + 100;
+        }
+        
         _lastAttacker = damageFrom;
         if (knockback)
         {
-            KnockBack(damageAmount / 2);
+            KnockBack(damageAmount * 2);
         }
         DiedByDamage();
 
+    }
+
+    public IEnumerator ShieldSelf()
+    {
+        if (shieldEffect != null && !shieldEffect.isPlaying)
+        {
+            shieldEffect.Play();
+            yield return new WaitForSeconds(shieldCD);
+            shieldEffect.Stop();
+        }
     }
 
     public bool DiedByDamage()

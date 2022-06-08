@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326629170}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.18, z: 0}
+  m_LocalPosition: {x: -1.41, y: -0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 543450652462352637}
@@ -76,13 +76,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc937ffb00dbc7a4c9919891c40ce7ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allSpawnObjects:
-  - name: Red
-    prefab: {fileID: 8911265961650227236, guid: 37c8c65405d2ebf468dee6f5afb0dfac, type: 3}
-    count: 5
-    spawnTimeFrom: 0
-    spawned: 0
+  allWaves:
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: "\u0447\u0451\u0440\u0442"
+      objectPrefab: {fileID: 1408723091106175317, guid: 68b9cc2940c9dc44f922e781779e61aa, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 3
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 70
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: "\u041B\u0438\u0445\u043E"
+      objectPrefab: {fileID: 9169583717073606146, guid: 09245baf94c2b1d4088a8ee8b269eb02, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 5
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 0
+    lastWave: 1
+  loopWave: 0
+  isMonsters: 1
   interval: 2
+  gameHandler: {fileID: 0}
   targetToAttack: {fileID: 0}
   targetToFollow: {fileID: 0}
   changeTargetRange: 10

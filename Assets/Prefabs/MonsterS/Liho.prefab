@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7316016223089159403}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.7163973, y: -0.00000047683716, z: -8.8932085}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -78,6 +78,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   bonusHandler: {fileID: 0}
   agent: {fileID: 2024787209735474089}
+  shieldEffect: {fileID: 0}
+  buffer: 0
+  shieldRange: 0
 --- !u!195 &2024787209735474089
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -87,17 +90,17 @@ NavMeshAgent:
   m_GameObject: {fileID: 7316016223089159403}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.3
+  m_Radius: 0.22
   m_Speed: 3.5
   m_Acceleration: 60
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
+  m_Height: 2.15
+  m_BaseOffset: -0.25
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 2
 --- !u!95 &8320860885979044726

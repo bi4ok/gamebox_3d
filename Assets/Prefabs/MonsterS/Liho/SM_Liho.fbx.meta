@@ -1,0 +1,709 @@
+fileFormatVersion: 2
+guid: edcf9b9c3b0253640b6cac35cbdd7d27
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -203655887218126122
+    second: Liho
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Liho
+      takeName: mixamo.com
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: liho_tris_low:Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:LeftHandMiddle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:LeftHandMiddle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:LeftHandMiddle3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:RightHandMiddle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:RightHandMiddle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:RightHandMiddle3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: liho_tris_low:Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: SM_Liho(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: liho_tris_low:liho_low
+      parentName: SM_Liho(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 8.872681, y: 8.872681, z: 8.872681}
+    - name: liho_tris_low:Hips
+      parentName: SM_Liho(Clone)
+      position: {x: -2.3283064e-10, y: 0.1353193, z: -0.019640386}
+      rotation: {x: 0.000000020993038, y: -2.2035377e-16, z: -0.000000010496519, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: liho_tris_low:LeftUpLeg
+      parentName: liho_tris_low:Hips
+      position: {x: -0.022955624, y: -0.006050081, z: -0.00088806625}
+      rotation: {x: -0.03284574, y: 0.108358204, z: 0.99081075, w: 0.07398466}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: liho_tris_low:LeftLeg
+      parentName: liho_tris_low:LeftUpLeg
+      position: {x: 0.0000000011266464, y: 0.06188739, z: 7.897934e-10}
+      rotation: {x: -0.33263984, y: 0.18433158, z: 0.0530418, w: 0.92334133}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: liho_tris_low:LeftFoot
+      parentName: liho_tris_low:LeftLeg
+      position: {x: 3.556286e-10, y: 0.062367506, z: -1.4035013e-11}
+      rotation: {x: 0.670688, y: -0.17200851, z: 0.19943109, w: 0.69341046}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: liho_tris_low:LeftToeBase
+      parentName: liho_tris_low:LeftFoot
+      position: {x: -1.0766281e-11, y: 0.022319622, z: 1.77727e-10}
+      rotation: {x: 0.16950783, y: 0.009177238, z: 0.05327654, w: 0.984045}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1}
+    - name: liho_tris_low:LeftToe_End
+      parentName: liho_tris_low:LeftToeBase
+      position: {x: -5.996874e-12, y: 0.007819614, z: -1.0243303e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: liho_tris_low:Spine
+      parentName: liho_tris_low:Hips
+      position: {x: -0, y: 0.0108839795, z: 0.0027932406}
+      rotation: {x: 0.12527758, y: 0.000000019512669, z: -0.0000000130437785, w: 0.99212176}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: liho_tris_low:Spine1
+      parentName: liho_tris_low:Spine
+      position: {x: -0, y: 0.013109485, z: -5.280867e-11}
+      rotation: {x: 0.0000005438924, y: -0.000000007557799, z: 0.000000012776284, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: liho_tris_low:Spine2
+      parentName: liho_tris_low:Spine1
+      position: {x: -0, y: 0.014982249, z: -8.16081e-11}
+      rotation: {x: 0.000000044703484, y: -0.000000033110375, z: -0.0000000023392952, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: liho_tris_low:Neck
+      parentName: liho_tris_low:Spine2
+      position: {x: -0, y: 0.016855035, z: -0.0000000059111676}
+      rotation: {x: -0.2928426, y: 0.000000020005889, z: 0.000000021935808, w: 0.95616066}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: liho_tris_low:Head
+      parentName: liho_tris_low:Neck
+      position: {x: -0, y: 0.007864246, z: 0.00852178}
+      rotation: {x: 0.000000014901159, y: -0, z: -1.554312e-15, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: liho_tris_low:HeadTop_End
+      parentName: liho_tris_low:Head
+      position: {x: -0, y: 0.040900517, z: 0.044320244}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: liho_tris_low:LeftShoulder
+      parentName: liho_tris_low:Spine2
+      position: {x: -0.010479409, y: 0.017447084, z: -0.0001378001}
+      rotation: {x: -0.48198563, y: 0.51791084, z: -0.488451, w: -0.51075804}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: liho_tris_low:LeftArm
+      parentName: liho_tris_low:LeftShoulder
+      position: {x: -4.5836577e-12, y: 0.02100291, z: -1.8028459e-11}
+      rotation: {x: -0.062256142, y: 0.010825127, z: 0.022654906, w: -0.9977444}
+      scale: {x: 0.99999994, y: 1.0000004, z: 1}
+    - name: liho_tris_low:LeftForeArm
+      parentName: liho_tris_low:LeftArm
+      position: {x: -2.5770364e-10, y: 0.06150711, z: -6.6504036e-10}
+      rotation: {x: -0.044380855, y: 0.0116903195, z: -0.019763753, w: 0.99875075}
+      scale: {x: 0.99999994, y: 0.99999976, z: 0.9999997}
+    - name: liho_tris_low:LeftHand
+      parentName: liho_tris_low:LeftForeArm
+      position: {x: -2.1610513e-10, y: 0.06216911, z: -9.7231195e-11}
+      rotation: {x: 0.025937892, y: 0.11527329, z: -0.024779517, w: 0.992686}
+      scale: {x: 1.0000001, y: 1, z: 1.0000002}
+    - name: liho_tris_low:LeftHandThumb1
+      parentName: liho_tris_low:LeftHand
+      position: {x: 0.008413817, y: 0.010110063, z: 0.0006088834}
+      rotation: {x: 0.022546284, y: -0.006257674, z: -0.26736495, w: 0.9633112}
+      scale: {x: 1.0000006, y: 1.0000001, z: 1.0000002}
+    - name: liho_tris_low:LeftHandThumb2
+      parentName: liho_tris_low:LeftHandThumb1
+      position: {x: 0.0015996649, y: 0.010411633, z: -1.2739726e-10}
+      rotation: {x: 0.036842212, y: 0.011054936, z: -0.02768748, w: 0.99887633}
+      scale: {x: 0.99999994, y: 1.0000004, z: 1.0000004}
+    - name: liho_tris_low:LeftHandThumb3
+      parentName: liho_tris_low:LeftHandThumb2
+      position: {x: 0.0010211519, y: 0.013277127, z: -3.5216628e-11}
+      rotation: {x: 0.0068356087, y: -0.0011796987, z: -0.1017914, w: 0.9947816}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: liho_tris_low:LeftHandThumb4
+      parentName: liho_tris_low:LeftHandThumb3
+      position: {x: -0.0026208174, y: 0.01299034, z: 4.5588408e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: liho_tris_low:LeftHandIndex1
+      parentName: liho_tris_low:LeftHand
+      position: {x: 0.006355756, y: 0.025128974, z: 0.000012363175}
+      rotation: {x: -0.0032516967, y: 0.00041921422, z: 0.029064141, w: 0.99957216}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000001}
+    - name: liho_tris_low:LeftHandIndex2
+      parentName: liho_tris_low:LeftHandIndex1
+      position: {x: -0.00018729657, y: 0.013365445, z: 6.070241e-11}
+      rotation: {x: 0.04009588, y: -0.00019455877, z: 0.0026155105, w: 0.9991925}
+      scale: {x: 1.0000005, y: 1, z: 1.0000004}
+    - name: liho_tris_low:LeftHandIndex3
+      parentName: liho_tris_low:LeftHandIndex2
+      position: {x: -0.000010169912, y: 0.012815972, z: 1.7522613e-10}
+      rotation: {x: 0.039052386, y: 0.00038732242, z: 0.004876646, w: 0.9992252}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1.0000001}
+    - name: liho_tris_low:LeftHandIndex4
+      parentName: liho_tris_low:LeftHandIndex3
+      position: {x: 0.00019746635, y: 0.011693971, z: 3.8088624e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: liho_tris_low:LeftHandMiddle1
+      parentName: liho_tris_low:LeftHand
+      position: {x: -0.006355756, y: 0.026812375, z: -0.000033204302}
+      rotation: {x: 0.0025645474, y: 0.00019442287, z: 0.07560336, w: 0.9971347}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+    - name: liho_tris_low:LeftHandMiddle2
+      parentName: liho_tris_low:LeftHandMiddle1
+      position: {x: -0.0001490812, y: 0.01228936, z: 7.331405e-11}
+      rotation: {x: 0.03602938, y: -0.0004460838, z: 0.006261109, w: 0.99933106}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1.0000001}
+    - name: liho_tris_low:LeftHandMiddle3
+      parentName: liho_tris_low:LeftHandMiddle2
+      position: {x: 0.000048761925, y: 0.0112312855, z: 8.1010837e-10}
+      rotation: {x: 0.041034658, y: 0.00006747294, z: 0.00051212363, w: 0.99915767}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: liho_tris_low:LeftHandMiddle4
+      parentName: liho_tris_low:LeftHandMiddle3
+      position: {x: 0.00010031877, y: 0.010269289, z: -2.36271e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: liho_tris_low:RightShoulder
+      parentName: liho_tris_low:Spine2
+      position: {x: 0.010479409, y: 0.01744027, z: -0.00016434837}
+      rotation: {x: 0.48153242, y: 0.51839817, z: -0.48922926, w: 0.50994575}
+      scale: {x: 0.9999995, y: 0.9999998, z: 0.9999996}
+    - name: liho_tris_low:RightArm
+      parentName: liho_tris_low:RightShoulder
+      position: {x: 4.690559e-12, y: 0.02100291, z: -1.8000925e-11}
+      rotation: {x: 0.061540186, y: 0.011334685, z: 0.024652386, w: 0.99773574}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: liho_tris_low:RightForeArm
+      parentName: liho_tris_low:RightArm
+      position: {x: -3.9992187e-11, y: 0.06152521, z: 2.2532962e-10}
+      rotation: {x: -0.04420017, y: -0.011145415, z: 0.019140625, w: 0.9987772}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: liho_tris_low:RightHand
+      parentName: liho_tris_low:RightForeArm
+      position: {x: 2.1050593e-10, y: 0.062123995, z: 5.4671645e-12}
+      rotation: {x: 0.024248179, y: -0.11405404, z: 0.025578793, w: 0.9928491}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1.0000002}
+    - name: liho_tris_low:RightHandThumb1
+      parentName: liho_tris_low:RightHand
+      position: {x: -0.00780054, y: 0.010017503, z: 0.00055495556}
+      rotation: {x: 0.021162702, y: 0.0059438497, z: 0.27033874, w: 0.96251434}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000001}
+    - name: liho_tris_low:RightHandThumb2
+      parentName: liho_tris_low:RightHandThumb1
+      position: {x: -0.0011552654, y: 0.010100978, z: -1.5837041e-10}
+      rotation: {x: 0.038922988, y: -0.01064938, z: -0.006997422, w: 0.99916095}
+      scale: {x: 1, y: 1.0000002, z: 1.0000002}
+    - name: liho_tris_low:RightHandThumb3
+      parentName: liho_tris_low:RightHandThumb2
+      position: {x: -0.0017919297, y: 0.013297756, z: -3.0385244e-10}
+      rotation: {x: 0.0031133324, y: 0.0005646533, z: 0.1425669, w: 0.9897801}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.9999998}
+    - name: liho_tris_low:RightHandThumb4
+      parentName: liho_tris_low:RightHandThumb3
+      position: {x: 0.0029471964, y: 0.013108877, z: -6.6677684e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: liho_tris_low:RightHandIndex1
+      parentName: liho_tris_low:RightHand
+      position: {x: -0.0066946135, y: 0.026269896, z: 0.000012961299}
+      rotation: {x: -0.0035679045, y: -0.00026942778, z: -0.032983076, w: 0.9994495}
+      scale: {x: 1.0000001, y: 1.0000005, z: 0.99999976}
+    - name: liho_tris_low:RightHandIndex2
+      parentName: liho_tris_low:RightHandIndex1
+      position: {x: 0.00016185711, y: 0.013030527, z: -2.9534195e-10}
+      rotation: {x: 0.03961424, y: 0.00021373792, z: -0.0032543275, w: 0.99920976}
+      scale: {x: 1, y: 0.99999964, z: 1.0000004}
+    - name: liho_tris_low:RightHandIndex3
+      parentName: liho_tris_low:RightHandIndex2
+      position: {x: -0.000012150151, y: 0.012272291, z: -1.7575054e-10}
+      rotation: {x: 0.03990111, y: -0.00022464397, z: -0.002705092, w: 0.9991999}
+      scale: {x: 0.99999976, y: 1, z: 0.99999964}
+    - name: liho_tris_low:RightHandIndex4
+      parentName: liho_tris_low:RightHandIndex3
+      position: {x: -0.00014970824, y: 0.011293469, z: -1.5216521e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: liho_tris_low:RightHandMiddle1
+      parentName: liho_tris_low:RightHand
+      position: {x: 0.006694615, y: 0.027408304, z: -0.00018798243}
+      rotation: {x: 0.020150332, y: -0.0012254567, z: -0.060693987, w: 0.9979523}
+      scale: {x: 1, y: 1.0000002, z: 0.9999996}
+    - name: liho_tris_low:RightHandMiddle2
+      parentName: liho_tris_low:RightHandMiddle1
+      position: {x: 0.0001296054, y: 0.012194756, z: 1.5610456e-10}
+      rotation: {x: 0.036671974, y: 0.00039274772, z: -0.0049547195, w: 0.999315}
+      scale: {x: 1.0000001, y: 1, z: 1.0000006}
+    - name: liho_tris_low:RightHandMiddle3
+      parentName: liho_tris_low:RightHandMiddle2
+      position: {x: -0.000031713767, y: 0.0110265715, z: 3.5284164e-11}
+      rotation: {x: 0.040293396, y: -0.00015605525, z: -0.0012673094, w: 0.9991871}
+      scale: {x: 1, y: 1.0000004, z: 1}
+    - name: liho_tris_low:RightHandMiddle4
+      parentName: liho_tris_low:RightHandMiddle3
+      position: {x: -0.000097891425, y: 0.010358819, z: 8.521869e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: liho_tris_low:RightUpLeg
+      parentName: liho_tris_low:Hips
+      position: {x: 0.022955624, y: -0.006050081, z: -0.0008264208}
+      rotation: {x: 0.03276826, y: 0.10831812, z: 0.9908067, w: -0.07413215}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.99999994}
+    - name: liho_tris_low:RightLeg
+      parentName: liho_tris_low:RightUpLeg
+      position: {x: -3.072301e-10, y: 0.061854415, z: -2.3888347e-10}
+      rotation: {x: -0.332596, y: -0.18528545, z: -0.05337391, w: 0.923147}
+      scale: {x: 1.0000004, y: 0.9999998, z: 1.0000004}
+    - name: liho_tris_low:RightFoot
+      parentName: liho_tris_low:RightLeg
+      position: {x: -5.2740556e-10, y: 0.062308617, z: 5.6082694e-10}
+      rotation: {x: 0.66886663, y: 0.17334384, z: -0.19926739, w: 0.69488263}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000005}
+    - name: liho_tris_low:RightToeBase
+      parentName: liho_tris_low:RightFoot
+      position: {x: 1.946638e-11, y: 0.022107674, z: 2.0636357e-10}
+      rotation: {x: 0.17351665, y: -0.009065091, z: -0.05137851, w: 0.983448}
+      scale: {x: 1.0000002, y: 1, z: 1.0000004}
+    - name: liho_tris_low:RightToe_End
+      parentName: liho_tris_low:RightToeBase
+      position: {x: -2.3361967e-11, y: 0.008120487, z: -4.050922e-12}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
