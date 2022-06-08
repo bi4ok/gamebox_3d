@@ -22,7 +22,7 @@ public class Flamethrower : Weapon
         Rigidbody bulletBody = bulletObject.GetComponent<Rigidbody>();
         Bullet bulletInside = bulletObject.GetComponent<Bullet>();
         bulletInside.damage = damage;
-        bulletInside.range = range;
+        bulletInside.range = upgrade ? range * 2 : range;
         bulletInside.knockback = knockback;
         bulletBody.AddForce(newPoint.forward * speed, ForceMode.Impulse);
         newPoint.rotation = test;

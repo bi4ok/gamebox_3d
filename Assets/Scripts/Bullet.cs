@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
     public float range;
     public bool knockback;
     public bool through = false;
+    public bool bounce = false;
 
     private void Start()
     {
@@ -38,7 +39,6 @@ public class Bullet : MonoBehaviour
             && !collision.CompareTag("Bullet")
             && !collision.CompareTag("Tower"))
         {
-            print("BULLET ALIVE " + collision.name + " " + collision.tag);
             BlastHim(collision);
             StartCoroutine(BlastEffect(0f));
             if (collision.CompareTag(attackerTag))
@@ -50,10 +50,32 @@ public class Bullet : MonoBehaviour
             {
                 Destroy(gameObject, 0.01f);
             }
+            if (bounce)
+            {
+                SpawnBounce();
+            }
             
-
         }
 
+    }
+
+    private void SpawnBounce()
+    {
+        var delta = 180;
+        var deltaAngle = Random.Range(-delta, delta);
+        var newAngle = Quaternion.AngleAxis(deltaAngle, Vector3.one);
+        transform.rotation = Quaternion.Euler(
+            0,
+            newAngle.eulerAngles.y,
+            newAngle.eulerAngles.z);
+        GameObject bulletObject = Instantiate(gameObject, gameObject.transform.position, gameObject.transform.rotation);
+        Rigidbody bulletBody = bulletObject.GetComponent<Rigidbody>();
+        Bullet bulletInside = bulletObject.GetComponent<Bullet>();
+        bulletInside.damage = damage;
+        bulletInside.range = range;
+        bulletInside.knockback = knockback;
+        bulletInside.bounce = false;
+        bulletBody.AddForce(transform.forward * 1, ForceMode.Impulse);
     }
 
     private IEnumerator BlastEffect(float sec)

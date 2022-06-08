@@ -24,6 +24,7 @@ public class ShotGun : Weapon
             bulletInside.damage = damage;
             bulletInside.range = range;
             bulletInside.knockback = knockback;
+            bulletInside.bounce = upgrade;
             bulletBody.AddForce(newPoint.forward * speed, ForceMode.Impulse);
             newPoint.rotation = test;
         }
