@@ -91,6 +91,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
             {"брызги", null},
             {"пробитие", null},
             {"база", null},
+            {"пламя", null},
 
         };
 
@@ -381,6 +382,9 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
                 break;
             case "пробитие":
                 weapons[0].UpgradeWeapon();
+                break;
+            case "пламя":
+                weapons[2].UpgradeWeapon();
                 break;
             case "база":
                 print("UPGRADE БАЗЫ ");
