@@ -390,8 +390,8 @@ MonoBehaviour:
   movementSpeed: 5
   attackRange: 2
   attackSpeed: 1
+  baseTimeToRespawn: 5
   pointOfAttack: {fileID: 296036680349442296}
-  bulletPrefab: {fileID: 8171511646293749693, guid: d1c4de684a456474f88b801b94c4046d, type: 3}
   gunScript: {fileID: 8357544810936285809}
   weapons:
   - {fileID: 8357544810936285809}
@@ -403,9 +403,10 @@ MonoBehaviour:
   playerSpawner: {fileID: 0}
   playerAnimator: {fileID: 296036679241440327}
   deathEffect: {fileID: 6309696766750554938, guid: 4c0644e29ef46f148be84d81b240025e, type: 3}
+  castle: {fileID: 0}
   groundMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 307
   alive: 1
 --- !u!1 &296036679945632171
 GameObject:
@@ -457,6 +458,7 @@ MonoBehaviour:
   weaponDamage: 100
   weaponRange: 4
   knockback: 0
+  bulletPrefab: {fileID: 8171511646293749693, guid: ba8cd996d0656fb4ead02aaca9e2e796, type: 3}
   glowEffect: {fileID: 2111307161}
   glowColor: {r: 0.97558546, g: 1, b: 0, a: 0}
   scrapName: yellow
@@ -2056,6 +2058,7 @@ MonoBehaviour:
   weaponDamage: 1
   weaponRange: 0.45
   knockback: 1
+  bulletPrefab: {fileID: 8171511646293749693, guid: 2a546ecb70cae324ca9c8e42515ee0e9, type: 3}
   glowEffect: {fileID: 2111307161}
   glowColor: {r: 0, g: 0.21829796, b: 1, a: 0}
   scrapName: blue
@@ -3076,6 +3079,7 @@ MonoBehaviour:
   weaponDamage: 8
   weaponRange: 2
   knockback: 1
+  bulletPrefab: {fileID: 8171511646293749693, guid: d1c4de684a456474f88b801b94c4046d, type: 3}
   glowEffect: {fileID: 2111307161}
   glowColor: {r: 1, g: 0, b: 0, a: 0}
   scrapName: red
@@ -3986,7 +3990,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8435916621050727985}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.9805002}
+  m_LocalPosition: {x: 0, y: 0, z: -0.003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 296036679241440320}
