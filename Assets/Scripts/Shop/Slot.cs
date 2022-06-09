@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
-    [SerializeField] 
-    private Image slotimage;
+    [SerializeField]
+    private Text slottext;
 
     public ProductScript productScript;
 
     public void OnCreate(ProductScript product)
     {
         productScript = product;
-       // slotimage.sprite = product.artwork;
+        slottext.text = product.nameofProduct.ToString();
  
     }
 
