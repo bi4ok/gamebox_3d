@@ -16,6 +16,8 @@ public class PortalManager : MonoBehaviour
     private Factory leftPortal;
     [SerializeField]
     private Factory downPortal;
+    [SerializeField]
+    private float[] timeList;
 
     [SerializeField]
     private GameHandler gameHandler;
@@ -23,6 +25,9 @@ public class PortalManager : MonoBehaviour
     private Dictionary<string, Factory> stringPortals;
     private bool lastState;
     private float nextUpdateTime;
+    private int counter = 0;
+    private bool waveInProcess;
+    private float timeForNextWave = 0f;
 
     private void Awake()
     {
@@ -36,6 +41,8 @@ public class PortalManager : MonoBehaviour
             {"Left", leftPortal},
             {"Down", downPortal}
         };
+
+        RunNextWave();
         
     }
 
@@ -43,34 +50,33 @@ public class PortalManager : MonoBehaviour
     {
         if (Time.time > nextUpdateTime)
         {
-            GameFinished();
-            gameHandler.WaveStateChange(CheckWaveIsEnded());
+            waveInProcess = CheckWaveIsEnded();
+            gameHandler.WaveStateChange(waveInProcess, timeForNextWave);
             nextUpdateTime = Time.time + 1;
         }
 
     }
 
-    public (bool, float) CheckWaveIsEnded()
+    public bool CheckWaveIsEnded()
     {
         bool waveInProcess = false;
-        float timeToNextWave = Mathf.Infinity;
         foreach (var portal in stringPortals.Values)
         {
             if (portal.GetWaveStatus() == true)
             {
                 waveInProcess = true;
             }
-            else
-            {
-                float buffTime = portal.TimeToNextWave();
-                if (0 < buffTime && buffTime < timeToNextWave)
-                {
-                    timeToNextWave = buffTime;
-                }
+            //else
+            //{
+            //    float buffTime = portal.TimeToNextWave();
+            //    if (0 < buffTime && buffTime < timeToNextWave)
+            //    {
+            //        timeToNextWave = buffTime;
+            //    }
                 
-            }
+            //}
         }
-        return (waveInProcess, timeToNextWave);
+        return waveInProcess;
     }
 
     public bool GameFinished()
@@ -87,5 +93,16 @@ public class PortalManager : MonoBehaviour
         return gameEnd;
     }
 
+    public void RunNextWave()
+    {
+        foreach (var portal in stringPortals.Values)
+        {
+            portal.ActivateNextWave(counter);
+        }
+        counter += 1;
+        print($"Волна №{counter} Запущена!");
+        waveInProcess = true;
+        timeForNextWave = timeList[counter];
 
+    }
 }

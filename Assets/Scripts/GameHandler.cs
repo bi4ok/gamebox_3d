@@ -9,7 +9,7 @@ public class GameHandler : MonoBehaviour
     [SerializeField]
     private MenuScript menuScript;
     [SerializeField]
-    private GameObject portalManagerHandler;
+    private PortalManager portalManager;
     [SerializeField]
     private Text HPBar;
     [SerializeField]
@@ -41,12 +41,13 @@ public class GameHandler : MonoBehaviour
     private Dictionary<string, float> scrapStorage; 
 
     private PlayerController playerInfo;
-    private PortalManager portalManager;
+    
     
     private int monstersInGame;
     private bool waveInProcess;
     private bool gameStateFight;
     private float timeToNextWave;
+    private float timeForStartNextWave;
     private bool gameEnd = false;
 
     private void Awake()
@@ -56,10 +57,9 @@ public class GameHandler : MonoBehaviour
         waveInProcess = true;
         gameStateFight = true;
         playerInfo = player.GetComponent<PlayerController>();
-        portalManager = portalManagerHandler.GetComponent<PortalManager>();
         scrapStorage = new Dictionary<string, float>() { { "red", 9999 }, { "blue", 99999 }, { "yellow", 9999 } };
         UpdateInfo();
-        soundmessr.PlayMessege();
+        //soundmessr.PlayMessege();
     }
 
     private void Update()
@@ -68,7 +68,7 @@ public class GameHandler : MonoBehaviour
         CheckGameState();
         if (!gameStateFight)
         {
-            nextWaveText.text = ((int)timeToNextWave).ToString();
+            nextWaveText.text = ((int)(timeForStartNextWave - Time.time)).ToString();
         }
         if (gameEnd)
         {
@@ -88,26 +88,44 @@ public class GameHandler : MonoBehaviour
 
         if (monstersInGame > 0 || waveInProcess)
         {
-            if (!gameStateFight)
-            {
-                gameStateFight = true;
-                menuScript.ChangeStateToFight();
-                print("MED PACKS SUMMON!! ");
-                medPackFactory.OnWaveMedPackSpawn();
-            }
+            print("ÌÎÁÛ ÅÑÒÜ, ÈÃÐÀ Â ÏÐÎÖÅÑÑÅ");
+            //if (!gameStateFight)
+            //{
+            //    gameStateFight = true;
+            //    menuScript.ChangeStateToFight();
+            //    print("MED PACKS SUMMON!! ");
+            //    medPackFactory.OnWaveMedPackSpawn();
+            //}
 
         }
         else
         {
+            print("ìîáîâ ÍÅÒ, èãðà â ïðîöåññå? " + waveInProcess + gameStateFight);
+
             if (gameStateFight)
             {
+                timeForStartNextWave = Time.time + timeToNextWave;
                 gameStateFight = false;
                 gameEnd = portalManager.GameFinished();
                 menuScript.ChangeStateToBuild();
-                soundmessr.PlayMessege();
+                //soundmessr.PlayMessege();
             }
-            
+
+            if (!gameStateFight)
+            {
+                print($"Äî ñëåäóþùåé âîëíû {timeForStartNextWave-Time.time}");
+                if (Time.time > timeForStartNextWave)
+                {
+                    portalManager.RunNextWave();
+                    gameStateFight = true;
+                    menuScript.ChangeStateToFight();
+                    medPackFactory.OnWaveMedPackSpawn();
+                }
+            }
         }
+
+
+        
         gameStateText.text = gameStateFight.ToString() + " " + monstersInGame.ToString() + " " + waveInProcess.ToString();
 
     }
@@ -212,10 +230,10 @@ public class GameHandler : MonoBehaviour
         monstersInGame += count;
     }
 
-    public void WaveStateChange((bool, float) waveState)
+    public void WaveStateChange(bool waveState, float nextWaveTime)
     {
-        waveInProcess = waveState.Item1;
-        timeToNextWave = waveState.Item2;
+        waveInProcess = waveState;
+        timeToNextWave = nextWaveTime;
 
     }
 

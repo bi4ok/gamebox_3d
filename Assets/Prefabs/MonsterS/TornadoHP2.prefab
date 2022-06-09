@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2254116186667753775}
   - component: {fileID: 7427649664657809388}
   m_Layer: 7
-  m_Name: Tornado
+  m_Name: TornadoHP2
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 2077202815519097773}
-  - {fileID: 1919017021541287009}
+  - {fileID: 4758337989407555460}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -98,7 +98,7 @@ MonoBehaviour:
   gunScript: {fileID: 0}
   bonusHandler: {fileID: 0}
   agent: {fileID: 7427649664657809388}
-  shieldEffect: {fileID: 656355739152818779}
+  shieldEffect: {fileID: 5887168923257379262}
   buffer: 0
   lockOnPlayer: 1
   shieldRange: 5
@@ -19370,7 +19370,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!1001 &5842347786266116509
+--- !u!1001 &701581580718127736
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -19379,7 +19379,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1590008848776210426, guid: 37efaf6a9545dc9468b0a9ea7822924e, type: 3}
       propertyPath: m_Name
-      value: ShieldEffect (3)
+      value: ShieldEffect (2)
       objectReference: {fileID: 0}
     - target: {fileID: 5455415558059787772, guid: 37efaf6a9545dc9468b0a9ea7822924e, type: 3}
       propertyPath: m_RootOrder
@@ -19403,7 +19403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5455415558059787772, guid: 37efaf6a9545dc9468b0a9ea7822924e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7199981
+      value: 1.7200029
       objectReference: {fileID: 0}
     - target: {fileID: 5455415558059787772, guid: 37efaf6a9545dc9468b0a9ea7822924e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19439,13 +19439,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37efaf6a9545dc9468b0a9ea7822924e, type: 3}
---- !u!4 &1919017021541287009 stripped
+--- !u!4 &4758337989407555460 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5455415558059787772, guid: 37efaf6a9545dc9468b0a9ea7822924e, type: 3}
-  m_PrefabInstance: {fileID: 5842347786266116509}
+  m_PrefabInstance: {fileID: 701581580718127736}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &656355739152818779 stripped
+--- !u!198 &5887168923257379262 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 6345545807480005574, guid: 37efaf6a9545dc9468b0a9ea7822924e, type: 3}
-  m_PrefabInstance: {fileID: 5842347786266116509}
+  m_PrefabInstance: {fileID: 701581580718127736}
   m_PrefabAsset: {fileID: 0}

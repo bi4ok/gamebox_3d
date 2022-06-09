@@ -885,6 +885,21 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4240650445347680559, guid: a35bf4278767d8a4e86e6856eae0b3d7, type: 3}
   m_PrefabInstance: {fileID: 1402216652023488669}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &173314305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173314294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9b5f012f80d9b54baf510e9f17fb845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messeges: []
+  audioSource: {fileID: 184332880}
+  circlemesseges: []
 --- !u!1 &175081585
 GameObject:
   m_ObjectHideFlags: 0
@@ -5801,7 +5816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 296036679241440320, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -35.2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 296036679241440320, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5869,6 +5884,11 @@ GameObject:
 --- !u!4 &184332878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 296036679241440320, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
+  m_PrefabInstance: {fileID: 184332876}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &184332880 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 296036679241440322, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
   m_PrefabInstance: {fileID: 184332876}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &188877697
@@ -6396,15 +6416,120 @@ MonoBehaviour:
   - order: 0
     name: 
     allSpawnObjects:
-    - name: 1
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: 0e8541c40da69ee4eab8402d41a50716, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 5
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 60
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
       objectPrefab: {fileID: 6350322320348864596, guid: 9117f8ff7bf492c4eb9f812da5d5d3cc, type: 3}
       scrapPrefab: {fileID: 7814339019828652005, guid: d114a490e1d5f424abbb8da8e7ea8156, type: 3}
+      count: 5
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 60
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects: []
+    timeToNextWave: 70
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 764020721661729620, guid: 959106f116e8d644c9e17f5ec57db450, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
       count: 1
       spawnTimeFrom: 0
       spawned: 0
-    timeToNextWave: 20
+    timeToNextWave: 68
     lastWave: 0
-  loopWave: 1
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 1408723091106175317, guid: 68b9cc2940c9dc44f922e781779e61aa, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 1
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 68
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: ef34e6dc1f1b66946b4a2bc05850754b, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 3
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 64
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 6350322320348864596, guid: fde1b8c1cffcf6249b03d6419febd99c, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: d114a490e1d5f424abbb8da8e7ea8156, type: 3}
+      count: 3
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 64
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 1408723091106175317, guid: 68b9cc2940c9dc44f922e781779e61aa, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 5
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 60
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 6350322320348864596, guid: 9117f8ff7bf492c4eb9f812da5d5d3cc, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: d114a490e1d5f424abbb8da8e7ea8156, type: 3}
+      count: 4
+      spawnTimeFrom: 0
+      spawned: 0
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: 0e8541c40da69ee4eab8402d41a50716, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 2
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 58
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 6350322320348864596, guid: 9117f8ff7bf492c4eb9f812da5d5d3cc, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: d114a490e1d5f424abbb8da8e7ea8156, type: 3}
+      count: 5
+      spawnTimeFrom: 0
+      spawned: 0
+    - name: 
+      objectPrefab: {fileID: 1408723091106175317, guid: 68b9cc2940c9dc44f922e781779e61aa, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 1
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 70
+    lastWave: 1
+  loopWave: 0
   isMonsters: 1
   interval: 2
   gameHandler: {fileID: 173314293}
@@ -7211,7 +7336,123 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc937ffb00dbc7a4c9919891c40ce7ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allWaves: []
+  allWaves:
+  - order: 0
+    name: 
+    allSpawnObjects: []
+    timeToNextWave: 70
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects: []
+    timeToNextWave: 70
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 764020721661729620, guid: 959106f116e8d644c9e17f5ec57db450, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 5
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 60
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: 0e8541c40da69ee4eab8402d41a50716, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 3
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 64
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 764020721661729620, guid: 959106f116e8d644c9e17f5ec57db450, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 4
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 62
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: ef34e6dc1f1b66946b4a2bc05850754b, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 4
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 62
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 764020721661729620, guid: 545447c5d7739a84dafe0f43d508bc11, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 2
+      spawnTimeFrom: 0
+      spawned: 0
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: 6dfd53b2a8bbe6e4f9aeb76c53890b00, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 4
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 58
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 764020721661729620, guid: 959106f116e8d644c9e17f5ec57db450, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 1
+      spawnTimeFrom: 0
+      spawned: 0
+    - name: 
+      objectPrefab: {fileID: 1408723091106175317, guid: 68b9cc2940c9dc44f922e781779e61aa, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 2
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 64
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 6350322320348864596, guid: 9117f8ff7bf492c4eb9f812da5d5d3cc, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: d114a490e1d5f424abbb8da8e7ea8156, type: 3}
+      count: 4
+      spawnTimeFrom: 0
+      spawned: 0
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: 0e8541c40da69ee4eab8402d41a50716, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 2
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 58
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: 0e8541c40da69ee4eab8402d41a50716, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 10
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 70
+    lastWave: 1
   loopWave: 0
   isMonsters: 1
   interval: 2
@@ -7812,6 +8053,17 @@ MonoBehaviour:
   rightPortal: {fileID: 1852006739}
   leftPortal: {fileID: 585799380}
   downPortal: {fileID: 899150591033349873}
+  timeList:
+  - 0
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
   gameHandler: {fileID: 173314293}
 --- !u!1001 &695384852
 PrefabInstance:
@@ -8129,15 +8381,120 @@ MonoBehaviour:
   - order: 0
     name: 
     allSpawnObjects:
-    - name: 2
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: 0e8541c40da69ee4eab8402d41a50716, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 5
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 60
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 6350322320348864596, guid: 9117f8ff7bf492c4eb9f812da5d5d3cc, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: d114a490e1d5f424abbb8da8e7ea8156, type: 3}
+      count: 5
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 60
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects: []
+    timeToNextWave: 70
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 764020721661729620, guid: 959106f116e8d644c9e17f5ec57db450, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 1
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 68
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
       objectPrefab: {fileID: 1408723091106175317, guid: 68b9cc2940c9dc44f922e781779e61aa, type: 3}
       scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
       count: 1
       spawnTimeFrom: 0
       spawned: 0
-    timeToNextWave: 20
+    timeToNextWave: 68
     lastWave: 0
-  loopWave: 1
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: ef34e6dc1f1b66946b4a2bc05850754b, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 3
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 64
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 6350322320348864596, guid: fde1b8c1cffcf6249b03d6419febd99c, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: d114a490e1d5f424abbb8da8e7ea8156, type: 3}
+      count: 3
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 64
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 1408723091106175317, guid: 68b9cc2940c9dc44f922e781779e61aa, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 5
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 60
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 6350322320348864596, guid: 9117f8ff7bf492c4eb9f812da5d5d3cc, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: d114a490e1d5f424abbb8da8e7ea8156, type: 3}
+      count: 4
+      spawnTimeFrom: 0
+      spawned: 0
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: 0e8541c40da69ee4eab8402d41a50716, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 2
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 58
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 6350322320348864596, guid: 9117f8ff7bf492c4eb9f812da5d5d3cc, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: d114a490e1d5f424abbb8da8e7ea8156, type: 3}
+      count: 5
+      spawnTimeFrom: 0
+      spawned: 0
+    - name: 
+      objectPrefab: {fileID: 1408723091106175317, guid: 68b9cc2940c9dc44f922e781779e61aa, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 1
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 70
+    lastWave: 1
+  loopWave: 0
   isMonsters: 1
   interval: 2
   gameHandler: {fileID: 173314293}
@@ -8284,17 +8641,104 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allWaves:
   - order: 0
-    name: "\u041F\u0435\u0440\u0432\u0430\u044F \u0432\u043E\u043B\u043D\u0430"
+    name: 
+    allSpawnObjects: []
+    timeToNextWave: 70
+    lastWave: 0
+  - order: 0
+    name: 
     allSpawnObjects:
-    - name: "\u041B\u0438\u0445\u043E"
+    - name: 
       objectPrefab: {fileID: 2398612183240333825, guid: 0e8541c40da69ee4eab8402d41a50716, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 5
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 60
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects: []
+    timeToNextWave: 70
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 764020721661729620, guid: 959106f116e8d644c9e17f5ec57db450, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 2
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 66
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: 0e8541c40da69ee4eab8402d41a50716, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 3
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 64
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 6350322320348864596, guid: da2d0c8eb81526a4fb9bd89ca282c78e, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: d114a490e1d5f424abbb8da8e7ea8156, type: 3}
+      count: 3
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 64
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects: []
+    timeToNextWave: 70
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: 0e8541c40da69ee4eab8402d41a50716, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 5
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 60
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: 0e8541c40da69ee4eab8402d41a50716, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 3
+      spawnTimeFrom: 0
+      spawned: 0
+    - name: 
+      objectPrefab: {fileID: 6350322320348864596, guid: 9117f8ff7bf492c4eb9f812da5d5d3cc, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: d114a490e1d5f424abbb8da8e7ea8156, type: 3}
+      count: 6
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 52
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: b9925ab0cca88fe42af079af02fbbbf9, type: 3}
       scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
       count: 1
       spawnTimeFrom: 0
       spawned: 0
-    timeToNextWave: 20
-    lastWave: 0
-  loopWave: 1
+    timeToNextWave: 70
+    lastWave: 1
+  loopWave: 0
   isMonsters: 1
   interval: 2
   gameHandler: {fileID: 173314293}
@@ -18941,19 +19385,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8764251091296862657, guid: 275729749d4e83f4c8c935e4f0cdd73e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -48.559998
+      value: -4.3599997
       objectReference: {fileID: 0}
     - target: {fileID: 8764251091296862657, guid: 275729749d4e83f4c8c935e4f0cdd73e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.43353274
+      value: 0.4335327
       objectReference: {fileID: 0}
     - target: {fileID: 8764251091296862657, guid: 275729749d4e83f4c8c935e4f0cdd73e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0020034842
+      value: 0.0020035056
       objectReference: {fileID: 0}
     - target: {fileID: 8764251091296862657, guid: 275729749d4e83f4c8c935e4f0cdd73e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0009638688
+      value: -0.00096387893
       objectReference: {fileID: 0}
     - target: {fileID: 8764251091296862686, guid: 275729749d4e83f4c8c935e4f0cdd73e, type: 3}
       propertyPath: m_Follow
@@ -19021,19 +19465,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8764251091927124197, guid: 275729749d4e83f4c8c935e4f0cdd73e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -48.559998
+      value: -4.3599997
       objectReference: {fileID: 0}
     - target: {fileID: 8764251091927124197, guid: 275729749d4e83f4c8c935e4f0cdd73e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.43353274
+      value: 0.4335327
       objectReference: {fileID: 0}
     - target: {fileID: 8764251091927124197, guid: 275729749d4e83f4c8c935e4f0cdd73e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0020034842
+      value: 0.0020035056
       objectReference: {fileID: 0}
     - target: {fileID: 8764251091927124197, guid: 275729749d4e83f4c8c935e4f0cdd73e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0009638688
+      value: -0.00096387893
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 275729749d4e83f4c8c935e4f0cdd73e, type: 3}
@@ -29576,7 +30020,123 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc937ffb00dbc7a4c9919891c40ce7ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allWaves: []
+  allWaves:
+  - order: 0
+    name: 
+    allSpawnObjects: []
+    timeToNextWave: 70
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects: []
+    timeToNextWave: 70
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 764020721661729620, guid: 959106f116e8d644c9e17f5ec57db450, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 5
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 60
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: 0e8541c40da69ee4eab8402d41a50716, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 3
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 64
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 764020721661729620, guid: 959106f116e8d644c9e17f5ec57db450, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 4
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 62
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: ef34e6dc1f1b66946b4a2bc05850754b, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 4
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 62
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 764020721661729620, guid: 545447c5d7739a84dafe0f43d508bc11, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 2
+      spawnTimeFrom: 0
+      spawned: 0
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: 6dfd53b2a8bbe6e4f9aeb76c53890b00, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 4
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 58
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 764020721661729620, guid: 959106f116e8d644c9e17f5ec57db450, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 1
+      spawnTimeFrom: 0
+      spawned: 0
+    - name: 
+      objectPrefab: {fileID: 1408723091106175317, guid: 68b9cc2940c9dc44f922e781779e61aa, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 2
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 64
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 6350322320348864596, guid: 9117f8ff7bf492c4eb9f812da5d5d3cc, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: d114a490e1d5f424abbb8da8e7ea8156, type: 3}
+      count: 4
+      spawnTimeFrom: 0
+      spawned: 0
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: 0e8541c40da69ee4eab8402d41a50716, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 2
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 58
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: 0e8541c40da69ee4eab8402d41a50716, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 10
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 70
+    lastWave: 1
   loopWave: 0
   isMonsters: 1
   interval: 2
@@ -31467,7 +32027,117 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc937ffb00dbc7a4c9919891c40ce7ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allWaves: []
+  allWaves:
+  - order: 0
+    name: 
+    allSpawnObjects: []
+    timeToNextWave: 70
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects: []
+    timeToNextWave: 70
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: "\u041B\u0438\u0445\u043E"
+      objectPrefab: {fileID: 2398612183240333825, guid: 0e8541c40da69ee4eab8402d41a50716, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 5
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 60
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: "\u0420\u0443\u0441\u0430\u043B\u043A\u0438"
+      objectPrefab: {fileID: 6350322320348864596, guid: 9117f8ff7bf492c4eb9f812da5d5d3cc, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: d114a490e1d5f424abbb8da8e7ea8156, type: 3}
+      count: 5
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 60
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 764020721661729620, guid: 959106f116e8d644c9e17f5ec57db450, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 4
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 62
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: ef34e6dc1f1b66946b4a2bc05850754b, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 4
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 62
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: 6dfd53b2a8bbe6e4f9aeb76c53890b00, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 2
+      spawnTimeFrom: 0
+      spawned: 0
+    - name: 
+      objectPrefab: {fileID: 6350322320348864596, guid: fde1b8c1cffcf6249b03d6419febd99c, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: d114a490e1d5f424abbb8da8e7ea8156, type: 3}
+      count: 2
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 62
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 764020721661729620, guid: 959106f116e8d644c9e17f5ec57db450, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 2
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 66
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 6350322320348864596, guid: 9117f8ff7bf492c4eb9f812da5d5d3cc, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: d114a490e1d5f424abbb8da8e7ea8156, type: 3}
+      count: 4
+      spawnTimeFrom: 0
+      spawned: 0
+    - name: 
+      objectPrefab: {fileID: 2398612183240333825, guid: 0e8541c40da69ee4eab8402d41a50716, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 2
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 58
+    lastWave: 0
+  - order: 0
+    name: 
+    allSpawnObjects:
+    - name: 
+      objectPrefab: {fileID: 764020721661729620, guid: 959106f116e8d644c9e17f5ec57db450, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      count: 10
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 70
+    lastWave: 1
   loopWave: 0
   isMonsters: 1
   interval: 2
@@ -36256,6 +36926,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1402216651855954993}
     - target: {fileID: 2256867503432670497, guid: 598be13704c905c428137e6fdd1d26b1, type: 3}
+      propertyPath: soundmessr
+      value: 
+      objectReference: {fileID: 173314305}
+    - target: {fileID: 2256867503432670497, guid: 598be13704c905c428137e6fdd1d26b1, type: 3}
       propertyPath: blue_scrtxt
       value: 
       objectReference: {fileID: 1402216652366448759}
@@ -36278,7 +36952,7 @@ PrefabInstance:
     - target: {fileID: 2256867503432670497, guid: 598be13704c905c428137e6fdd1d26b1, type: 3}
       propertyPath: portalManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 650660793}
     - target: {fileID: 2256867503432670497, guid: 598be13704c905c428137e6fdd1d26b1, type: 3}
       propertyPath: gameOverCanvas
       value: 

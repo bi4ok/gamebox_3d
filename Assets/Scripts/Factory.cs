@@ -22,7 +22,7 @@ public abstract class Factory : MonoBehaviour
         public int order;
         public string name;
         public List<ObjToSpawn> allSpawnObjects;
-        public float timeToNextWave;
+        public float timeToNextWave=70f;
         public bool lastWave;
 
     }
@@ -71,13 +71,13 @@ public abstract class Factory : MonoBehaviour
                 fightPhase = false;
 
             }
-            else
-            {
-                if (Time.time > nextWaveTime && !currentWaveInProcess)
-                {
-                    fightPhase = ChooseNextWave();
-                }
-            }
+            //else
+            //{
+            //    if (Time.time > nextWaveTime && !currentWaveInProcess)
+            //    {
+            //        fightPhase = ChooseNextWave();
+            //    }
+            //}
         }
         else if(currentWaveInProcess)
         {
@@ -106,7 +106,7 @@ public abstract class Factory : MonoBehaviour
             return false;
         }
 
-        currentWaveInProcess = true;
+        //currentWaveInProcess = true;
 
         return true;
     }
@@ -132,7 +132,7 @@ public abstract class Factory : MonoBehaviour
 
         yield return SpawnObject(interval, currentSpawnObjects);
         
-        nextWaveTime = Time.time + currentWave.timeToNextWave;
+        //nextWaveTime = Time.time + currentWave.timeToNextWave;
         currentWaveInProcess = false;
         
     }
@@ -158,6 +158,13 @@ public abstract class Factory : MonoBehaviour
             return false;
         }
         
+    }
+
+    public void ActivateNextWave(int waveIndex)
+    {
+        currentWaveInProcess = true;
+        fightPhase = true;
+        waveOrder = waveIndex;
     }
 
     protected abstract IEnumerator SpawnObject(float interval, List<ObjToSpawn> spawnObjectst);

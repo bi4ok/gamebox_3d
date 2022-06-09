@@ -11,7 +11,7 @@ public class Soundmessegemanager : MonoBehaviour
     {
         print("fffffffffff");
         int i = 0;
-        if (i <= messeges.Length) 
+        if (i < messeges.Length) 
         {
             audioSource.clip = messeges[i];
             audioSource.Play();
