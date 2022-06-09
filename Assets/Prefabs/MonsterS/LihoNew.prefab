@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8308069317180195151}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2526896316463042404}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8568471135988288150}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2339397729837624966}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7461167863266937334}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3012074647901275466}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1373498880938448142}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7242710416804775914}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6846814971383875378}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3909755627831790954}
   - component: {fileID: 5398685995755571137}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:liho_low_triangl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +411,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3071374282961494981}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8003192620939758502}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -472,7 +472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7877274193497811164}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +503,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8165018992510588335}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,9 +541,9 @@ GameObject:
   - component: {fileID: 8273375882618603450}
   - component: {fileID: 1500414828762922234}
   - component: {fileID: 2413099468461455212}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LihoNew
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -594,9 +594,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.2681088
-  m_Height: 0.84428567
+  m_Height: 1.3060547
   m_Direction: 1
-  m_Center: {x: 0.057539396, y: 0.41291502, z: 0.04374075}
+  m_Center: {x: 0.057539403, y: 0.6437995, z: 0.04374075}
 --- !u!114 &1500414828762922234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,17 +639,17 @@ NavMeshAgent:
   m_GameObject: {fileID: 2398612183240333825}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.11
+  m_Radius: 0.32
   m_Speed: 3.5
   m_Acceleration: 60
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 2
+  m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
-  m_Height: 0.3
-  m_BaseOffset: 0
+  m_Height: 0.74
+  m_BaseOffset: -0.03
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 2
 --- !u!1 &2441519115858176568
@@ -661,7 +661,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3366194056301465541}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,7 +692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5631908767880755700}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -723,7 +723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6169519751041441253}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -754,7 +754,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1405366876136201838}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -785,7 +785,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8841692970630624841}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -816,7 +816,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1462879024027948563}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -847,7 +847,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8816682272289416962}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -878,7 +878,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7146935026492073651}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -908,7 +908,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1901045103782139174}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -938,7 +938,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1754367312991701810}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -969,7 +969,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9009550483898424446}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1000,7 +1000,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4289330171087180852}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1031,7 +1031,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4618657206725964111}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1064,7 +1064,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2874148555105966623}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1095,7 +1095,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1080257830656612822}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1125,7 +1125,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8708776551920089596}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1155,7 +1155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7878997635222172443}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1186,7 +1186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3772666658259993107}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1217,7 +1217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9057356929197839396}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1248,7 +1248,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4015460936742997952}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1279,7 +1279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4377349851842182814}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1310,7 +1310,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1718804802018943090}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1343,7 +1343,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8929389770720361553}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1374,7 +1374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7283831935492795327}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1404,7 +1404,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3639328902478181865}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1435,7 +1435,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4832362731609361914}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1466,7 +1466,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7054163033056890735}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1497,7 +1497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4671482225808743762}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1528,7 +1528,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8159110579559161383}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1559,7 +1559,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4898885636295174973}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1590,7 +1590,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 406879504118076091}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1621,7 +1621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2289949385810092139}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1652,7 +1652,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 805284514941947498}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1683,7 +1683,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4561018200264737952}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1714,7 +1714,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8127288237741096819}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:HeadTop_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1744,7 +1744,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7834388917001166387}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: liho_1:RightHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

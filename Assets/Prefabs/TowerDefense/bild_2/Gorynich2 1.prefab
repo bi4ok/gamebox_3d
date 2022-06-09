@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4337670592571160224}
   - component: {fileID: 7700729466432882485}
   - component: {fileID: 5962506697361712427}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gorynich_1p:new__dragondr2_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 6123848587098477361}
   - component: {fileID: 6812612134611227402}
   - component: {fileID: 9009844131079507265}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gorynich_1p:new__dragondr5_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4051915603567366219}
-  m_Layer: 0
+  - component: {fileID: 552308700}
+  m_Layer: 10
   m_Name: Pushka
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,6 +196,22 @@ Transform:
   m_Father: {fileID: 2898002727121587669}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &552308700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935445024111144251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142aabf2dbf1dce4a941827364671e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunScript: {fileID: 2435793486995679076}
+  attackRange: 10
+  attackSpeed: 10
+  aimForwardOffset: 0
 --- !u!1 &2523596322428547273
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +223,7 @@ GameObject:
   - component: {fileID: 1325525666109419873}
   - component: {fileID: 2818228688827368525}
   - component: {fileID: 5073274583758035029}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gorynich_1p:new__dragondr1_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,10 +302,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2898002727121587669}
-  - component: {fileID: -1914988110951310923}
-  m_Layer: 0
-  m_Name: Gorynich
-  m_TagString: Untagged
+  m_Layer: 10
+  m_Name: Gorynich2 1
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -300,31 +316,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2556943482723915631}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -38.18, y: 0, z: -29.14}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 7061167992699250642}
   - {fileID: 4051915603567366219}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-1914988110951310923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2556943482723915631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 142aabf2dbf1dce4a941827364671e2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunScript: {fileID: 2435793486995679076}
-  attackRange: 10
-  attackSpeed: 10
-  aimForwardOffset: 0
 --- !u!1 &2753814540271309610
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +334,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2758011324833890884}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: PointOfAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 7061167992699250642}
   - component: {fileID: 1230002653439704575}
   - component: {fileID: 1494015820164675765}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Osnovanie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 8336515260357227669}
   - component: {fileID: 7768666939485275458}
   - component: {fileID: 2759289078589285001}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: polySurface18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 557851567767336542}
   - component: {fileID: 2886117968587045573}
   - component: {fileID: 2435793486995679076}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: TowerFlamethrower (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -680,7 +680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8649301448263465008}
   - component: {fileID: 7050779831772275977}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -774,7 +774,7 @@ GameObject:
   - component: {fileID: 4960213035828856422}
   - component: {fileID: 4850846231314058288}
   - component: {fileID: 7460027088947265862}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gorynich_1p:new__dragondr4_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -853,7 +853,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3157509633771953137}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

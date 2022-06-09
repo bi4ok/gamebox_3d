@@ -14,6 +14,7 @@ public class MedPackBonus : Bonus
     protected override IEnumerator BonusActivateEffect(Collider collision)
     {
         yield return new WaitForSeconds(0);
+        print("Лечим деда");
         PlayerController playerScript = collision.GetComponent<PlayerController>();
         playerScript.TakeHeal(healAmount);
         Destroy(gameObject);

@@ -68,7 +68,10 @@ public class MedPackCellContoller : MonoBehaviour
 
         for (int i=0; i<_medPack.countOfMedpacks; i++)
         {
-            var medPackObject = Instantiate(_medPack.prefabInGame, transform.position + Vector3.right * start * rangeBetweenPacks, transform.rotation, gameObject.transform);
+            var newPoint = transform.position + Vector3.right * start * rangeBetweenPacks + Vector3.up * 2;
+            var medPackObject = Instantiate(_medPack.prefabInGame,
+                newPoint, 
+                transform.rotation, gameObject.transform);
             start += 1;
             var objScript = medPackObject.GetComponent<Bonus>();
             objScript.aliveBonusTimer = 999;
