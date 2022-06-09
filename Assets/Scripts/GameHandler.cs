@@ -32,6 +32,8 @@ public class GameHandler : MonoBehaviour
 
     [SerializeField]
     private GameObject player;
+    [SerializeField]
+    private Soundmessegemanager soundmessr;
 
     [SerializeField]
     private MedPackCellContoller medPackFactory;
@@ -49,6 +51,7 @@ public class GameHandler : MonoBehaviour
 
     private void Awake()
     {
+      
         monstersInGame = 0;
         waveInProcess = true;
         gameStateFight = true;
@@ -56,6 +59,7 @@ public class GameHandler : MonoBehaviour
         portalManager = portalManagerHandler.GetComponent<PortalManager>();
         scrapStorage = new Dictionary<string, float>() { { "red", 9999 }, { "blue", 99999 }, { "yellow", 9999 } };
         UpdateInfo();
+        soundmessr.PlayMessege();
     }
 
     private void Update()
@@ -100,6 +104,7 @@ public class GameHandler : MonoBehaviour
                 gameStateFight = false;
                 gameEnd = portalManager.GameFinished();
                 menuScript.ChangeStateToBuild();
+                soundmessr.PlayMessege();
             }
             
         }
