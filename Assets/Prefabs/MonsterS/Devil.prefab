@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307389955784844873}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1785425037058524143}
@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408723091106175317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.93, y: 0.00000047683716, z: -31.52}
+  m_LocalPosition: {x: -25.93, y: 0.00000047683716, z: -31.577}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3561829660856597725}
@@ -148,7 +148,7 @@ CapsuleCollider:
   m_Radius: 0.6914978
   m_Height: 2.6871552
   m_Direction: 1
-  m_Center: {x: 0, y: 1.3915732, z: -0.4923172}
+  m_Center: {x: 0, y: 1.3915732, z: 0}
 --- !u!114 &458989234785837870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,11 +175,12 @@ MonoBehaviour:
   scrap: {fileID: 0}
   scrapValueMin: 2
   scrapValueMax: 6
-  bulletPrefab: {fileID: 0}
+  gunScript: {fileID: 0}
   bonusHandler: {fileID: 0}
   agent: {fileID: 9080034169845915117}
   shieldEffect: {fileID: 0}
   buffer: 1
+  lockOnPlayer: 0
   shieldRange: 5
 --- !u!195 &9080034169845915117
 NavMeshAgent:
@@ -190,7 +191,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1408723091106175317}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.3
+  m_Radius: 0.7
   m_Speed: 3.5
   m_Acceleration: 60
   avoidancePriority: 1

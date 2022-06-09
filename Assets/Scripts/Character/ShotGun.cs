@@ -5,7 +5,10 @@ using UnityEngine;
 public class ShotGun : Weapon
 {
 
-    protected override void BulletSpawn(GameObject bullet, float damage, float speed, float range, bool knockback, bool upgrade, Transform pointOfAttack)
+    protected override void BulletSpawn(GameObject bullet, 
+        float damage, float speed, float range, bool knockback, bool upgrade, 
+        Transform pointOfAttack,
+        GameObject attacker)
     {
         for (float i=-5; i<=4; i++)
         {
@@ -21,6 +24,7 @@ public class ShotGun : Weapon
             GameObject bulletObject = Instantiate(bullet, newPoint.position, newPoint.rotation);
             Rigidbody bulletBody = bulletObject.GetComponent<Rigidbody>();
             Bullet bulletInside = bulletObject.GetComponent<Bullet>();
+            bulletInside.ChooseAttacker(attacker.tag);
             bulletInside.damage = damage;
             bulletInside.range = range;
             bulletInside.knockback = knockback;

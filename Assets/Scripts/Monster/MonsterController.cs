@@ -36,7 +36,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
     [SerializeField]
     private float scrapValueMax;
     [SerializeField]
-    private GameObject bulletPrefab;
+    private Weapon gunScript;
     [SerializeField]
     private GameObject bonusHandler;
     [SerializeField]
@@ -45,6 +45,8 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
     private ParticleSystem shieldEffect;
     [SerializeField]
     private bool buffer = false;
+    [SerializeField]
+    private bool lockOnPlayer = false;
     [SerializeField]
     private float shieldRange;
 
@@ -86,6 +88,9 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         _monsterAnimator.speed = movementSpeed/3;
         _vectorToTarget = targetToAttack.transform.position - transform.position;
         _attackCoolDownTimer = 0;
+
+        gunScript.OnEquip(damageValue, attackSpeed, gameObject);
+
         if (shieldEffect != null)
             shieldEffect.Stop();
     }
@@ -164,6 +169,13 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
 
     private void GetTarget()
     {
+        if (lockOnPlayer)
+        {
+            transform.LookAt(targetToAttack.transform.position);
+            agent.SetDestination(targetToAttack.transform.position);
+            return;
+        }
+
         if ((_castleTargetPosition - transform.position).magnitude <= attackRange)
         {
             locked = true;
@@ -171,6 +183,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
             agent.SetDestination(_castleTargetPosition);
             return;
         }
+
 
         if (buffer)
         {
@@ -236,14 +249,13 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
             var player = target.GetComponent<PlayerController>();
             if (player != null && player.CheckThorns())
             {
-                print("МОБ БЬЁТ САМ СЕБЯ!!!");
                 TakeDamage(_monsterInside.statsOut["damage"].Value, "self");
             }
 
             // Ищем цель и наносим урон
-            if (bulletPrefab)
+            if (gunScript != null)
             {
-                RangeAttack(target);
+                gunScript.Shoot();
             }
             else
             {
@@ -266,19 +278,21 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         targetType.TakeDamage(_monsterInside.statsOut["damage"].Value, tag);
     }
 
-    private void RangeAttack(GameObject target)
-    {
-        Vector3 deltaDirection = (target.transform.position - transform.position).normalized;
-        Debug.DrawLine(transform.position + (deltaDirection * 2), target.transform.position);
-        Vector3 pointOfAttack = transform.position + deltaDirection;
+    //private void RangeAttack(GameObject target)
+    //{
+    //    print("RANGE ATTACK");
+    //    Vector3 deltaDirection = (target.transform.position - transform.position).normalized;
+    //    Debug.DrawLine(transform.position + (deltaDirection * 2), target.transform.position);
+    //    Vector3 pointOfAttack = transform.position + deltaDirection;
 
-        GameObject bullet = Instantiate(bulletPrefab, pointOfAttack, transform.rotation);
-        Rigidbody bulletBody = bullet.GetComponent<Rigidbody>();
-        Bullet bulletInside = bullet.GetComponent<Bullet>();
-        bulletInside.damage = _monsterInside.statsOut["damage"].Value;
-        bulletInside.ChooseAttacker(tag);
-        bulletBody.AddForce(deltaDirection * _monsterInside.statsOut["attackSpeed"].Value * _monsterInside.statsOut["movementSpeed"].Value, ForceMode.Impulse);
-    }
+    //    GameObject bullet = Instantiate(bulletPrefab, pointOfAttack, transform.rotation);
+    //    Rigidbody bulletBody = bullet.GetComponent<Rigidbody>();
+    //    Bullet bulletInside = bullet.GetComponent<Bullet>();
+    //    bulletInside.damage = _monsterInside.statsOut["damage"].Value;
+    //    bulletInside.ChooseAttacker(tag);
+    //    bulletBody.AddForce(deltaDirection * 1, ForceMode.Impulse);
+    //    //_monsterInside.statsOut["attackSpeed"].Value * _monsterInside.statsOut["movementSpeed"].Value
+    //}
 
     public void TakeDamage(float damageAmount, string damageFrom, bool knockback=false)
     {

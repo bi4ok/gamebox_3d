@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     private GameObject hitEffect;
 
     private string attackerTag="Player";
-    private string targetOfAttack;
+    private string targetOfAttack= "Monster";
     public float damage;
     public float range;
     public bool knockback;
@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        targetOfAttack = (attackerTag == "Player" || attackerTag == "Tower") ? "Monster" : "Player";
+        //targetOfAttack = (attackerTag == "Player" || attackerTag == "Tower") ? "Monster" : "Player";
         Destroy(gameObject, range);
         StartCoroutine(BlastEffect(range-0.1f));
     }
@@ -34,6 +34,7 @@ public class Bullet : MonoBehaviour
 
     private void ApplyDamage(Collider collision)
     {
+        
         if(!collision.CompareTag(attackerTag) 
             && !collision.CompareTag("Bonus") 
             && !collision.CompareTag("Bullet")
@@ -41,7 +42,7 @@ public class Bullet : MonoBehaviour
         {
             BlastHim(collision);
             StartCoroutine(BlastEffect(0f));
-            if (collision.CompareTag(attackerTag))
+            if (collision.CompareTag(targetOfAttack))
             {
                 if (!through)
                     Destroy(gameObject, 0.01f);
@@ -101,9 +102,10 @@ public class Bullet : MonoBehaviour
 
     }
 
-    public void ChooseAttacker(string tag)
+    public void ChooseAttacker(string attacker)
     {
-        attackerTag = tag;
+        attackerTag = attacker;
+        targetOfAttack = (attackerTag == "Player" || attackerTag == "Tower") ? "Monster" : "Player";
     }
 
 }

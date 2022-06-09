@@ -26,8 +26,6 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     [SerializeField]
     private Transform pointOfAttack;
     [SerializeField]
-    private GameObject bulletPrefab;
-    [SerializeField]
     private Weapon gunScript;
     [SerializeField] 
     private Weapon[] weapons;
@@ -112,7 +110,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
                 if (aimSucsess)
                 {
                     playerAnimator.SetTrigger("Shoot");
-                    gunScript.Shoot(bulletPrefab);
+                    gunScript.Shoot();
                 }
                 _nextAttackTime = Time.time + _attackCoolDown;
             }

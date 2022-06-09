@@ -20,6 +20,9 @@ public abstract class Weapon : MonoBehaviour
     private bool knockback;
 
     [SerializeField]
+    private GameObject bulletPrefab;
+
+    [SerializeField]
     private Light glowEffect;
 
     [SerializeField]
@@ -41,6 +44,7 @@ public abstract class Weapon : MonoBehaviour
     private float attackSpeed;
     private float _nextRangeAttackTime = 0f;
     private GameObject glow;
+    private GameObject attacker;
     private bool _isUpgrade;
 
     public void OnEquip(float damage, float speed, GameObject player)
@@ -49,6 +53,7 @@ public abstract class Weapon : MonoBehaviour
         attackSpeed = speed;
         if (glowEffect)
             glowEffect.color = glowColor;
+        attacker = player;
     }
 
     public void UnEquip()
@@ -56,15 +61,18 @@ public abstract class Weapon : MonoBehaviour
         Destroy(glow);
     }
 
-    protected abstract void BulletSpawn(GameObject bullet, float damage, float speed, float range, bool knockback, bool upgrade, Transform pointOfAttack);
+    protected abstract void BulletSpawn(GameObject bullet, 
+        float damage, float speed, float range, bool knockback, bool upgrade, 
+        Transform pointOfAttack,
+        GameObject attacker);
 
-    public void Shoot(GameObject bullet)
+    public void Shoot()
     {
         if (Time.time > _nextRangeAttackTime)
         {
             if (scrapName == "tower" || (gameHandler != null && gameHandler.PlayerTryWasteScrap(scrapName, 1)))
             {
-                BulletSpawn(bullet, weaponDamage, attackSpeed, weaponRange, knockback, _isUpgrade, pointOfAttack);
+                BulletSpawn(bulletPrefab, weaponDamage, attackSpeed, weaponRange, knockback, _isUpgrade, pointOfAttack, attacker);
                 audioSource.PlayOneShot(blasterSound, 0.1f);
                 _nextRangeAttackTime = Time.time + 1 / rangeAttackCoolDown;
             }

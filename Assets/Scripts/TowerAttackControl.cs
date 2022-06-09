@@ -8,18 +8,11 @@ public class TowerAttackControl : MonoBehaviour
     [SerializeField]
     private Weapon gunScript;
     [SerializeField]
-    private GameObject bullet;
-    [SerializeField]
     private float attackRange;
-    [SerializeField]
-    private float damageValue;
-    [SerializeField, Range(1,10)]
+    [SerializeField, Range(1,15)]
     private float attackSpeed;
     [SerializeField, Range(0, 1)]
     private float aimForwardOffset;
-
-    [SerializeField]
-    private SphereCollider mobSearch;
 
     private Collider[] monsters = new Collider[] { };
     private Collider target;
@@ -31,7 +24,7 @@ public class TowerAttackControl : MonoBehaviour
     {
         attackCooldown = 1 / attackSpeed;
         nextAttackTime = attackCooldown;
-        gunScript.OnEquip(damageValue, attackSpeed*2, gameObject);
+        gunScript.OnEquip(1, 1, gameObject);
     }
     private void Update()
     {
@@ -44,8 +37,9 @@ public class TowerAttackControl : MonoBehaviour
             }
             if (!target)
                 return;
+            print(target.name);
             Aim();
-            gunScript.Shoot(bullet);
+            gunScript.Shoot();
             nextAttackTime = Time.time + attackCooldown;
         }
 

@@ -5,7 +5,10 @@ using UnityEngine;
 public class Flamethrower : Weapon
 {
 
-    protected override void BulletSpawn(GameObject bullet, float damage, float speed, float range, bool knockback, bool upgrade, Transform pointOfAttack)
+    protected override void BulletSpawn(GameObject bullet, 
+        float damage, float speed, float range, bool knockback, bool upgrade, 
+        Transform pointOfAttack,
+        GameObject attacker)
     {
         var newPoint = pointOfAttack;
         
@@ -20,6 +23,7 @@ public class Flamethrower : Weapon
         GameObject bulletObject = Instantiate(bullet, newPoint.position, newPoint.rotation);
         Rigidbody bulletBody = bulletObject.GetComponent<Rigidbody>();
         Bullet bulletInside = bulletObject.GetComponent<Bullet>();
+        bulletInside.ChooseAttacker(attacker.tag);
         bulletInside.damage = damage;
         bulletInside.range = upgrade ? range * 2 : range;
         bulletInside.knockback = knockback;
