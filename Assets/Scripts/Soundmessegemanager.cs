@@ -9,6 +9,7 @@ public class Soundmessegemanager : MonoBehaviour
     [SerializeField] private AudioClip[] circlemesseges;
     public void PlayMessege()
     {
+        print("fffffffffff");
         int i = 0;
         if (i <= messeges.Length) 
         {
