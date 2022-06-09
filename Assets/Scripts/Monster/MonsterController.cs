@@ -89,7 +89,8 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         _vectorToTarget = targetToAttack.transform.position - transform.position;
         _attackCoolDownTimer = 0;
 
-        gunScript.OnEquip(damageValue, attackSpeed, gameObject);
+        if (gunScript != null)
+            gunScript.OnEquip(damageValue, attackSpeed, gameObject);
 
         if (shieldEffect != null)
             shieldEffect.Stop();

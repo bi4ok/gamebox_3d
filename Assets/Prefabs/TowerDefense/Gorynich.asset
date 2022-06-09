@@ -24,4 +24,4 @@ MonoBehaviour:
   costBrown: 100
   costBlue: 100
   check: {fileID: 0}
-  isBougth: 1
+  isBougth: 0
