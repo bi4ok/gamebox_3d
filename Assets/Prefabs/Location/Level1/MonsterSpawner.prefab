@@ -48,7 +48,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2530051665993682769
 Transform:
   m_ObjectHideFlags: 0
@@ -80,20 +80,20 @@ MonoBehaviour:
   - order: 0
     name: 
     allSpawnObjects:
-    - name: "\u0447\u0451\u0440\u0442"
-      objectPrefab: {fileID: 1408723091106175317, guid: 68b9cc2940c9dc44f922e781779e61aa, type: 3}
-      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
-      count: 3
-      spawnTimeFrom: 0
-      spawned: 0
-    timeToNextWave: 70
-    lastWave: 0
-  - order: 0
-    name: 
-    allSpawnObjects:
     - name: "\u041B\u0438\u0445\u043E"
       objectPrefab: {fileID: 9169583717073606146, guid: 09245baf94c2b1d4088a8ee8b269eb02, type: 3}
       scrapPrefab: {fileID: 7814339019828652005, guid: a1a9ea64f252f014aa698057c91f3d00, type: 3}
+      count: 5
+      spawnTimeFrom: 0
+      spawned: 0
+    timeToNextWave: 60
+    lastWave: 0
+  - order: 1
+    name: 
+    allSpawnObjects:
+    - name: "\u0420\u0443\u0441\u0430\u043B\u043A\u0430"
+      objectPrefab: {fileID: 6350322320348864596, guid: 9117f8ff7bf492c4eb9f812da5d5d3cc, type: 3}
+      scrapPrefab: {fileID: 7814339019828652005, guid: d114a490e1d5f424abbb8da8e7ea8156, type: 3}
       count: 5
       spawnTimeFrom: 0
       spawned: 0
