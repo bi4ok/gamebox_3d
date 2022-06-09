@@ -59,6 +59,7 @@ public class GameHandler : MonoBehaviour
         playerInfo = player.GetComponent<PlayerController>();
         scrapStorage = new Dictionary<string, float>() { { "red", 9999 }, { "blue", 99999 }, { "yellow", 9999 } };
         UpdateInfo();
+        menuScript.ChangeStateToFight();
         //soundmessr.PlayMessege();
     }
 

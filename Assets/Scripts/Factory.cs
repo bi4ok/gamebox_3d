@@ -113,6 +113,8 @@ public abstract class Factory : MonoBehaviour
 
     private void WhoToSpawnUpdate()
     {
+        if (waveOrder >= allWaves.Count)
+            return;
         currentWave = allWaves[waveOrder];
         currentSpawnObjects = currentWave.allSpawnObjects;
 
