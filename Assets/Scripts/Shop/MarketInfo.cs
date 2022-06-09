@@ -13,6 +13,12 @@ public class MarketInfo : MonoBehaviour
     private Text chtext;
     [SerializeField] 
     private Image mainimage;
+    [SerializeField]
+    private Text blue_pricetext;
+    [SerializeField]
+    private Text green_pricetext;
+    [SerializeField]
+    private Text red_pricetext;
     [SerializeField] 
     private Button buttonbuy;
     [SerializeField]
@@ -52,13 +58,12 @@ public class MarketInfo : MonoBehaviour
             "\n\n" + "Урон:" +
             "+" + products.damagePlus.ToString() + "," + "+" + products.damagePercent.ToString() + "%" +
             "\n\n" + "Скорость бега:" +
-            "+" + products.movementSpeedPlus.ToString() + "," + "+" + products.movementSpeedPercent.ToString() + "%" +
-            "\n\n" + "Стоимость в ошмётках:" + 
-            "\n" + "красные: " + products.cost_red.ToString() +
-            "\n" + "синие: " + products.cost_blue.ToString() +
-            "\n" + "жёлтые: " + products.cost_brown.ToString();
+            "+" + products.movementSpeedPlus.ToString() + "," + "+" + products.movementSpeedPercent.ToString() + "%" 
         ;
-
+        blue_pricetext.text = products.cost_blue.ToString();
+        green_pricetext.text = products.cost_brown.ToString();
+        red_pricetext.text = products.cost_red.ToString();
+        
         return productInfo;
     }
 
