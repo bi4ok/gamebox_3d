@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName ="New Product",menuName ="ProductforMarket" )]
+[CreateAssetMenu(fileName ="New Product",menuName ="Product/forMarket" )]
 public class ProductScript : ScriptableObject
 {
     public string type;

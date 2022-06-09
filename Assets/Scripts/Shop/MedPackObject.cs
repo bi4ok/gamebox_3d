@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "New Product", menuName = "ProductForMedPacks")]
+[CreateAssetMenu(fileName = "New Product", menuName = "Product/ForMedPacks")]
 public class MedPackObject : ScriptableObject
 {
     public string nameOfMedPack;

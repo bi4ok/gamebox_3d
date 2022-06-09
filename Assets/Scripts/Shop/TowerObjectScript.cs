@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "New Product", menuName = "ProductForTower")]
+[CreateAssetMenu(fileName = "New Product", menuName = "Product/ForTower")]
 public class TowerObjectScript : ScriptableObject
 {
     public string nameOfTower;
