@@ -35,7 +35,7 @@ public class MarketInfo : MonoBehaviour
         //"\n" + products.cost_brown.ToString();
         chtext.text = GetProductInfo(products);
 
-        mainimage.sprite = products.artwork;
+       // mainimage.sprite = products.artwork;
         currentproduct = products;
         currentSlot = slotScript;
         buttonbuy.interactable = currentSlot.CanIBuyIt();
