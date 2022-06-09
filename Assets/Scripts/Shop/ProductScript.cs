@@ -22,7 +22,6 @@ public class ProductScript : ScriptableObject
     public int healthPercent;
     public int movementSpeedPlus;
     public int movementSpeedPercent;
-    public Sprite artwork;
     public bool isbought;
     public ProductScript check;
 

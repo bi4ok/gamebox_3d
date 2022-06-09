@@ -13,7 +13,7 @@ public class Slot : MonoBehaviour
     public void OnCreate(ProductScript product)
     {
         productScript = product;
-        slotimage.sprite = product.artwork;
+       // slotimage.sprite = product.artwork;
  
     }
 
