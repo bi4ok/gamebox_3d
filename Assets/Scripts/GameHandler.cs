@@ -46,6 +46,7 @@ public class GameHandler : MonoBehaviour
     private int monstersInGame;
     private bool waveInProcess;
     private bool gameStateFight;
+    [SerializeField]
     private float timeToNextWave;
     private float timeForStartNextWave;
     private bool gameEnd = false;
@@ -106,6 +107,7 @@ public class GameHandler : MonoBehaviour
             if (gameStateFight)
             {
                 timeForStartNextWave = Time.time + timeToNextWave;
+                print(timeToNextWave);
                 gameStateFight = false;
                 gameEnd = portalManager.GameFinished();
                 menuScript.ChangeStateToBuild();

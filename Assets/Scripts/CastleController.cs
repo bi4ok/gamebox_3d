@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CastleController : MonoBehaviour, IDamageAble
 {
-    [SerializeField]
+    
     private float hitpoints;
+    [SerializeField]
+    private float maxhitpoints;
 
     [SerializeField]
     private GameObject deathEffect;
+    [SerializeField]
+    private Image linelife;
 
     [SerializeField]
     private GameObject gameManager;
@@ -18,15 +23,23 @@ public class CastleController : MonoBehaviour, IDamageAble
 
     private void Start()
     {
+        hitpoints = maxhitpoints;
         _stats = new Character(hitpoints);
+    }
+    void Update()
+    {
+        linelife.fillAmount = hitpoints / maxhitpoints;
+       
     }
 
     public void TakeDamage(float damageAmount, string damageFrom, bool knockback = false)
     {
         if (_alive)
         {
+            print(_alive + " alive");
             _stats.TakeDamage(damageAmount, damageFrom);
             DiedByDamage();
+            print(hitpoints);
         }
 
     }
@@ -52,6 +65,7 @@ public class CastleController : MonoBehaviour, IDamageAble
 
     public void Upgrade()
     {
+        
         Item hpBoost = new Item(healthPercent:50);
         print("дн сксвьемхъ - " + _stats.health);
         hpBoost.Equip(_stats);

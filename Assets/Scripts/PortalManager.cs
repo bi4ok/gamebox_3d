@@ -27,7 +27,7 @@ public class PortalManager : MonoBehaviour
     private float nextUpdateTime;
     private int counter = 0;
     private bool waveInProcess;
-    private float timeForNextWave = 0f;
+    private float timeForNextWave = 30f;
 
     private void Awake()
     {
@@ -102,7 +102,10 @@ public class PortalManager : MonoBehaviour
         counter += 1;
         print($"Волна №{counter} Запущена!");
         waveInProcess = true;
-        timeForNextWave = timeList[counter];
+        if(counter < timeList.Length)
+          timeForNextWave = timeList[counter];
+        
+
 
     }
 }
