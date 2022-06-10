@@ -28,7 +28,7 @@ public class CastleController : MonoBehaviour, IDamageAble
     }
     void Update()
     {
-        linelife.fillAmount = hitpoints / maxhitpoints;
+        linelife.fillAmount = _stats.health / maxhitpoints;
        
     }
 
@@ -39,7 +39,7 @@ public class CastleController : MonoBehaviour, IDamageAble
             print(_alive + " alive");
             _stats.TakeDamage(damageAmount, damageFrom);
             DiedByDamage();
-            print(hitpoints);
+            
         }
 
     }
