@@ -48,6 +48,13 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
 
     [SerializeField]
     private LayerMask groundMask;
+    [SerializeField]
+    private AudioClip death; // done
+    
+    [SerializeField]
+    private AudioClip luckymelee_attack;
+    [SerializeField]
+    private AudioClip unluckymelee_attack;
 
     private Character _characterInside;
     private Dictionary<string, Item> _inventory;
@@ -214,10 +221,13 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
 
     private void MeeleAttack()
     {
+        audioSource.clip = luckymelee_attack;
+        audioSource.Play();
 
         Collider[] hitEnemies = Physics.OverlapSphere(pointOfAttack.position, attackRange, LayerMask.GetMask("Enemy"));
         foreach (var enemy in hitEnemies)
         {
+           
             Attack(enemy.gameObject);
         }
     }
@@ -251,6 +261,8 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         {
             if (deathEffect)
             {
+                audioSource.clip = death;
+                audioSource.Play();
                 GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
                 SpriteRenderer effectSprite = effect.GetComponent<SpriteRenderer>();
                 Destroy(effect, 3f);
