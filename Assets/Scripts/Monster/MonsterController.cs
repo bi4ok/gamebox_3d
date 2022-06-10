@@ -84,7 +84,8 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         _changeTargetRange = changeTargetRange + attackRange;
         targetToAttack = target;
         _castleTargetPosition =  castle.transform.position + Random.insideUnitSphere*attackRange;
-        NavMesh.SamplePosition(_castleTargetPosition, out hitNavCastle, 5.0f, NavMesh.AllAreas);
+        NavMesh.SamplePosition(_castleTargetPosition, out hitNavCastle, 10.0f, NavMesh.AllAreas);
+        print(hitNavCastle.position + " HIT NAV CASTLE POSITION");
         _castle = castle;
         _castleHeart = heartOfCastle;
         agent.SetDestination(_castleTargetPosition);
@@ -176,7 +177,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         // Set the color of Gizmos to green
         Gizmos.color = Color.green;
 
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.DrawWireSphere(transform.position, shieldRange);
 
         //Gizmos.DrawWireSphere(_castleTargetPosition, attackRange);
         Gizmos.color = Color.red;
@@ -202,7 +203,6 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
 
         if (buffer)
         {
-            print("BUFFER get target");
 
             
             if (Time.time > timeToAttackCastle)
@@ -219,14 +219,6 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
                 transform.position = startTransform.position;
                 transform.rotation = startTransform.rotation;
                 agent.SetDestination(hit.position);
-                //var awayFromAttacker = (transform.position + (transform.position - targetToAttack.transform.position));
-                //print(targetToAttack.transform.position);
-                //awayFromAttacker.Normalize();
-                //Debug.DrawRay(transform.position, awayFromAttacker);
-                //Debug.DrawRay(transform.position, (-1) * awayFromAttacker, Color.red);
-                //print("RUN AWAY");
-                //transform.LookAt(awayFromAttacker);
-                //agent.SetDestination(awayFromAttacker);
             }
             return;
         }
@@ -317,7 +309,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
 
         if (buffer)
         {
-            timeToAttackCastle = Time.time + 100;
+            timeToAttackCastle = Time.time + 6;
         }
         
         _lastAttacker = damageFrom;

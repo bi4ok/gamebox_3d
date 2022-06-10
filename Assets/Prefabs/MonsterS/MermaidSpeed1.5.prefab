@@ -6944,8 +6944,8 @@ MonoBehaviour:
   targetToAttack: {fileID: 0}
   deathEffect: {fileID: 0}
   scrap: {fileID: 0}
-  scrapValueMin: 250
-  scrapValueMax: 500
+  scrapValueMin: 50
+  scrapValueMax: 150
   gunScript: {fileID: 7210687137278826188}
   bonusHandler: {fileID: 0}
   agent: {fileID: 8110213375144106215}
@@ -7824,6 +7824,10 @@ PrefabInstance:
       propertyPath: glowEffect
       value: 
       objectReference: {fileID: 617378833514841856}
+    - target: {fileID: 3948703234599400610, guid: ef46e09fc0de81343b69d270b3a3222b, type: 3}
+      propertyPath: weaponDamage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3948703234599400610, guid: ef46e09fc0de81343b69d270b3a3222b, type: 3}
       propertyPath: rangeAttackCoolDown
       value: 10

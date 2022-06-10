@@ -42,7 +42,7 @@ public class PortalManager : MonoBehaviour
             {"Down", downPortal}
         };
 
-        RunNextWave();
+        //RunNextWave();
         
     }
 

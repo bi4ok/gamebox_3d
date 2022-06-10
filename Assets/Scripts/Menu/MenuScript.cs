@@ -46,8 +46,8 @@ public class MenuScript : MonoBehaviour
     {
         Time.timeScale = 1; 
         volumeSlider.value = PlayerPrefs.GetFloat("MasterVolume");
-        combatCanvas.SetActive(true);
-        buildCanvas.SetActive(false);
+        //combatCanvas.SetActive(true);
+        //buildCanvas.SetActive(false);
     }
     public void FixedUpdate()
     {
@@ -83,12 +83,14 @@ public class MenuScript : MonoBehaviour
 
     public void ChangeStateToFight()
     {
+        print("++FIGHT+");
         combatCanvas.SetActive(true);
         buildCanvas.SetActive(false);
     }
 
     public void ChangeStateToBuild()
     {
+        print("++BUILD");
         combatCanvas.SetActive(false);
         buildCanvas.SetActive(true);
     }

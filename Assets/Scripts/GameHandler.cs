@@ -56,12 +56,13 @@ public class GameHandler : MonoBehaviour
     {
       
         monstersInGame = 0;
-        waveInProcess = true;
-        gameStateFight = true;
+        waveInProcess = false;
+        gameStateFight = false;
         playerInfo = player.GetComponent<PlayerController>();
-        scrapStorage = new Dictionary<string, float>() { { "red", 9999 }, { "blue", 99999 }, { "yellow", 9999 } };
+        scrapStorage = new Dictionary<string, float>() { { "red", 0 }, { "blue", 0 }, { "yellow", 99} };
         UpdateInfo();
-        menuScript.ChangeStateToFight();
+        menuScript.ChangeStateToBuild();
+        timeForStartNextWave = Time.time + 30;
         soundmessr.PlayMessege();
     }
 
@@ -121,6 +122,7 @@ public class GameHandler : MonoBehaviour
             {
                 if (Time.time > timeForStartNextWave)
                 {
+                    print("+++++");
                     portalManager.RunNextWave();
                     gameStateFight = true;
                     menuScript.ChangeStateToFight();

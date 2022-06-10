@@ -7,14 +7,21 @@ public class Soundmessegemanager : MonoBehaviour
     [SerializeField] private AudioClip[] messeges;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip[] circlemesseges;
+
+    private int soundIndex=0;
+
+    private void Awake()
+    {
+    }
     public void PlayMessege()
     {
-        print("fffffffffff");
-        int i = 0;
-        if (i < messeges.Length) 
+        print(soundIndex + "  " + messeges.Length + " sound index");
+        if (soundIndex < messeges.Length) 
         {
-            audioSource.clip = messeges[i];
+            audioSource.clip = messeges[soundIndex];
             audioSource.Play();
+            soundIndex += 1;
+            print(soundIndex + " увеличен на 1");
         }
         else
         {

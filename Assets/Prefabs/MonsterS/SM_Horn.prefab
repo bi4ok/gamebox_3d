@@ -982,7 +982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824bc477b3e65ac48b01acc638cff12b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 30
+  startHealth: 20
   damageValue: 10
   energyValue: 0
   shieldPower: 0
@@ -994,15 +994,17 @@ MonoBehaviour:
   targetToAttack: {fileID: 0}
   deathEffect: {fileID: 0}
   scrap: {fileID: 0}
-  scrapValueMin: 2
-  scrapValueMax: 6
+  scrapValueMin: 1
+  scrapValueMax: 3
   gunScript: {fileID: 0}
   bonusHandler: {fileID: 0}
   agent: {fileID: 0}
   shieldEffect: {fileID: 0}
   buffer: 1
   lockOnPlayer: 0
-  shieldRange: 5
+  shieldRange: 12
+  audio_source: {fileID: 0}
+  death: {fileID: 0}
 --- !u!195 &1948019535572450802
 NavMeshAgent:
   m_ObjectHideFlags: 0

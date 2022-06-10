@@ -5427,8 +5427,8 @@ MonoBehaviour:
   targetToAttack: {fileID: 0}
   deathEffect: {fileID: 0}
   scrap: {fileID: 0}
-  scrapValueMin: 2
-  scrapValueMax: 6
+  scrapValueMin: 1
+  scrapValueMax: 3
   gunScript: {fileID: 0}
   bonusHandler: {fileID: 0}
   agent: {fileID: 2413099468461455212}

@@ -55,8 +55,8 @@ public abstract class Factory : MonoBehaviour
         currentSpawnObjects = new List<ObjToSpawn>();
         waveOrder = 0;
         maxWaveOrder = allWaves.Capacity;
-        fightPhase = true;
-        currentWaveInProcess = true;
+        fightPhase = isMonsters? false : true;
+        currentWaveInProcess = isMonsters ? false : true;
 
     }
 
