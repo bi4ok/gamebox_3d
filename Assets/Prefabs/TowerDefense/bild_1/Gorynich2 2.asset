@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 392a85844985a294382faaa7f611e47f, type: 3}
+  m_Name: Gorynich2 2
+  m_EditorClassIdentifier: 
+  nameOfTower: "\u0417\u043C\u0435\u0439-\u0433\u043E\u0440\u044B\u043D\u044B\u0447
+    LVL 2"
+  towerInfo: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 13 \u0443\u0440\u043E\u043D\u0430
+    \u0437\u0430 \u0432\u044B\u0441\u0442\u0440\u0435\u043B. \u0421\u0442\u0440\u0435\u043B\u044F\u0435\u0442
+    10 \u0440\u0430\u0437"
+  prefabInGame: {fileID: 2556943482723915631, guid: ef386ea37a8ccc24cb38fd5e62b59629, type: 3}
+  prefabInUI: {fileID: 4506649144114880103, guid: b261ebcb2766f5b49be88ab608099886, type: 3}
+  imgOfTower: {fileID: 21300000, guid: 1f4a289b82485d94fb80b9f86a355952, type: 3}
+  costRed: 0
+  costBrown: 100
+  costBlue: 100
+  check: {fileID: 11400000, guid: b255f25423ce9d042953a18a41f655a6, type: 2}
+  isBougth: 0
