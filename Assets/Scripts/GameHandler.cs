@@ -116,7 +116,7 @@ public class GameHandler : MonoBehaviour
                 gameStateFight = false;
                 gameEnd = portalManager.GameFinished();
                 menuScript.ChangeStateToBuild();
-                //soundmessr.PlayMessege();
+                soundmessr.PlayMessege();
             }
 
             if (!gameStateFight)

@@ -121,10 +121,10 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         {
             GetTarget();
 
-            if (agent.status == NavMeshPathStatus.PathInvalid || agent.status == NavMeshPathStatus.PathPartial)
-            {
-                // Target is unreachable
-            }
+            //if (agent.status == NavMeshPathStatus.PathInvalid || agent.status == NavMeshPathStatus.PathPartial)
+            //{
+            //    // Target is unreachable
+            //}
 
             if (_vectorToTarget.magnitude > _monsterInside.statsOut["range"].Value || !targetToAttack.activeSelf)
             {
