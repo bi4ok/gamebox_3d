@@ -49,7 +49,10 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
     private bool lockOnPlayer = false;
     [SerializeField]
     private float shieldRange;
-
+    [SerializeField]
+    private AudioSource audio_source;
+    [SerializeField]
+    private AudioClip death;
     private GameHandler gameHandler;
 
     private Character _monsterInside;
@@ -343,6 +346,8 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
             dead = true;
             if (deathEffect)
             {
+                audio_source.clip = death;
+                audio_source.Play();
                 GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
                 Destroy(effect, 3f);
             }
