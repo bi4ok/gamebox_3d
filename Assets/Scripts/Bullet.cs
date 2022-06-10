@@ -14,12 +14,13 @@ public class Bullet : MonoBehaviour
     public bool knockback;
     public bool through = false;
     public bool bounce = false;
+    private List<string> targetsOfAttack;
 
     private void Start()
     {
         //targetOfAttack = (attackerTag == "Player" || attackerTag == "Tower") ? "Monster" : "Player";
         Destroy(gameObject, range);
-        StartCoroutine(BlastEffect(range-0.1f));
+        StartCoroutine(BlastEffect(range-0.01f));
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -34,29 +35,57 @@ public class Bullet : MonoBehaviour
 
     private void ApplyDamage(Collider collision)
     {
-        
-        if(!collision.CompareTag(attackerTag) 
-            && !collision.CompareTag("Bonus") 
-            && !collision.CompareTag("Bullet")
-            && !collision.CompareTag("Tower"))
+
+        if (targetsOfAttack.Contains(collision.tag))
         {
             BlastHim(collision);
             StartCoroutine(BlastEffect(0f));
             if (collision.CompareTag(targetOfAttack))
             {
                 if (!through)
-                    Destroy(gameObject, 0.01f);
+                    Destroy(gameObject, 0f);
             }
             else
             {
-                Destroy(gameObject, 0.01f);
+                Destroy(gameObject, 0f);
             }
             if (bounce)
             {
                 SpawnBounce();
             }
-            
         }
+        else
+        {
+            Destroy(gameObject, 0f);
+        }
+        
+        //if(!collision.CompareTag(attackerTag) 
+        //    && !collision.CompareTag("Bonus") 
+        //    && !collision.CompareTag("Bullet")
+        //    && !collision.CompareTag("Tower")
+        //    && !collision.CompareTag("Castle"))
+        //{
+        //    BlastHim(collision);
+        //    StartCoroutine(BlastEffect(0f));
+        //    if (collision.CompareTag(targetOfAttack))
+        //    {
+        //        if (!through)
+        //            Destroy(gameObject, 0f);
+        //    }
+        //    else
+        //    {
+        //        Destroy(gameObject, 0f);
+        //    }
+        //    if (bounce)
+        //    {
+        //        SpawnBounce();
+        //    }
+            
+        //}
+        //else if (collision.CompareTag("Castle"))
+        //{
+        //    Destroy(gameObject, 0f);
+        //}
 
     }
 
@@ -105,7 +134,15 @@ public class Bullet : MonoBehaviour
     public void ChooseAttacker(string attacker)
     {
         attackerTag = attacker;
-        targetOfAttack = (attackerTag == "Player" || attackerTag == "Tower") ? "Monster" : "Player";
+        //targetOfAttack = (attackerTag == "Player" || attackerTag == "Tower") ? "Monster" : "Player";
+        if (attackerTag == "Player" || attackerTag == "Tower")
+        {
+            targetsOfAttack = new List<string>() { "Monster" };
+        }
+        else if (attackerTag == "Monster")
+        {
+            targetsOfAttack = new List<string>() { "Player", "Castle" };
+        }
     }
 
 }

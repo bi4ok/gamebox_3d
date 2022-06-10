@@ -33,6 +33,8 @@ public class GameHandler : MonoBehaviour
     [SerializeField]
     private GameObject player;
     [SerializeField]
+    private CastleController castle;
+    [SerializeField]
     private Soundmessegemanager soundmessr;
 
     [SerializeField]
@@ -46,7 +48,6 @@ public class GameHandler : MonoBehaviour
     private int monstersInGame;
     private bool waveInProcess;
     private bool gameStateFight;
-    [SerializeField]
     private float timeToNextWave;
     private float timeForStartNextWave;
     private bool gameEnd = false;
@@ -73,6 +74,10 @@ public class GameHandler : MonoBehaviour
             nextWaveText.text = ((int)(timeForStartNextWave - Time.time)).ToString();
         }
         if (gameEnd)
+        {
+            WinGame();
+        }
+        else if (castle.DiedByDamage())
         {
             EndGame();
         }
@@ -162,6 +167,11 @@ public class GameHandler : MonoBehaviour
     public void EndGame()
     {
         menuScript.EndGame();
+    }
+
+    public void WinGame()
+    {
+        menuScript.WinGame();
     }
 
     public void BackToMenuButton()

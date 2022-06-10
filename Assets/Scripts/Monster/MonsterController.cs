@@ -60,6 +60,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
 
     private Vector3 _castleTargetPosition;
     private GameObject _castle;
+    private GameObject _castleHeart;
     private float _changeTargetRange;
     private bool locked = false;
     private bool dead = false;
@@ -69,7 +70,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
     private float timeToAttackCastle = 0f;
     
 
-    public void OnCreate(GameObject target, GameObject castle, float changeTargetRange, GameObject bonus, GameObject scrapPrefab)
+    public void OnCreate(GameObject target, GameObject castle, GameObject heartOfCastle, float changeTargetRange, GameObject bonus, GameObject scrapPrefab)
     {
         _monsterAnimator = GetComponent<Animator>();
         bonusHandler = bonus;
@@ -80,6 +81,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         targetToAttack = target;
         _castleTargetPosition =  castle.transform.position + Random.insideUnitSphere*attackRange;
         _castle = castle;
+        _castleHeart = heartOfCastle;
         agent.SetDestination(_castleTargetPosition);
 
         _monsterInside = new Character(startHealth, damageValue, energyValue, shieldPower, attackRange, attackSpeed, movementSpeed, tag);
@@ -119,6 +121,11 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         {
             GetTarget();
 
+            if (agent.status == NavMeshPathStatus.PathInvalid || agent.status == NavMeshPathStatus.PathPartial)
+            {
+                // Target is unreachable
+            }
+
             if (_vectorToTarget.magnitude > _monsterInside.statsOut["range"].Value || !targetToAttack.activeSelf)
             {
                 _monsterAnimator.SetFloat("Speed", _monsterInside.statsOut["movementSpeed"].Value);
@@ -133,6 +140,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         }
         else
         {
+            transform.LookAt(_castleHeart.transform);
             Attack(_castle);
         }
         
@@ -179,9 +187,16 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
 
         if ((_castleTargetPosition - transform.position).magnitude <= attackRange)
         {
+            print(gameObject.name + " locked on castle");
             locked = true;
+            
+            //transform.LookAt(_castleHeart.transform);
+            var direction = _castleHeart.transform.position - transform.position;
+            direction.y = 0;
+            transform.forward = direction;
+            //agent.SetDestination(_castleTargetPosition);
             agent.isStopped = true;
-            agent.SetDestination(_castleTargetPosition);
+            Debug.DrawLine(transform.position, _castleTargetPosition, Color.red);
             return;
         }
 
@@ -353,10 +368,6 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
             BonusController bonusScript = bonusHandler.GetComponent<BonusController>();
             bonusScript.PlayerScoresUp(scoreForKill, _lastAttacker);
             
-            if (endAfterDie)
-            {
-                gameHandler.EndGame();
-            }
             gameHandler.MonsterIsDead();
             Destroy(gameObject);
         }

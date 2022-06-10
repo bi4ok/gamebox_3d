@@ -12,6 +12,9 @@ public class MonsterFactory : Factory
     private GameObject targetToFollow;
 
     [SerializeField]
+    private GameObject heartOfCastle;
+
+    [SerializeField]
     private float changeTargetRange;
 
     [SerializeField]
@@ -29,7 +32,7 @@ public class MonsterFactory : Factory
                 var objScript = objFromPrefab.GetComponent<MonsterController>();
                 if (targetToFollow != null)
                 {
-                    objScript.OnCreate(targetToAttack, targetToFollow, changeTargetRange, bonusHandler, spawnObject.scrapPrefab);
+                    objScript.OnCreate(targetToAttack, targetToFollow, targetToFollow, changeTargetRange, bonusHandler, spawnObject.scrapPrefab);
                 }
 
 
