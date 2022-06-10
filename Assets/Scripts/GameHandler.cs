@@ -95,7 +95,6 @@ public class GameHandler : MonoBehaviour
 
         if (monstersInGame > 0 || waveInProcess)
         {
-            print("ÌÎÁÛ ÅÑÒÜ, ÈÃÐÀ Â ÏÐÎÖÅÑÑÅ");
             //if (!gameStateFight)
             //{
             //    gameStateFight = true;
@@ -107,7 +106,6 @@ public class GameHandler : MonoBehaviour
         }
         else
         {
-            print("ìîáîâ ÍÅÒ, èãðà â ïðîöåññå? " + waveInProcess + gameStateFight);
 
             if (gameStateFight)
             {
@@ -121,7 +119,6 @@ public class GameHandler : MonoBehaviour
 
             if (!gameStateFight)
             {
-                print($"Äî ñëåäóþùåé âîëíû {timeForStartNextWave-Time.time}");
                 if (Time.time > timeForStartNextWave)
                 {
                     portalManager.RunNextWave();

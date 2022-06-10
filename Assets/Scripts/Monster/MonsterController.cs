@@ -68,6 +68,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
     private float shieldCD = 1f;
     private float nextShieldCastTime = 0f;
     private float timeToAttackCastle = 0f;
+    private NavMeshHit hitNavCastle;
     
 
     public void OnCreate(GameObject target, GameObject castle, GameObject heartOfCastle, float changeTargetRange, GameObject bonus, GameObject scrapPrefab)
@@ -80,6 +81,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         _changeTargetRange = changeTargetRange + attackRange;
         targetToAttack = target;
         _castleTargetPosition =  castle.transform.position + Random.insideUnitSphere*attackRange;
+        NavMesh.SamplePosition(_castleTargetPosition, out hitNavCastle, 5.0f, NavMesh.AllAreas);
         _castle = castle;
         _castleHeart = heartOfCastle;
         agent.SetDestination(_castleTargetPosition);
@@ -96,6 +98,9 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
 
         if (shieldEffect != null)
             shieldEffect.Stop();
+
+
+        
     }
 
     private void FixedUpdate()
@@ -120,11 +125,6 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         if (!locked)
         {
             GetTarget();
-
-            if (agent.status == NavMeshPathStatus.PathInvalid || agent.status == NavMeshPathStatus.PathPartial)
-            {
-                // Target is unreachable
-            }
 
             if (_vectorToTarget.magnitude > _monsterInside.statsOut["range"].Value || !targetToAttack.activeSelf)
             {
@@ -173,7 +173,11 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         // Set the color of Gizmos to green
         Gizmos.color = Color.green;
 
-        Gizmos.DrawWireSphere(transform.position, shieldRange);
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+
+        //Gizmos.DrawWireSphere(_castleTargetPosition, attackRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(hitNavCastle.position, attackRange);
     }
 
     private void GetTarget()
@@ -185,18 +189,10 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
             return;
         }
 
-        if ((_castleTargetPosition - transform.position).magnitude <= attackRange)
+        if ((hitNavCastle.position - transform.position).magnitude <= attackRange)
         {
-            print(gameObject.name + " locked on castle");
             locked = true;
-            
-            //transform.LookAt(_castleHeart.transform);
-            var direction = _castleHeart.transform.position - transform.position;
-            direction.y = 0;
-            transform.forward = direction;
-            //agent.SetDestination(_castleTargetPosition);
             agent.isStopped = true;
-            Debug.DrawLine(transform.position, _castleTargetPosition, Color.red);
             return;
         }
 
@@ -208,9 +204,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
             
             if (Time.time > timeToAttackCastle)
             {
-                print(timeToAttackCastle);
-                transform.LookAt(_castleTargetPosition);
-                agent.SetDestination(_castleTargetPosition);
+                agent.SetDestination(hitNavCastle.position);
             }
             else
             {
@@ -236,8 +230,8 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
 
         if (_vectorToTarget.magnitude > _changeTargetRange || !targetToAttack.activeSelf)
         {
-            transform.LookAt(_castleTargetPosition);
-            agent.SetDestination(_castleTargetPosition);
+            transform.LookAt(hitNavCastle.position);
+            agent.SetDestination(hitNavCastle.position);
         }
         else if (targetToAttack.activeSelf)
         {
