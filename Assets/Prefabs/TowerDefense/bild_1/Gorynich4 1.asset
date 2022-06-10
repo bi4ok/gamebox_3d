@@ -19,7 +19,7 @@ MonoBehaviour:
     10 \u0440\u0430\u0437"
   prefabInGame: {fileID: 2556943482723915631, guid: d85bb5c2ee66f694c835a7dab07f783e, type: 3}
   prefabInUI: {fileID: 4506649144114880103, guid: b261ebcb2766f5b49be88ab608099886, type: 3}
-  imgOfTower: {fileID: 21300000, guid: f24dfabee004aae45bb8fe59229d8b52, type: 3}
+  imgOfTower: {fileID: 21300000, guid: 4c7bb07573f30eb4ba96abc74d423a27, type: 3}
   costRed: 0
   costBrown: 100
   costBlue: 100
