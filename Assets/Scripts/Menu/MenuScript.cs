@@ -13,6 +13,9 @@ public class MenuScript : MonoBehaviour
     private GameObject buildCanvas;
 
     [SerializeField]
+    private GameObject winCanvas;
+
+    [SerializeField]
     private GameObject gameOverCanvas;
 
     [SerializeField]
@@ -96,6 +99,16 @@ public class MenuScript : MonoBehaviour
         combatCanvas.SetActive(false);
         buildCanvas.SetActive(false);
         gameOverCanvas.SetActive(true);
+        ShowScoreOnEnd();
+
+    }
+
+    public void WinGame()
+    {
+        Time.timeScale = 0;
+        combatCanvas.SetActive(false);
+        buildCanvas.SetActive(false);
+        winCanvas.SetActive(true);
         ShowScoreOnEnd();
 
     }
