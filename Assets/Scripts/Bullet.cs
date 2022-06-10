@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
 
     private void ApplyDamage(Collider collision)
     {
-
+        print(collision.name);
         if (targetsOfAttack.Contains(collision.tag))
         {
             BlastHim(collision);
@@ -53,6 +53,10 @@ public class Bullet : MonoBehaviour
             {
                 SpawnBounce();
             }
+        }
+        else if (collision.CompareTag("Bullet") || collision.CompareTag("Bonus"))
+        {
+            
         }
         else
         {

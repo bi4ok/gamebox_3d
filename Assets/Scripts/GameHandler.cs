@@ -62,7 +62,7 @@ public class GameHandler : MonoBehaviour
         scrapStorage = new Dictionary<string, float>() { { "red", 9999 }, { "blue", 99999 }, { "yellow", 9999 } };
         UpdateInfo();
         menuScript.ChangeStateToFight();
-        //soundmessr.PlayMessege();
+        soundmessr.PlayMessege();
     }
 
     private void Update()
