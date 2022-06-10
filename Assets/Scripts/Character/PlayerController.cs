@@ -33,7 +33,9 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     [SerializeField]
     private GameHandler gameManager;
     [SerializeField]
-    private AudioClip blasterSound;
+    private AudioClip soundOfDamage;
+    [SerializeField]
+    private AudioClip guitarSolo;
     [SerializeField]
     private AudioSource audioSource;
     [SerializeField]
@@ -163,13 +165,20 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
 
     private void Move()
     {
-        var currentMoveVector = CalculateMovementVector();
-        if (_movementAxes.magnitude > 0)
-        {
+        //var currentMoveVector = CalculateMovementVector();
+        //if (_movementAxes.magnitude > 0)
+        //{
 
-            _playerRigidBody.MovePosition(currentMoveVector);
-            _playerRigidBody.velocity = Vector3.zero;
-        }
+        //    _playerRigidBody.MovePosition(currentMoveVector);
+        //    _playerRigidBody.velocity = Vector3.zero;
+        //}
+
+        _movementAxes.x = Input.GetAxisRaw("Horizontal");
+        _movementAxes.z = Input.GetAxisRaw("Vertical");
+        playerAnimator.SetFloat("CurrentSpeed", _movementAxes.magnitude);
+        playerAnimator.SetFloat("Horizontal", _movementAxes.x * transform.right.normalized.x);
+        playerAnimator.SetFloat("Vertical", _movementAxes.z * transform.forward.normalized.z);
+        _playerRigidBody.velocity = new Vector3(_movementAxes.x, _playerRigidBody.velocity.y, _movementAxes.z)* _characterInside.statsOut["movementSpeed"].Value;
 
     }
 
@@ -244,6 +253,8 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     {
         if (alive)
         {
+            audioSource.clip = soundOfDamage;
+            audioSource.Play();
             _characterInside.TakeDamage(damageAmount, damageFrom);
             DiedByDamage();
         }
@@ -261,12 +272,13 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         {
             if (deathEffect)
             {
-                audioSource.clip = death;
-                audioSource.Play();
+
                 GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
                 SpriteRenderer effectSprite = effect.GetComponent<SpriteRenderer>();
                 Destroy(effect, 3f);
             }
+            audioSource.clip = death;
+            audioSource.Play();
             alive = false;
             playerSpawner.StartRespawn(_timeToRespawn);
         }

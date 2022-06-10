@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
     public bool knockback;
     public bool through = false;
     public bool bounce = false;
-    private List<string> targetsOfAttack;
+    private List<string> targetsOfAttack = new List<string>() { "Player", "Castle" };
 
     private void Start()
     {
@@ -35,7 +35,6 @@ public class Bullet : MonoBehaviour
 
     private void ApplyDamage(Collider collision)
     {
-        print(collision.name);
         if (targetsOfAttack.Contains(collision.tag))
         {
             BlastHim(collision);

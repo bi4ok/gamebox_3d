@@ -15,18 +15,20 @@ public class Soundmessegemanager : MonoBehaviour
     }
     public void PlayMessege()
     {
-        print(soundIndex + "  " + messeges.Length + " sound index");
         if (soundIndex < messeges.Length) 
         {
             audioSource.clip = messeges[soundIndex];
             audioSource.Play();
             soundIndex += 1;
-            print(soundIndex + " увеличен на 1");
         }
         else
         {
-            audioSource.clip = circlemesseges[Random.Range(0, circlemesseges.Length)];
-            audioSource.Play();
+            if (circlemesseges.Length > 0)
+            {
+                audioSource.clip = circlemesseges[Random.Range(0, circlemesseges.Length)];
+                audioSource.Play();
+            }
+
         }
     }
 }

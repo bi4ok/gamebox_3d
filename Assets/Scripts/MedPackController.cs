@@ -38,8 +38,12 @@ public class MedPackController : MonoBehaviour
     private void TowerInfo(MedPackObject medpack)
     {
         string info =
-            $"Башня {medpack.name}:\n" +
-            $"{medpack.medpackInfo}";
+            $"Самобранка {medpack.name}:\n" +
+            $"{medpack.medpackInfo}\n" +
+            $"Стоимость:\n" +
+            $"Горящие ошмётки: {medpack.costRed}\n" +
+            $"Мокрые ошмётки: {medpack.costBlue}\n" +
+            $"Твёрдые ошмётки: {medpack.costBrown}";
 
         medpackInfoText.text = info;
 

@@ -59,7 +59,7 @@ public class GameHandler : MonoBehaviour
         waveInProcess = false;
         gameStateFight = false;
         playerInfo = player.GetComponent<PlayerController>();
-        scrapStorage = new Dictionary<string, float>() { { "red", 0 }, { "blue", 0 }, { "yellow", 99} };
+        scrapStorage = new Dictionary<string, float>() { { "red", 5 }, { "blue", 250 }, { "yellow", 5} };
         UpdateInfo();
         menuScript.ChangeStateToBuild();
         timeForStartNextWave = Time.time + 30;
@@ -86,9 +86,9 @@ public class GameHandler : MonoBehaviour
     }
     private void UpdateInfo()
     {
-        red_scrtxt.text = (scrapStorage["red"] > 999 ? "999" : scrapStorage["red"].ToString());
-        blue_scrtxt.text = (scrapStorage["blue"] > 999 ? "999" : scrapStorage["blue"].ToString());
-        brown_scrtxt.text = (scrapStorage["yellow"] > 999 ? "999" : scrapStorage["yellow"].ToString());
+        red_scrtxt.text = (scrapStorage["red"] > 99 ? "99" : scrapStorage["red"].ToString());
+        blue_scrtxt.text = (scrapStorage["blue"] > 99 ? "99" : scrapStorage["blue"].ToString());
+        brown_scrtxt.text = (scrapStorage["yellow"] > 99 ? "99" : scrapStorage["yellow"].ToString());
     }
 
     private void CheckGameState()

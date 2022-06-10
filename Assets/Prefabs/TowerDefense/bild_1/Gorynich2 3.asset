@@ -14,14 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameOfTower: "\u0417\u043C\u0435\u0439-\u0433\u043E\u0440\u044B\u043D\u044B\u0447
     LVL 3"
-  towerInfo: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 15 \u0443\u0440\u043E\u043D\u0430
-    \u0437\u0430 \u0432\u044B\u0441\u0442\u0440\u0435\u043B. \u0421\u0442\u0440\u0435\u043B\u044F\u0435\u0442
-    15 \u0440\u0430\u0437"
+  towerInfo: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 15 \u0435\u0434\u0438\u043D\u0438\u0446
+    \u0443\u0440\u043E\u043D\u0430 \u0432 \u0441\u0435\u043A\u0443\u043D\u0434\u0443"
   prefabInGame: {fileID: 2556943482723915631, guid: 6e332d01d606bb644900251ea98a1418, type: 3}
   prefabInUI: {fileID: 4506649144114880103, guid: b261ebcb2766f5b49be88ab608099886, type: 3}
   imgOfTower: {fileID: 21300000, guid: 49c2882c52c9a8f488e1f558a0b626de, type: 3}
-  costRed: 0
-  costBrown: 100
-  costBlue: 100
+  costRed: 10
+  costBrown: 10
+  costBlue: 0
   check: {fileID: 11400000, guid: 6a053aeb50d86d0438f7c55e36d2c45b, type: 2}
   isBougth: 0

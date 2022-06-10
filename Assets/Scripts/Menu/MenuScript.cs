@@ -46,12 +46,11 @@ public class MenuScript : MonoBehaviour
     {
         Time.timeScale = 1; 
         volumeSlider.value = PlayerPrefs.GetFloat("MasterVolume");
-        //combatCanvas.SetActive(true);
-        //buildCanvas.SetActive(false);
     }
-    public void FixedUpdate()
+    public void Update()
     {
-        PauseGame();
+        if (Input.GetKey(KeyCode.Escape))
+            PauseGame();
     }
 
     public void ChangeToMainMenu()
@@ -67,11 +66,8 @@ public class MenuScript : MonoBehaviour
 
     public void PauseGame()
     {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            PauseMenu.SetActive(true);
-            Time.timeScale = 0;
-        }
+        PauseMenu.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void ContinueGameButton()
@@ -83,14 +79,12 @@ public class MenuScript : MonoBehaviour
 
     public void ChangeStateToFight()
     {
-        print("++FIGHT+");
         combatCanvas.SetActive(true);
         buildCanvas.SetActive(false);
     }
 
     public void ChangeStateToBuild()
     {
-        print("++BUILD");
         combatCanvas.SetActive(false);
         buildCanvas.SetActive(true);
     }

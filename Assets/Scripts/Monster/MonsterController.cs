@@ -50,9 +50,13 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
     [SerializeField]
     private float shieldRange;
     [SerializeField]
-    private AudioSource audio_source;
+    private float audioVolume=1f;
     [SerializeField]
     private AudioClip death;
+    [SerializeField]
+    private GameObject soundHanlder;
+
+
     private GameHandler gameHandler;
 
     private Character _monsterInside;
@@ -215,7 +219,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
                 transform.rotation = Quaternion.LookRotation(transform.position - targetToAttack.transform.position);
                 Vector3 runTo = transform.position + transform.forward * 5;
                 NavMeshHit hit;
-                NavMesh.SamplePosition(runTo, out hit, 5, 1 << NavMesh.GetNavMeshLayerFromName("Default"));
+                NavMesh.SamplePosition(runTo, out hit, 10, NavMesh.AllAreas);
                 transform.position = startTransform.position;
                 transform.rotation = startTransform.rotation;
                 agent.SetDestination(hit.position);
@@ -309,7 +313,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
 
         if (buffer)
         {
-            timeToAttackCastle = Time.time + 6;
+            timeToAttackCastle = Time.time + 2;
         }
         
         _lastAttacker = damageFrom;
@@ -337,16 +341,14 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         {
             dead = true;
             if (deathEffect)
-            {
-                audio_source.clip = death;
-                audio_source.Play();
+            { 
                 GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
                 Destroy(effect, 3f);
             }
 
             if (scrap)
             {
-                GameObject scrapObj = Instantiate(scrap, transform.position, Quaternion.identity);
+                GameObject scrapObj = Instantiate(scrap, transform.position + Vector3.up, Quaternion.identity);
                 var scrapBonus = scrapObj.GetComponent<ScrapBonus>();
                 scrapBonus.SetStats(gameHandler, (int)Random.Range(scrapValueMin, scrapValueMax));
                 var objScript = scrapObj.GetComponent<Bonus>();
@@ -354,8 +356,12 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
                 objScript.bonusHandler = bonusHandler;
 
             }
-
-            // создание ошмётка
+            GameObject soundObj = Instantiate(soundHanlder, transform.position, Quaternion.identity);
+            AudioSource soundSource = soundObj.GetComponent<AudioSource>();
+            soundSource.clip = death;
+            soundSource.volume = audioVolume;
+            soundSource.Play();
+            Destroy(soundSource, 1f);
             BonusController bonusScript = bonusHandler.GetComponent<BonusController>();
             bonusScript.PlayerScoresUp(scoreForKill, _lastAttacker);
             

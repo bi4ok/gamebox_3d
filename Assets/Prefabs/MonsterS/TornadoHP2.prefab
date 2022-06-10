@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 20
-  damageValue: 30
+  damageValue: 10
   energyValue: 0
   shieldPower: 0
   movementSpeed: 10
@@ -94,17 +94,18 @@ MonoBehaviour:
   targetToAttack: {fileID: 0}
   deathEffect: {fileID: 0}
   scrap: {fileID: 0}
-  scrapValueMin: 1
-  scrapValueMax: 3
+  scrapValueMin: 2
+  scrapValueMax: 4
   gunScript: {fileID: 0}
   bonusHandler: {fileID: 0}
   agent: {fileID: 7427649664657809388}
-  shieldEffect: {fileID: 5887168923257379262}
+  shieldEffect: {fileID: 0}
   buffer: 0
   lockOnPlayer: 1
   shieldRange: 5
-  audio_source: {fileID: 1789112003249181065}
+  audioVolume: 0.3
   death: {fileID: 8300000, guid: cf9895ca3263dd14b903e653eeb90851, type: 3}
+  soundHanlder: {fileID: 167540077378506745, guid: 3800f327137bb8446aeced4839da587f, type: 3}
 --- !u!195 &7427649664657809388
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -19541,10 +19542,5 @@ PrefabInstance:
 --- !u!4 &4758337989407555460 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5455415558059787772, guid: 37efaf6a9545dc9468b0a9ea7822924e, type: 3}
-  m_PrefabInstance: {fileID: 701581580718127736}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &5887168923257379262 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6345545807480005574, guid: 37efaf6a9545dc9468b0a9ea7822924e, type: 3}
   m_PrefabInstance: {fileID: 701581580718127736}
   m_PrefabAsset: {fileID: 0}

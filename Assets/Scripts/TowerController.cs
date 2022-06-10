@@ -41,7 +41,11 @@ public class TowerController : MonoBehaviour
     {
         string info = 
             $"Башня {tower.name}:\n" +
-            $"{tower.towerInfo}";
+            $"{tower.towerInfo}\n" +
+            $"Стоимость:\n" +
+            $"Горящие ошмётки: {tower.costRed}\n" +
+            $"Мокрые ошмётки: {tower.costBlue}\n" +
+            $"Твёрдые ошмётки: {tower.costBrown}";
 
         towerInfoText.text = info;
 

@@ -23,6 +23,8 @@ public class MarketInfo : MonoBehaviour
     private Button buttonbuy;
     [SerializeField]
     private PlayerController playercontroller;
+    [SerializeField]
+    private GameHandler gameHandler;
 
     private ProductScript currentproduct;
     private Slot currentSlot;
@@ -50,15 +52,15 @@ public class MarketInfo : MonoBehaviour
 
     private string GetProductInfo(ProductScript products)
     {
-        string productInfo = "Описание товара:" + 
-            "\n" + products.productInfo + 
-            "\n" + "Характеристики:" +
-            "\n\n" + "Здоровье:" +
-            "+" + products.healthPlus.ToString() + "," + "+" + products.healthPercent.ToString() + "%" +
-            "\n\n" + "Урон:" +
-            "+" + products.damagePlus.ToString() + "," + "+" + products.damagePercent.ToString() + "%" +
-            "\n\n" + "Скорость бега:" +
-            "+" + products.movementSpeedPlus.ToString() + "," + "+" + products.movementSpeedPercent.ToString() + "%" 
+        string productInfo = "Описание товара:" +
+            "\n" + products.productInfo;
+            //"\n" + "Характеристики:" +
+            //"\n\n" + "Здоровье:" +
+            //"+" + products.healthPlus.ToString() + "," + "+" + products.healthPercent.ToString() + "%" +
+            //"\n\n" + "Урон:" +
+            //"+" + products.damagePlus.ToString() + "," + "+" + products.damagePercent.ToString() + "%" +
+            //"\n\n" + "Скорость бега:" +
+            //"+" + products.movementSpeedPlus.ToString() + "," + "+" + products.movementSpeedPercent.ToString() + "%" 
         ;
         blue_pricetext.text = products.cost_blue.ToString();
         green_pricetext.text = products.cost_brown.ToString();
@@ -82,7 +84,14 @@ public class MarketInfo : MonoBehaviour
             movementSpeedPlus: currentproduct.movementSpeedPlus,
             movementSpeedPercent: currentproduct.movementSpeedPercent);
 
-        if (true)
+        var cost = new Dictionary<string, float>()
+        {
+            {"red", currentproduct.cost_red },
+            {"blue", currentproduct.cost_blue },
+            {"yellow", currentproduct.cost_brown }
+        };
+
+        if (gameHandler.PlayerTryWasteScrap(cost))
         {
             //Вычитаем монеты
             playercontroller.EquipProduct(item, currentproduct.type, currentproduct.level);

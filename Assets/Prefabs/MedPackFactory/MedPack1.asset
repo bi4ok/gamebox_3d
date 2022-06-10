@@ -22,7 +22,7 @@ MonoBehaviour:
   prefabInUI: {fileID: 4506649144114880103, guid: c42919e4bc368374580a2a55fe09dcf9, type: 3}
   imgOfMedPack: {fileID: 21300000, guid: c33f0ab456fc86345b395d4b30f0b61a, type: 3}
   costRed: 0
-  costBrown: 100
-  costBlue: 5000
+  costBrown: 20
+  costBlue: 1000
   check: {fileID: 0}
   isBougth: 0
