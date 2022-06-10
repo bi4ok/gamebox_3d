@@ -17,6 +17,17 @@ public class CastleController : MonoBehaviour, IDamageAble
 
     [SerializeField]
     private GameObject gameManager;
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip twentfive;
+    [SerializeField]
+    private AudioClip fifty;
+    [SerializeField]
+    private AudioClip seventyfive;
+    private bool twentufive = true;
+    private bool fifti = true;
+    private bool seventy = true;
 
     private bool _alive = true;
     private Character _stats;
@@ -29,7 +40,24 @@ public class CastleController : MonoBehaviour, IDamageAble
     void Update()
     {
         linelife.fillAmount = _stats.health / maxhitpoints;
-       
+      if(linelife.fillAmount < 0.75f && seventy)
+        {
+            audioSource.clip =seventyfive;
+            audioSource.Play();
+            seventy = false;
+        }
+      if(linelife.fillAmount < 0.5 && fifti)
+        {
+            audioSource.clip = fifty;
+            audioSource.Play();
+            fifti = false;
+        }
+      if(linelife.fillAmount < 0.25 && twentufive)
+        {
+            audioSource.clip = twentfive;
+            audioSource.Play();
+            twentufive = false;
+        }
     }
 
     public void TakeDamage(float damageAmount, string damageFrom, bool knockback = false)
