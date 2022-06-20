@@ -61,6 +61,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
 
     private Character _monsterInside;
     private Vector3 _vectorToTarget;
+    private Vector3 _vectorToCastle;
     private float _attackCoolDownTimer;
     private Animator _monsterAnimator;
     private string _lastAttacker;
@@ -69,6 +70,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
     private GameObject _castle;
     private GameObject _castleHeart;
     private float _changeTargetRange;
+    private float _changeCastleRange;
     private bool locked = false;
     private bool dead = false;
     private bool devilShield = true;
@@ -87,8 +89,10 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         
         _changeTargetRange = changeTargetRange + attackRange;
         targetToAttack = target;
-        _castleTargetPosition =  castle.transform.position + Random.insideUnitSphere*attackRange;
-        NavMesh.SamplePosition(_castleTargetPosition, out hitNavCastle, 10.0f, NavMesh.AllAreas);
+        //_castleTargetPosition =  castle.transform.position + Random.insideUnitSphere*attackRange;
+        _castleTargetPosition = castle.transform.position;
+        _changeCastleRange = 8;
+        NavMesh.SamplePosition(_castleTargetPosition, out hitNavCastle, 8.0f, NavMesh.AllAreas);
         print(hitNavCastle.position + " HIT NAV CASTLE POSITION");
         _castle = castle;
         _castleHeart = heartOfCastle;
@@ -148,8 +152,20 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         }
         else
         {
-            transform.LookAt(_castleHeart.transform);
-            Attack(_castle);
+            if (_vectorToCastle.magnitude > _monsterInside.statsOut["range"].Value)
+            {
+                _monsterAnimator.SetFloat("Speed", _monsterInside.statsOut["movementSpeed"].Value);
+                agent.isStopped = false;
+            }
+            else
+            {
+                _monsterAnimator.SetFloat("Speed", 0);
+                agent.isStopped = true;
+                transform.LookAt(_castleHeart.transform);
+                Attack(_castle);
+            }
+            
+            
         }
         
 
@@ -186,6 +202,11 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         //Gizmos.DrawWireSphere(_castleTargetPosition, attackRange);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(hitNavCastle.position, attackRange);
+
+
+        Gizmos.color = Color.blue;
+
+        Gizmos.DrawWireSphere(_castleTargetPosition, _changeCastleRange);
     }
 
     private void GetTarget()
@@ -200,7 +221,6 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         if ((hitNavCastle.position - transform.position).magnitude <= attackRange)
         {
             locked = true;
-            agent.isStopped = true;
             return;
         }
 
@@ -245,6 +265,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
     private Vector3 CalculateMovementVector()
     {
         _vectorToTarget = targetToAttack.transform.position - transform.position;
+        _vectorToCastle = hitNavCastle.position - transform.position;
         return transform.position + _vectorToTarget.normalized * _monsterInside.statsOut["movementSpeed"].Value * Time.fixedDeltaTime;
     }
 

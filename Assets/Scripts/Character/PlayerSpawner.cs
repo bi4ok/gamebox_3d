@@ -19,8 +19,7 @@ public class PlayerSpawner : MonoBehaviour
     void Start()
     {
         playerController = player.GetComponent<PlayerController>();
-
-        print(playerController.CheckStats("health"));
+        print(playerController);
     }
 
     public IEnumerator Respawn(float timeToSpawn)
