@@ -29,6 +29,8 @@ public class GameHandler : MonoBehaviour
 
     [SerializeField]
     private Text nextWaveText;
+    [SerializeField]
+    private float timeForFirstWave=30f;
 
     [SerializeField]
     private GameObject player;
@@ -62,7 +64,7 @@ public class GameHandler : MonoBehaviour
         scrapStorage = new Dictionary<string, float>() { { "red", 5 }, { "blue", 250 }, { "yellow", 5} };
         UpdateInfo();
         menuScript.ChangeStateToBuild();
-        timeForStartNextWave = Time.time + 30;
+        timeForStartNextWave = Time.time + timeForFirstWave;
         soundmessr.PlayMessege();
     }
 
