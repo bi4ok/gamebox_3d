@@ -64,7 +64,6 @@ public class CastleController : MonoBehaviour, IDamageAble
     {
         if (_alive)
         {
-            print(_alive + " alive");
             _stats.TakeDamage(damageAmount, damageFrom);
             DiedByDamage();
             

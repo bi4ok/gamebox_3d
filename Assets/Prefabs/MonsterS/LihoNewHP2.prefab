@@ -631,7 +631,7 @@ MonoBehaviour:
   shieldEffect: {fileID: 6746494171462994834}
   buffer: 0
   lockOnPlayer: 0
-  shieldRange: 0
+  shieldRange: 12
   audioVolume: 1
   death: {fileID: 8300000, guid: 77d50a10212c9fb429c8b9d3f2bbf2b6, type: 3}
   soundHanlder: {fileID: 167540077378506745, guid: 3800f327137bb8446aeced4839da587f, type: 3}
