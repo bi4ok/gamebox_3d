@@ -8,6 +8,7 @@ public class Soundmessegemanager : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip[] circlemesseges;
 
+    [SerializeField] private AudioManager audioManager;
     private int soundIndex=0;
 
     private void Awake()
@@ -17,8 +18,7 @@ public class Soundmessegemanager : MonoBehaviour
     {
         if (soundIndex < messeges.Length) 
         {
-            audioSource.clip = messeges[soundIndex];
-            audioSource.Play();
+            audioManager.PlayDilogs("Narrative" + " " + soundIndex.ToString());
             soundIndex += 1;
         }
         else

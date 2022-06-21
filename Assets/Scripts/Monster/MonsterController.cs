@@ -49,12 +49,16 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
     private bool lockOnPlayer = false;
     [SerializeField]
     private float shieldRange;
-    [SerializeField]
-    private float audioVolume=1f;
-    [SerializeField]
-    private AudioClip death;
+    //[SerializeField]
+    //private float audioVolume=1f;
+    //[SerializeField]
+    //private AudioClip death;
     [SerializeField]
     private GameObject soundHanlder;
+    [SerializeField]
+    private string namesound_death;
+    private AudioManager audioManager;
+
 
 
     private GameHandler gameHandler;
@@ -82,6 +86,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
 
     public void OnCreate(GameObject target, GameObject castle, GameObject heartOfCastle, float changeTargetRange, GameObject bonus, GameObject scrapPrefab)
     {
+        audioManager = FindObjectOfType<AudioManager>(); 
         _monsterAnimator = GetComponent<Animator>();
         bonusHandler = bonus;
         gameHandler = bonusHandler.GetComponent<GameHandler>();
@@ -286,6 +291,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
             if (gunScript != null)
             {
                 gunScript.Shoot();
+                audioManager.PlaySounds("shoot rusalka 1");
             }
             else
             {
@@ -341,6 +347,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         if (knockback)
         {
             KnockBack(damageAmount * 2);
+           
         }
         DiedByDamage();
 
@@ -379,9 +386,8 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
             }
             GameObject soundObj = Instantiate(soundHanlder, transform.position, Quaternion.identity);
             AudioSource soundSource = soundObj.GetComponent<AudioSource>();
-            soundSource.clip = death;
-            soundSource.volume = audioVolume;
-            soundSource.Play();
+            audioManager.PlaySounds(namesound_death);
+            
             Destroy(soundSource, 1f);
             BonusController bonusScript = bonusHandler.GetComponent<BonusController>();
             bonusScript.PlayerScoresUp(scoreForKill, _lastAttacker);

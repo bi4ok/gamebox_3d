@@ -51,12 +51,9 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     [SerializeField]
     private LayerMask groundMask;
     [SerializeField]
-    private AudioClip death; // done
+    private AudioManager audioManager;
     
-    [SerializeField]
-    private AudioClip luckymelee_attack;
-    [SerializeField]
-    private AudioClip unluckymelee_attack;
+   
 
     private Character _characterInside;
     private Dictionary<string, Item> _inventory;
@@ -230,14 +227,22 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
 
     private void MeeleAttack()
     {
-        audioSource.clip = luckymelee_attack;
-        audioSource.Play();
+        
 
         Collider[] hitEnemies = Physics.OverlapSphere(pointOfAttack.position, attackRange, LayerMask.GetMask("Enemy"));
         foreach (var enemy in hitEnemies)
         {
            
             Attack(enemy.gameObject);
+
+        }
+        if(hitEnemies.Length == 0f)
+        {
+            audioManager.PlaySounds("Promah" + " " + Random.Range(1, 4).ToString());
+        }
+        else
+        {
+            audioManager.PlaySounds("Bonk" + " " + Random.Range(1, 4).ToString());
         }
     }
 
@@ -253,8 +258,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     {
         if (alive)
         {
-            audioSource.clip = soundOfDamage;
-            audioSource.Play();
+            audioManager.PlaySounds("Ded uron");
             _characterInside.TakeDamage(damageAmount, damageFrom);
             DiedByDamage();
         }
@@ -277,8 +281,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
                 SpriteRenderer effectSprite = effect.GetComponent<SpriteRenderer>();
                 Destroy(effect, 3f);
             }
-            audioSource.clip = death;
-            audioSource.Play();
+            audioManager.PlaySounds("Ded pogib");
             alive = false;
             playerSpawner.StartRespawn(_timeToRespawn);
         }

@@ -39,11 +39,7 @@ public class GameHandler : MonoBehaviour
     [SerializeField]
     private Soundmessegemanager soundmessr;
     [SerializeField]
-    private AudioClip ambientforbuilding;
-    [SerializeField]
-    private AudioClip ambientforbattle;
-    [SerializeField]
-    private AudioSource audioSourceformusic;
+    AudioManager audioManager;
 
     [SerializeField]
     private MedPackCellContoller medPackFactory;
@@ -124,9 +120,7 @@ public class GameHandler : MonoBehaviour
                 gameEnd = portalManager.GameFinished();
                 menuScript.ChangeStateToBuild();
                 soundmessr.PlayMessege();
-                audioSourceformusic.clip = ambientforbuilding;
-                audioSourceformusic.volume = 1f;
-                audioSourceformusic.Play();
+                audioManager.PlayMusic("Phase 1 ambient");
             }
 
             if (!gameStateFight)
@@ -138,9 +132,8 @@ public class GameHandler : MonoBehaviour
                     gameStateFight = true;
                     menuScript.ChangeStateToFight();
                     medPackFactory.OnWaveMedPackSpawn();
-                    audioSourceformusic.clip = ambientforbattle;
-                    audioSourceformusic.volume = 0.5f;
-                    audioSourceformusic.Play();
+                    audioManager.PlayMusic("Battle");
+                   
                 }
             }
         }

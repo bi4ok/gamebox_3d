@@ -16,15 +16,7 @@ public class CastleController : MonoBehaviour, IDamageAble
     private Image linelife;
 
     [SerializeField]
-    private GameObject gameManager;
-    [SerializeField]
-    private AudioSource audioSource;
-    [SerializeField]
-    private AudioClip twentfive;
-    [SerializeField]
-    private AudioClip fifty;
-    [SerializeField]
-    private AudioClip seventyfive;
+    AudioManager audioManager;
     private bool twentufive = true;
     private bool fifti = true;
     private bool seventy = true;
@@ -42,20 +34,17 @@ public class CastleController : MonoBehaviour, IDamageAble
         linelife.fillAmount = _stats.health / maxhitpoints;
       if(linelife.fillAmount < 0.75f && seventy)
         {
-            audioSource.clip =seventyfive;
-            audioSource.Play();
+            audioManager.PlaySounds("Baza v opasnosty");
             seventy = false;
         }
       if(linelife.fillAmount < 0.5 && fifti)
         {
-            audioSource.clip = fifty;
-            audioSource.Play();
+            audioManager.PlaySounds("Baza 50%");
             fifti = false;
         }
       if(linelife.fillAmount < 0.25 && twentufive)
         {
-            audioSource.clip = twentfive;
-            audioSource.Play();
+            audioManager.PlaySounds("Baza 25%");
             twentufive = false;
         }
     }

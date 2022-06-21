@@ -6953,9 +6953,8 @@ MonoBehaviour:
   buffer: 0
   lockOnPlayer: 0
   shieldRange: 0
-  audioVolume: 1
-  death: {fileID: 8300000, guid: 89fcc5ef1dd3c9f4ab158f6afa844649, type: 3}
   soundHanlder: {fileID: 167540077378506745, guid: 3800f327137bb8446aeced4839da587f, type: 3}
+  namesound_death: cry rusalka
 --- !u!195 &8110213375144106215
 NavMeshAgent:
   m_ObjectHideFlags: 0
