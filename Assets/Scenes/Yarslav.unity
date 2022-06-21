@@ -7803,30 +7803,6 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   dialogs:
-  - name: ad-1
-    clip: {fileID: 8300000, guid: 88aeba2e5edc42441a8c6327897f3942, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: ad-2
-    clip: {fileID: 8300000, guid: 69651271f0897e349ab418149bf26c65, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: ad-3
-    clip: {fileID: 8300000, guid: 9f7cda43ca7fd294498e8b673d07cf06, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: ad-4
-    clip: {fileID: 8300000, guid: 1724118ff291cee4d9132296a6588497, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
   - name: Narrative 1
     clip: {fileID: 8300000, guid: 604639262a1e43347a784be3b5f71c81, type: 3}
     volume: 1
@@ -7847,6 +7823,30 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Narrative 4
     clip: {fileID: 8300000, guid: d2e23440dd235fa4f889c7a795441b23, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ad-1
+    clip: {fileID: 8300000, guid: 88aeba2e5edc42441a8c6327897f3942, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ad-2
+    clip: {fileID: 8300000, guid: 69651271f0897e349ab418149bf26c65, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ad-3
+    clip: {fileID: 8300000, guid: 9f7cda43ca7fd294498e8b673d07cf06, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ad-4
+    clip: {fileID: 8300000, guid: 1724118ff291cee4d9132296a6588497, type: 3}
     volume: 1
     pitch: 1
     loop: 0

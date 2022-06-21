@@ -18,7 +18,7 @@ public class Soundmessegemanager : MonoBehaviour
     {
         if (soundIndex < messeges.Length) 
         {
-            audioManager.PlayDilogs("Narrative" + " " + soundIndex.ToString());
+            audioManager.PlayDilogs();
             soundIndex += 1;
         }
         else
