@@ -76,10 +76,12 @@
     <Compile Include="Assets\Scripts\Character\Rifle.cs" />
     <Compile Include="Assets\Scripts\Bonus\TimeStopBonus.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerSpawner.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\MechanicManager.cs" />
     <Compile Include="Assets\Scripts\NavMeshComponents\Scripts\NavMeshSurface.cs" />
     <Compile Include="Assets\Scripts\TowerAttackControl.cs" />
     <Compile Include="Assets\Scripts\StatModifier.cs" />
+    <Compile Include="Assets\Scripts\Sound.cs" />
     <Compile Include="Assets\Scripts\Bonus\BuffsFactory.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Shop\MarketInfo.cs" />
@@ -108,8 +110,6 @@
     <Compile Include="Assets\Scripts\Bonus\Bonus.cs" />
     <Compile Include="Assets\Scripts\MedPackController.cs" />
     <Compile Include="Assets\Scripts\Bonus\BonusController.cs" />
-    <Compile Include="Assets\Scripts\AudioManager.cs" />
-    <Compile Include="Assets\Scripts\Sound.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
