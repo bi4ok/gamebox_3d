@@ -5920,6 +5920,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 296036679241440323, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 296036679241440323, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
       propertyPath: m_Interpolate
       value: 0
       objectReference: {fileID: 0}
@@ -7612,14 +7616,236 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
+  - name: Baza 25%
+    clip: {fileID: 8300000, guid: 91380a570fd773545bf438856b3ad187, type: 3}
+    volume: 1
     pitch: 0.1
     loop: 0
     source: {fileID: 0}
-  music: []
-  dialogs: []
+  - name: Baza 50%
+    clip: {fileID: 8300000, guid: e57a5e800ae4dfc41b5cb7471ac9b63f, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Baza v opasnosty
+    clip: {fileID: 8300000, guid: 7cf4663cbe2600346b1cd2714ecd8db9, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Smert_liho
+    clip: {fileID: 8300000, guid: 60429434368d1a344941409c620975c9, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Bonk 1
+    clip: {fileID: 8300000, guid: 5a1e57609874449429238491eaf3d03a, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Bonk 2
+    clip: {fileID: 8300000, guid: a87df980f14f1c946bf3f86ac1ea8dc3, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Bonk 3
+    clip: {fileID: 8300000, guid: f2a5768388ce49a42abb201de4a8cf1d, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Bonk 4
+    clip: {fileID: 8300000, guid: ede2516499dad8840b49750021280b56, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Promah 1
+    clip: {fileID: 8300000, guid: a2638ab3d13b77c4c9d85a6bdc1d6c8b, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Promah 2
+    clip: {fileID: 8300000, guid: d97bec6244a226547930245a8c96005d, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Promah 3
+    clip: {fileID: 8300000, guid: 71b4c127cff8c794b9feaed96b2f3427, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Promah 4
+    clip: {fileID: 8300000, guid: fd9d6eece1e2ae9448897714fd784884, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Ded pogib
+    clip: {fileID: 8300000, guid: b0f02b8b741ed264ea0805b5a700fd10, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: cry rusalka
+    clip: {fileID: 8300000, guid: 2fbc3c0c001e6d648b95ec3418e771d3, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: cry rusalka 2
+    clip: {fileID: 8300000, guid: 2fbc3c0c001e6d648b95ec3418e771d3, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: shoot rusalka 1
+    clip: {fileID: 8300000, guid: a251a34570b223d43a81c805d4048212, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: shoot rusalka 2
+    clip: {fileID: 8300000, guid: 2b849ca10e3316443b7063acfeaeb2d5, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Ded uron
+    clip: {fileID: 8300000, guid: c415f783f4a3e08499902ccf32e37eb6, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Drobovic_1
+    clip: {fileID: 8300000, guid: 74d3175fa7a45d64f9fafcedd947433b, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Drobovic_2
+    clip: {fileID: 8300000, guid: 80ae0ec7e7e0a57499f4144604d573a0, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Energy Shield
+    clip: {fileID: 8300000, guid: 80ae0ec7e7e0a57499f4144604d573a0, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Kassa
+    clip: {fileID: 8300000, guid: 91b2c5da3f5922048b21b4c99cc0d094, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Smert_vihr
+    clip: {fileID: 8300000, guid: 4c03acbcf78b2864a83ddaff1e81d2ef, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Vintovka 1
+    clip: {fileID: 8300000, guid: 0d26f064ba75f724687489e98f3bf447, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Vintovka 2
+    clip: {fileID: 8300000, guid: cad1fe6138f73aa4c854813db2418d22, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Vintovka 3
+    clip: {fileID: 8300000, guid: c9b14482c73bf9d4baa15f3bd1b34548, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  music:
+  - name: Battle
+    clip: {fileID: 8300000, guid: ad22234c35cbb9f45b2cddabb500f8a0, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: Battle 2
+    clip: {fileID: 8300000, guid: ad22234c35cbb9f45b2cddabb500f8a0, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: Game over
+    clip: {fileID: 8300000, guid: 1bc2030963471ab4286f9e66a51902ae, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: Phase 1 ambient
+    clip: {fileID: 8300000, guid: 1bc2030963471ab4286f9e66a51902ae, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}
+  dialogs:
+  - name: ad-1
+    clip: {fileID: 8300000, guid: 88aeba2e5edc42441a8c6327897f3942, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: ad-2
+    clip: {fileID: 8300000, guid: 69651271f0897e349ab418149bf26c65, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: ad-2
+    clip: {fileID: 8300000, guid: 9f7cda43ca7fd294498e8b673d07cf06, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: ad-2
+    clip: {fileID: 8300000, guid: 1724118ff291cee4d9132296a6588497, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Narrative 1_amb
+    clip: {fileID: 8300000, guid: 604639262a1e43347a784be3b5f71c81, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Narrative 2_amb
+    clip: {fileID: 8300000, guid: 4b77a7df95f76a84d8c589d2cc80bd47, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Narrative 3_amb
+    clip: {fileID: 8300000, guid: a147b6930e90b064fa96f0e0e7645076, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Narrative 4_amb
+    clip: {fileID: 8300000, guid: d2e23440dd235fa4f889c7a795441b23, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &426206748
 Transform:
   m_ObjectHideFlags: 0
