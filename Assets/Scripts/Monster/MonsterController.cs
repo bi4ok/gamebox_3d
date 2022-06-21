@@ -73,12 +73,13 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
     private Vector3 _castleTargetPosition;
     private GameObject _castle;
     private GameObject _castleHeart;
+    private Collider[] _buffersNear;
     private float _changeTargetRange;
     private float _changeCastleRange;
     private bool locked = false;
     private bool dead = false;
-    private bool devilShield = true;
-    private float shieldCD = 1f;
+    private bool devilShield = false;
+    private float shieldCD = 0.1f;
     private float nextShieldCastTime = 0f;
     private float timeToAttackCastle = 0f;
     private NavMeshHit hitNavCastle;
@@ -95,9 +96,9 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         _changeTargetRange = changeTargetRange + attackRange;
         targetToAttack = target;
         //_castleTargetPosition =  castle.transform.position + Random.insideUnitSphere*attackRange;
-        _castleTargetPosition = castle.transform.position;
+        _castleTargetPosition = castle.transform.position + Random.insideUnitSphere * attackRange;
         _changeCastleRange = 8;
-        NavMesh.SamplePosition(_castleTargetPosition, out hitNavCastle, 8.0f, NavMesh.AllAreas);
+        NavMesh.SamplePosition(_castleTargetPosition, out hitNavCastle, 10.0f, NavMesh.AllAreas);
         print(hitNavCastle.position + " HIT NAV CASTLE POSITION");
         _castle = castle;
         _castleHeart = heartOfCastle;
@@ -125,19 +126,19 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
 
         CalculateMovementVector();
 
-        if (buffer)
+        if (!buffer && shieldEffect != null)
         {
-            CastShieldOnMonsters();
+            CheckBuff();
+            if (devilShield && !shieldEffect.isPlaying)
+            {
+                shieldEffect.Play();
+            }
+            else if (!devilShield && shieldEffect.isPlaying)
+            {
+                shieldEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            }
         }
-
-        if (shieldEffect != null && shieldEffect.isPlaying)
-        {
-            devilShield = true;
-        }
-        else
-        {
-            devilShield = false;
-        }
+        
 
         if (!locked)
         {
@@ -177,25 +178,6 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
 
     }
 
-    private void CastShieldOnMonsters()
-    {
-        if (Time.time > nextShieldCastTime)
-        {
-            print("CAST THIS SHIELD");
-            Collider[] monstersAround = Physics.OverlapSphere(transform.position, shieldRange, LayerMask.GetMask("Enemy"));
-            _monsterAnimator.SetTrigger("Attack");
-            foreach (var monster in monstersAround)
-            {
-                print(monster.name);
-                MonsterController mobScript = monster.GetComponent<MonsterController>();
-                if (mobScript != null)
-                {
-                    StartCoroutine(mobScript.ShieldSelf());
-                }
-            }
-            nextShieldCastTime += shieldCD;
-        }
-    }
 
     private void OnDrawGizmos()
     {
@@ -353,15 +335,46 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
 
     }
 
-    public IEnumerator ShieldSelf()
+    //public IEnumerator ShieldSelf()
+    //{
+    //    if (shieldEffect != null && !shieldEffect.isPlaying)
+    //    {
+    //        shieldEffect.Play();
+    //        yield return new WaitForSeconds(shieldCD);
+    //        shieldEffect.Stop();
+    //    }
+    //}
+
+    private void CheckBuff()
     {
-        if (shieldEffect != null && !shieldEffect.isPlaying)
+        if (Time.time > nextShieldCastTime)
         {
-            shieldEffect.Play();
-            yield return new WaitForSeconds(shieldCD);
-            shieldEffect.Stop();
+            _buffersNear = Physics.OverlapSphere(transform.position, shieldRange, LayerMask.GetMask("Buffer"));
+            devilShield = _buffersNear.Length > 0;
+            nextShieldCastTime = Time.time + shieldCD;
         }
     }
+
+
+    //private void CastShieldOnMonsters()
+    //{
+    //    if (Time.time > nextShieldCastTime)
+    //    {
+    //        print("CAST THIS SHIELD");
+    //        Collider[] monstersAround = Physics.OverlapSphere(transform.position, shieldRange, LayerMask.GetMask("Enemy"));
+    //        _monsterAnimator.SetTrigger("Attack");
+    //        foreach (var monster in monstersAround)
+    //        {
+    //            print(monster.name);
+    //            MonsterController mobScript = monster.GetComponent<MonsterController>();
+    //            if (mobScript != null)
+    //            {
+    //                StartCoroutine(mobScript.ShieldSelf());
+    //            }
+    //        }
+    //        nextShieldCastTime += shieldCD;
+    //    }
+    //}
 
     public bool DiedByDamage()
     {

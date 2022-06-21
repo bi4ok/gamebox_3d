@@ -630,7 +630,13 @@ MonoBehaviour:
   shieldEffect: {fileID: 2302313772331910549}
   buffer: 0
   lockOnPlayer: 0
+<<<<<<< HEAD
   shieldRange: 0
+=======
+  shieldRange: 12
+  audioVolume: 1
+  death: {fileID: 8300000, guid: 77d50a10212c9fb429c8b9d3f2bbf2b6, type: 3}
+>>>>>>> 043e0e871afdd34b3747777a77f8649d1fe4950c
   soundHanlder: {fileID: 167540077378506745, guid: 3800f327137bb8446aeced4839da587f, type: 3}
   namesound_death: Smert_liho
 --- !u!195 &2413099468461455212
