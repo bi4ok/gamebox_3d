@@ -36,8 +36,7 @@ public class GameHandler : MonoBehaviour
     private GameObject player;
     [SerializeField]
     private CastleController castle;
-    [SerializeField]
-    private Soundmessegemanager soundmessr;
+   
     [SerializeField]
     AudioManager audioManager;
 
@@ -67,7 +66,7 @@ public class GameHandler : MonoBehaviour
         UpdateInfo();
         menuScript.ChangeStateToBuild();
         timeForStartNextWave = Time.time + timeForFirstWave;
-        soundmessr.PlayMessege();
+        audioManager.PlayDilogs();
     }
 
     private void Update()
@@ -119,7 +118,8 @@ public class GameHandler : MonoBehaviour
                 gameStateFight = false;
                 gameEnd = portalManager.GameFinished();
                 menuScript.ChangeStateToBuild();
-                soundmessr.PlayMessege();
+                audioManager.PlayDilogs();
+                audioManager.StopMusic("Battle");
                 audioManager.PlayMusic("Phase 1 ambient");
             }
 
@@ -132,6 +132,7 @@ public class GameHandler : MonoBehaviour
                     gameStateFight = true;
                     menuScript.ChangeStateToFight();
                     medPackFactory.OnWaveMedPackSpawn();
+                    audioManager.StopMusic("Phase 1 ambient");
                     audioManager.PlayMusic("Battle");
                    
                 }
