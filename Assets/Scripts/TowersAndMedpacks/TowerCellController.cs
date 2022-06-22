@@ -7,6 +7,8 @@ public class TowerCellController : MonoBehaviour
     [SerializeField]
     private GameObject towerBuyCanvas;
     [SerializeField]
+    private GameHandler gameHandler;
+    [SerializeField]
     private Light lightOnBild;
     [SerializeField]
     private Color colorOnMouseEnter;
@@ -22,18 +24,28 @@ public class TowerCellController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        towerBuyCanvas.SetActive(true);
-        towerBuyCanvas.GetComponent<TowerController>().GetNewCell(gameObject);
+        if (!gameHandler.gameStateFight)
+        {
+            towerBuyCanvas.SetActive(true);
+            towerBuyCanvas.GetComponent<TowerController>().GetNewCell(gameObject);
+        }
+            
     }
 
     private void OnMouseEnter()
     {
-        lightOnBild.color = colorOnMouseEnter;
+        if (!gameHandler.gameStateFight)
+        {
+            lightOnBild.color = colorOnMouseEnter;
+        }
     }
 
     private void OnMouseExit()
     {
-        lightOnBild.color = originalColor;
+        if (!gameHandler.gameStateFight)
+        {
+            lightOnBild.color = originalColor;
+        }
     }
 
     public void MakeNewTower(GameObject towerPrefab)

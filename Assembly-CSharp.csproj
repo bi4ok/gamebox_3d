@@ -66,7 +66,6 @@
     <Compile Include="Assets\Scripts\CastleController.cs" />
     <Compile Include="Assets\Scripts\NavMeshComponents\Scripts\NavMeshModifierVolume.cs" />
     <Compile Include="Assets\Scripts\InstatiateSolt.cs" />
-    <Compile Include="Assets\Scripts\TowerCellController.cs" />
     <Compile Include="Assets\Scripts\IDamageAble.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\Character\ShotGun.cs" />
@@ -79,7 +78,6 @@
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\MechanicManager.cs" />
     <Compile Include="Assets\Scripts\NavMeshComponents\Scripts\NavMeshSurface.cs" />
-    <Compile Include="Assets\Scripts\TowerAttackControl.cs" />
     <Compile Include="Assets\Scripts\StatModifier.cs" />
     <Compile Include="Assets\Scripts\Sound.cs" />
     <Compile Include="Assets\Scripts\Bonus\BuffsFactory.cs" />
@@ -94,11 +92,9 @@
     <Compile Include="Assets\Scripts\Solt.cs" />
     <Compile Include="Assets\Scripts\Character\Flamethrower.cs" />
     <Compile Include="Assets\Scripts\Bonus\BoomEffectTimeline.cs" />
-    <Compile Include="Assets\Scripts\TowerController.cs" />
     <Compile Include="Assets\Scripts\IDamageDealer.cs" />
     <Compile Include="Assets\Scripts\Shop\MedPackObject.cs" />
     <Compile Include="Assets\Scripts\PortalManager.cs" />
-    <Compile Include="Assets\Scripts\MedPackCellContoller.cs" />
     <Compile Include="Assets\Scripts\Character\Weapon.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterController.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
@@ -108,8 +104,12 @@
     <Compile Include="Assets\Scripts\CloseOpen.cs" />
     <Compile Include="Assets\Scripts\Character\Character.cs" />
     <Compile Include="Assets\Scripts\Bonus\Bonus.cs" />
-    <Compile Include="Assets\Scripts\MedPackController.cs" />
     <Compile Include="Assets\Scripts\Bonus\BonusController.cs" />
+    <Compile Include="Assets\Scripts\TowersAndMedpacks\MedPackController.cs" />
+    <Compile Include="Assets\Scripts\TowersAndMedpacks\TowerAttackControl.cs" />
+    <Compile Include="Assets\Scripts\TowersAndMedpacks\MedPackCellContoller.cs" />
+    <Compile Include="Assets\Scripts\TowersAndMedpacks\TowerCellController.cs" />
+    <Compile Include="Assets\Scripts\TowersAndMedpacks\TowerController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
