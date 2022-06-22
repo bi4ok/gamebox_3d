@@ -9,6 +9,8 @@ public class MedPackCellContoller : MonoBehaviour
     [SerializeField]
     private GameObject bonusHandler;
     [SerializeField]
+    private GameHandler gameHandler;
+    [SerializeField]
     private Light lightOnBild;
     [SerializeField]
     private Color colorOnMouseEnter;
@@ -28,19 +30,25 @@ public class MedPackCellContoller : MonoBehaviour
 
     private void OnMouseDown()
     {
-        medpackBuyCanvas.SetActive(true);
-        medpackBuyCanvas.GetComponent<MedPackController>().GetNewCell(gameObject);
+        if (!gameHandler.gameStateFight)
+        {
+            medpackBuyCanvas.SetActive(true);
+            medpackBuyCanvas.GetComponent<MedPackController>().GetNewCell(gameObject);
+        }
+
         
     }
 
     private void OnMouseEnter()
     {
-        lightOnBild.color = colorOnMouseEnter;
+        if (!gameHandler.gameStateFight)
+            lightOnBild.color = colorOnMouseEnter;
     }
 
     private void OnMouseExit()
     {
-        lightOnBild.color = originalColor;
+        if (!gameHandler.gameStateFight)
+            lightOnBild.color = originalColor;
     }
 
     public void ChooseNewMedpack(MedPackObject medpackScriptObject)

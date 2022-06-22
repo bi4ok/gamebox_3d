@@ -50,7 +50,7 @@ public class GameHandler : MonoBehaviour
     
     private int monstersInGame;
     private bool waveInProcess;
-    private bool gameStateFight;
+    public bool gameStateFight;
     private float timeToNextWave;
     private float timeForStartNextWave;
     private bool gameEnd = false;
@@ -66,6 +66,11 @@ public class GameHandler : MonoBehaviour
         UpdateInfo();
         menuScript.ChangeStateToBuild();
         timeForStartNextWave = Time.time + timeForFirstWave;
+        
+    }
+
+    private void Start()
+    {
         audioManager.PlayDilogs();
     }
 
@@ -240,6 +245,8 @@ public class GameHandler : MonoBehaviour
                 scrapStorage[scrap.Key] -= scrap.Value;
             }
         }
+
+        UpdateInfo();
         return true;
 
     }

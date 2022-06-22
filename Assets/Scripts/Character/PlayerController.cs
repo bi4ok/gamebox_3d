@@ -51,6 +51,10 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     [SerializeField]
     private LayerMask groundMask;
     [SerializeField]
+    private LayerMask nonInteractMask;
+    [SerializeField]
+    private LayerMask enemyMask;
+    [SerializeField]
     private AudioManager audioManager;
     
    
@@ -208,7 +212,11 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, groundMask) && !EventSystem.current.IsPointerOverGameObject())
+        if (Physics.Raycast(ray, out var hitInfoNull, Mathf.Infinity, nonInteractMask) && !gameManager.gameStateFight)
+        {
+            return (succsess: false, position: Vector3.zero);
+        }
+        else if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, groundMask) && !EventSystem.current.IsPointerOverGameObject())
         {
             return (succsess: true, position: hitInfo.point);
         }
@@ -229,7 +237,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     {
         
 
-        Collider[] hitEnemies = Physics.OverlapSphere(pointOfAttack.position, attackRange, LayerMask.GetMask("Enemy"));
+        Collider[] hitEnemies = Physics.OverlapSphere(pointOfAttack.position, attackRange, enemyMask);
         foreach (var enemy in hitEnemies)
         {
            

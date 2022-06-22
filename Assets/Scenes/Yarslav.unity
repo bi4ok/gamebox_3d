@@ -475,7 +475,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 42938468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0b7424e6c6f3d046863bc3f823cdf55, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d2489eabd83884439349c4fc94de4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   allTowerObjects:
@@ -5837,7 +5837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 296036679241440320, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.5
+      value: 4.95
       objectReference: {fileID: 0}
     - target: {fileID: 296036679241440320, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5845,7 +5845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 296036679241440320, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.17
+      value: -6.98
       objectReference: {fileID: 0}
     - target: {fileID: 296036679241440320, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5912,6 +5912,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: d431ab9e19b38394f90195b65db8dd4d, type: 3}
     - target: {fileID: 296036679241440321, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
+      propertyPath: enemyMask.m_Bits
+      value: 2176
+      objectReference: {fileID: 0}
+    - target: {fileID: 296036679241440321, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
       propertyPath: luckymelee_attack
       value: 
       objectReference: {fileID: 8300000, guid: 557ba09511d6d1f4b89ca864b4091b55, type: 3}
@@ -5919,6 +5923,10 @@ PrefabInstance:
       propertyPath: unluckymelee_attack
       value: 
       objectReference: {fileID: 8300000, guid: aa57edfdf8618d94ea778ec3608cd904, type: 3}
+    - target: {fileID: 296036679241440321, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
+      propertyPath: nonInteractMask.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 296036679241440322, guid: 53ed89142c4612c4387f6875d3186660, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
@@ -6522,9 +6530,33 @@ PrefabInstance:
     m_TransformParent: {fileID: 650660792}
     m_Modifications:
     - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: gameHandler
+      value: 
+      objectReference: {fileID: 249420845}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: lightOnBild
+      value: 
+      objectReference: {fileID: 1598407847}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
       propertyPath: towerBuyCanvas
       value: 
       objectReference: {fileID: 550903569}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: originalColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: originalColor.g
+      value: 0.21960784
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: colorOnMouseEnter.g
+      value: 0.50980395
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: colorOnMouseEnter.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7365032311012134158, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
       propertyPath: m_Name
       value: Bild3
@@ -6955,7 +6987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &336015951
 Transform:
   m_ObjectHideFlags: 0
@@ -7867,11 +7899,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426206746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.047499895, y: 0.43056023, z: 0.009999752}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalPosition: {x: -357.31, y: -192.27, z: -12.130001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 184332878}
-  m_RootOrder: 6
+  m_Father: {fileID: 7875397932351647238}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &432474292
 PrefabInstance:
@@ -7951,12 +7983,48 @@ PrefabInstance:
     m_TransformParent: {fileID: 650660792}
     m_Modifications:
     - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: gameHandler
+      value: 
+      objectReference: {fileID: 249420845}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: lightOnBild
+      value: 
+      objectReference: {fileID: 1545835751}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
       propertyPath: towerBuyCanvas
       value: 
       objectReference: {fileID: 42938468}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: originalColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: originalColor.g
+      value: 0.21960784
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: colorOnMouseEnter.g
+      value: 0.50980395
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: colorOnMouseEnter.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756705223, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258771731778743495, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7365032311012134158, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
       propertyPath: m_Name
       value: Bild4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7365032311012134158, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7889753978598545332, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
       propertyPath: m_RootOrder
@@ -8838,7 +8906,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 550903569}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0b7424e6c6f3d046863bc3f823cdf55, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d2489eabd83884439349c4fc94de4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   allTowerObjects:
@@ -9014,7 +9082,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &585799379
 Transform:
   m_ObjectHideFlags: 0
@@ -9585,7 +9653,7 @@ MonoBehaviour:
   upPortal: {fileID: 892695964}
   rightPortal: {fileID: 1852006739}
   leftPortal: {fileID: 585799380}
-  downPortal: {fileID: 899150591033349873}
+  downPortal: {fileID: 1218091223}
   timeList:
   - 0
   - 30
@@ -10184,7 +10252,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &796105393
 Transform:
   m_ObjectHideFlags: 0
@@ -10630,7 +10698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &892695963
 Transform:
   m_ObjectHideFlags: 0
@@ -11721,6 +11789,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 650660792}
     m_Modifications:
     - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: gameHandler
+      value: 
+      objectReference: {fileID: 249420845}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
       propertyPath: towerBuyCanvas
       value: 
       objectReference: {fileID: 7875397933888797098}
@@ -12109,7 +12181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1218091222
 Transform:
   m_ObjectHideFlags: 0
@@ -12144,13 +12216,13 @@ MonoBehaviour:
     - name: 
       objectPrefab: {fileID: 4000856683519419410, guid: d680493ee8f130149b8d85818141148e, type: 3}
       scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
-      count: 1
+      count: 2
       spawnTimeFrom: 0
       spawned: 0
     - name: 
       objectPrefab: {fileID: 764020721661729620, guid: 959106f116e8d644c9e17f5ec57db450, type: 3}
       scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
-      count: 1
+      count: 0
       spawnTimeFrom: 0
       spawned: 0
     - name: 
@@ -12162,7 +12234,7 @@ MonoBehaviour:
     - name: 
       objectPrefab: {fileID: 6350322320348864596, guid: 9117f8ff7bf492c4eb9f812da5d5d3cc, type: 3}
       scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
-      count: 3
+      count: 0
       spawnTimeFrom: 0
       spawned: 0
     timeToNextWave: 70
@@ -21855,7 +21927,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8764251091296862657, guid: 275729749d4e83f4c8c935e4f0cdd73e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.2
+      value: 33.65
       objectReference: {fileID: 0}
     - target: {fileID: 8764251091296862657, guid: 275729749d4e83f4c8c935e4f0cdd73e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21863,7 +21935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8764251091296862657, guid: 275729749d4e83f4c8c935e4f0cdd73e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -25.529999
+      value: -20.34
       objectReference: {fileID: 0}
     - target: {fileID: 8764251091296862657, guid: 275729749d4e83f4c8c935e4f0cdd73e, type: 3}
       propertyPath: m_LocalRotation.x
@@ -21935,7 +22007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8764251091927124197, guid: 275729749d4e83f4c8c935e4f0cdd73e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.2
+      value: 33.65
       objectReference: {fileID: 0}
     - target: {fileID: 8764251091927124197, guid: 275729749d4e83f4c8c935e4f0cdd73e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21943,7 +22015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8764251091927124197, guid: 275729749d4e83f4c8c935e4f0cdd73e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -25.529999
+      value: -20.34
       objectReference: {fileID: 0}
     - target: {fileID: 8764251091927124197, guid: 275729749d4e83f4c8c935e4f0cdd73e, type: 3}
       propertyPath: m_LocalRotation.x
@@ -27540,6 +27612,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!108 &1399277099 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 1756705225, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+  m_PrefabInstance: {fileID: 1745671093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1405100977
 GameObject:
   m_ObjectHideFlags: 0
@@ -32788,6 +32865,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!108 &1545835751 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 1756705225, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+  m_PrefabInstance: {fileID: 434265971}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1561040289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33045,6 +33127,11 @@ MonoBehaviour:
   m_Spacing: {x: 300, y: 100}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!108 &1598407847 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 1756705225, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+  m_PrefabInstance: {fileID: 279976902}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1599306933
 GameObject:
   m_ObjectHideFlags: 0
@@ -33437,9 +33524,33 @@ PrefabInstance:
     m_TransformParent: {fileID: 650660792}
     m_Modifications:
     - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: gameHandler
+      value: 
+      objectReference: {fileID: 249420845}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: lightOnBild
+      value: 
+      objectReference: {fileID: 1399277099}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
       propertyPath: towerBuyCanvas
       value: 
       objectReference: {fileID: 2120686649}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: originalColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: originalColor.g
+      value: 0.21960784
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: colorOnMouseEnter.g
+      value: 0.50980395
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: colorOnMouseEnter.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7365032311012134158, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
       propertyPath: m_Name
       value: Bild2
@@ -33859,7 +33970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1852006738
 Transform:
   m_ObjectHideFlags: 0
@@ -39665,7 +39776,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2003796571}
   - component: {fileID: 2003796572}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Area Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40511,7 +40622,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2120686649}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0b7424e6c6f3d046863bc3f823cdf55, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d2489eabd83884439349c4fc94de4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   allTowerObjects:
@@ -40717,7 +40828,7 @@ GameObject:
   - component: {fileID: 93327263478139461}
   - component: {fileID: 720646353311043841}
   - component: {fileID: 720646353311043840}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: MedPackFactory
   m_TagString: Earth
   m_Icon: {fileID: 0}
@@ -40746,11 +40857,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 720646353311043839}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e57842ab9837444bb7d987d7e6c8ef6, type: 3}
+  m_Script: {fileID: 11500000, guid: fffa0e8bce4bdc449b8c666610e23a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   medpackBuyCanvas: {fileID: 8738388076538198917}
   bonusHandler: {fileID: 249420844}
+  gameHandler: {fileID: 249420845}
   lightOnBild: {fileID: 2003796572}
   colorOnMouseEnter: {r: 0, g: 1, b: 0.09281945, a: 0}
   originalColor: {r: 1, g: 0, b: 0, a: 0}
@@ -40918,7 +41030,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1421576452715883588
 Transform:
   m_ObjectHideFlags: 0
@@ -41944,7 +42056,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6181698683660565127}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: polySurface2
   m_TagString: Earth
   m_Icon: {fileID: 0}
@@ -49895,6 +50007,7 @@ Transform:
   - {fileID: 2120686650}
   - {fileID: 550903570}
   - {fileID: 42938469}
+  - {fileID: 426206748}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54539,7 +54652,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7875397933888797098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0b7424e6c6f3d046863bc3f823cdf55, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d2489eabd83884439349c4fc94de4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   allTowerObjects:
@@ -55303,7 +55416,7 @@ GameObject:
   - component: {fileID: 7083381324125429275}
   - component: {fileID: 7371705119905419747}
   - component: {fileID: 5561992473663756433}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: polySurface3
   m_TagString: Earth
   m_Icon: {fileID: 0}
@@ -55999,7 +56112,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8738388076538198917}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31c10d180e2b6444cba0de6ff11222f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8158344be8fe3db4ab97628966f67ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   allMedpackObjects:
