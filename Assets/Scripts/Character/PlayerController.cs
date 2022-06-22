@@ -212,7 +212,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out var hitInfoNull, Mathf.Infinity, nonInteractMask))
+        if (Physics.Raycast(ray, out var hitInfoNull, Mathf.Infinity, nonInteractMask) && !gameManager.gameStateFight)
         {
             return (succsess: false, position: Vector3.zero);
         }

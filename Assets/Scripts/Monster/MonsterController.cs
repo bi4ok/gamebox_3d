@@ -153,6 +153,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
             {
                 _monsterAnimator.SetFloat("Speed", 0);
                 agent.isStopped = true;
+                transform.LookAt(targetToAttack.transform);
                 Attack(targetToAttack.gameObject);
             }
         }
