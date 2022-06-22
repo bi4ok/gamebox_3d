@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         _playerRigidBody = GetComponent<Rigidbody>();
         _characterInside = new Character(startHealth, damageValue, energyValue, shieldPower, attackRange, attackSpeed, movementSpeed, tag);
         _meeleAttackCoolDown = 1 / attackSpeed;
-        gunScript.OnEquip(damageValue, attackSpeed, gameObject);
+        gunScript.OnEquip(damageValue, attackSpeed, gameObject, gunScript.name);
         playerAnimator.SetFloat("MovementSpeed", movementSpeed / 10);
         playerAnimator.SetFloat("AttackSpeed", attackSpeed);
         _timeToRespawn = baseTimeToRespawn;
@@ -148,7 +148,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
         //weapons[to].SetActive(true);
         gunScript.UnEquip();
         gunScript = weapons[to];
-        gunScript.OnEquip(damageValue, attackSpeed, gameObject);
+        gunScript.OnEquip(damageValue, attackSpeed, gameObject, gunScript.name);
         print(gunScript.name);
     }
 

@@ -112,7 +112,7 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         _attackCoolDownTimer = 0;
 
         if (gunScript != null)
-            gunScript.OnEquip(damageValue, attackSpeed, gameObject);
+            gunScript.OnEquip(damageValue, attackSpeed, gameObject, gunScript.name);
 
         if (shieldEffect != null)
             shieldEffect.Stop();

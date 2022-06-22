@@ -125,7 +125,7 @@ public class GameHandler : MonoBehaviour
 
             if (!gameStateFight)
             {
-                if (Time.time > timeForStartNextWave)
+                if (Input.GetKey(KeyCode.N))
                 {
                     print("+++++");
                     portalManager.RunNextWave();
