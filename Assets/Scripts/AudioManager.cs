@@ -30,6 +30,7 @@ public class AudioManager : MonoBehaviour
         }
         foreach(Sound  s in dialogs)
         {
+            print(s.name);
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
 
@@ -77,8 +78,9 @@ public class AudioManager : MonoBehaviour
     {
         if(dialogs.Length > i)
         {
-            print(dialogs.Length);
+            print(dialogs.Length + " " + i + " " + dialogs[i]);
             Sound s = dialogs[i];
+            print(s.source);
             s.source.Play();
             i++;
         }

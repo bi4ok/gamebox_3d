@@ -66,6 +66,11 @@ public class GameHandler : MonoBehaviour
         UpdateInfo();
         menuScript.ChangeStateToBuild();
         timeForStartNextWave = Time.time + timeForFirstWave;
+        
+    }
+
+    private void Start()
+    {
         audioManager.PlayDilogs();
     }
 
