@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: e2bc2912146b5ce4599d4841df927041
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Aqum
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2c5521d881fe49647ae652436f32384e, type: 3}
+  - {fileID: 12800000, guid: 7bdb92cba9028e44c991e21a95ff6119, type: 3}
+  - {fileID: 12800000, guid: b088191fded5dee40bdf05e04483324a, type: 3}
+  - {fileID: 12800000, guid: 0c0bfb05e88fc334b87e6da18206fcd4, type: 3}
+  - {fileID: 12800000, guid: f9452b522945c854b8fa7572708276aa, type: 3}
+  - {fileID: 12800000, guid: e9e896e69b3dbe446994b208be90654d, type: 3}
+  - {fileID: 12800000, guid: df0fd0bf2b472994496248589c2525ca, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

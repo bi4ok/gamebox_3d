@@ -14,9 +14,12 @@ public class MainMenuScript : MonoBehaviour
 
     [SerializeField]
     private GameObject MainCanvas;
+    [SerializeField]
+    private GameObject EducationCanvas;
 
     [SerializeField]
     private Slider masterVolumeSlider;
+    
 
 
     private void Awake()
@@ -46,12 +49,18 @@ public class MainMenuScript : MonoBehaviour
         AuthorsCanvas.SetActive(false);
         SettingsCanvas.SetActive(true);
     }
+    public void ShowEducation()
+    {
+        MainCanvas.SetActive(false);
+        EducationCanvas.SetActive(true);
+    }
 
     public void BackToMenu()
     {
         MainCanvas.SetActive(true);
         AuthorsCanvas.SetActive(false);
         SettingsCanvas.SetActive(false);
+        EducationCanvas.SetActive(false);
     }
 
     public void ExitGame()
