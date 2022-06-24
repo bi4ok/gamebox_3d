@@ -36,6 +36,7 @@ public abstract class Weapon : MonoBehaviour
 
     [SerializeField]
     private AudioSource audioSource;
+
     [SerializeField]
     private AudioManager audioManager;
 
@@ -70,6 +71,11 @@ public abstract class Weapon : MonoBehaviour
         scrapUI.SetActive(false);
         print(scrapUI.name + " выключено");
         Destroy(glow);
+    }
+
+    public void ChooseAudioManager(AudioManager newAudioManager)
+    {
+        audioManager = newAudioManager;
     }
 
     protected abstract void BulletSpawn(GameObject bullet, 

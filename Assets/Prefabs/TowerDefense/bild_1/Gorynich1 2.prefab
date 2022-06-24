@@ -300,7 +300,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2556943482723915631}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -38.18, y: 0, z: -29.14}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
@@ -318,13 +318,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2556943482723915631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 142aabf2dbf1dce4a941827364671e2d, type: 3}
+  m_Script: {fileID: 11500000, guid: f848489053c3e3a449708e3573c7969b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gunScript: {fileID: 2435793486995679076}
-  attackRange: 10
+  attackRange: 6
   attackSpeed: 13
-  aimForwardOffset: 0
+  aimForwardOffset: 0.059
+  audioManager: {fileID: 0}
 --- !u!1 &2753814540271309610
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,7 +350,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2753814540271309610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.001, z: 5.05}
+  m_LocalPosition: {x: 0, y: -1.15, z: 7.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 557851567767336542}
@@ -669,7 +670,9 @@ MonoBehaviour:
   scrapName: tower
   blasterSound: {fileID: 8300000, guid: 5747405c106f3b4478c60be67396aad9, type: 3}
   audioSource: {fileID: 2886117968587045573}
+  audioManager: {fileID: 0}
   gameHandler: {fileID: 0}
+  scrapUI: {fileID: 0}
 --- !u!1 &7857353373752641483
 GameObject:
   m_ObjectHideFlags: 0

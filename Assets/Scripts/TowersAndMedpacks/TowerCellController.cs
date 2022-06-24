@@ -14,6 +14,8 @@ public class TowerCellController : MonoBehaviour
     private Color colorOnMouseEnter;
     [SerializeField]
     private Color originalColor;
+    [SerializeField]
+    private AudioManager audioManager;
 
     private GameObject _currentTower;
 
@@ -55,6 +57,9 @@ public class TowerCellController : MonoBehaviour
             Destroy(_currentTower);
         }
         _currentTower = Instantiate(towerPrefab, transform.position, transform.rotation, gameObject.transform);
+        TowerAttackControl towerAttackScript = _currentTower.GetComponent<TowerAttackControl>();
+        towerAttackScript.audioManager = audioManager;
+        towerAttackScript.OnCreate();
         
     }
 }
