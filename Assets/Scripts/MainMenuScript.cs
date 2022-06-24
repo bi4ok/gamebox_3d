@@ -18,8 +18,11 @@ public class MainMenuScript : MonoBehaviour
     private GameObject EducationCanvas;
 
     [SerializeField]
-    private Slider masterVolumeSlider;
-    
+    private Slider masterVolumeSlider_music;
+    [SerializeField]
+    private Slider masterVolumeSlider_sounds;
+    [SerializeField]
+    private Slider masterVolumeSlider_dilogs;
 
 
     private void Awake()
@@ -31,7 +34,9 @@ public class MainMenuScript : MonoBehaviour
 
     public void StartGame()
     {
-        PlayerPrefs.SetFloat("MasterVolume", masterVolumeSlider.value);
+        PlayerPrefs.SetFloat("MasterVolume_Music", masterVolumeSlider_music.value);
+        PlayerPrefs.SetFloat("MasterVolume_Sounds", masterVolumeSlider_sounds.value);
+        PlayerPrefs.SetFloat("MasterVolume_Dilogs", masterVolumeSlider_dilogs.value);
         PlayerPrefs.Save();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

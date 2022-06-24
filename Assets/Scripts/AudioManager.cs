@@ -15,7 +15,7 @@ public class AudioManager : MonoBehaviour
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
 
-            s.source.volume = s.volume;
+            s.source.volume = PlayerPrefs.GetFloat("MasterVolume_Sounds");
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
@@ -24,7 +24,7 @@ public class AudioManager : MonoBehaviour
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
 
-            s.source.volume = s.volume;
+            s.source.volume = PlayerPrefs.GetFloat("MasterVolume_Music");
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
@@ -34,7 +34,7 @@ public class AudioManager : MonoBehaviour
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
 
-            s.source.volume = s.volume;
+            s.source.volume = PlayerPrefs.GetFloat("MasterVolume_Dilogs"); ;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
