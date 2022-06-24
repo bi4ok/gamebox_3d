@@ -8,6 +8,9 @@ public class AudioManager : MonoBehaviour
     public Sound[] music;
     public Sound[] dialogs;
     int i = 0;
+    private Sound s_sound;
+    private Sound s_music;
+    private Sound s_dilogs;
     private void Awake()
     {
         foreach(Sound s in sounds)
@@ -18,6 +21,7 @@ public class AudioManager : MonoBehaviour
             s.source.volume = PlayerPrefs.GetFloat("MasterVolume_Sounds");
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+            
         }
         foreach(Sound s in music)
         {
@@ -30,7 +34,7 @@ public class AudioManager : MonoBehaviour
         }
         foreach(Sound  s in dialogs)
         {
-            print(s.name);
+          
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
 
@@ -83,6 +87,22 @@ public class AudioManager : MonoBehaviour
             print(s.source);
             s.source.Play();
             i++;
+        }
+    }
+    public void UpdateVolume()
+    {
+        foreach (Sound s in sounds)
+        {
+            s.source.volume = PlayerPrefs.GetFloat("MasterVolume_Sounds");
+        }
+        foreach (Sound s in music)
+        {
+            s.source.volume = PlayerPrefs.GetFloat("MasterVolume_Music");
+        }
+        foreach (Sound s in dialogs)
+        {
+           
+            s.source.volume = PlayerPrefs.GetFloat("MasterVolume_Dilogs"); 
         }
     }
 }

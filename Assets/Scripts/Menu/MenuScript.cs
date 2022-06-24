@@ -26,10 +26,15 @@ public class MenuScript : MonoBehaviour
 
     [SerializeField]
     private GameObject PauseMenu;
-   
+
 
     [SerializeField]
-    private Slider volumeSlider;
+    private Slider masterVolumeSlider_music;
+    [SerializeField]
+    private Slider masterVolumeSlider_sounds;
+    [SerializeField]
+    private Slider masterVolumeSlider_dilogs;
+
 
     [SerializeField]
     private BonusController bonusHandler;
@@ -39,13 +44,16 @@ public class MenuScript : MonoBehaviour
 
     [SerializeField]
     private InputField inputField;
-
+    [SerializeField]
+    private AudioManager audioManager;
     private bool _nameEntered = false;
 
     private void Awake()
     {
-        Time.timeScale = 1; 
-        volumeSlider.value = PlayerPrefs.GetFloat("MasterVolume");
+        Time.timeScale = 1;
+        masterVolumeSlider_music.value = PlayerPrefs.GetFloat("MasterVolume_Music");
+        masterVolumeSlider_sounds.value = PlayerPrefs.GetFloat("MasterVolume_Sounds");
+        masterVolumeSlider_dilogs.value = PlayerPrefs.GetFloat("MasterVolume_Dilogs");
     }
     public void Update()
     {
@@ -96,6 +104,7 @@ public class MenuScript : MonoBehaviour
         buildCanvas.SetActive(false);
         gameOverCanvas.SetActive(true);
         ShowScoreOnEnd();
+        audioManager.PlayMusic("Game over");
 
     }
 
