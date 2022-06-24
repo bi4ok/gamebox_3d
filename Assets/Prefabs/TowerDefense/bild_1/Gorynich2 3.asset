@@ -22,5 +22,5 @@ MonoBehaviour:
   costRed: 10
   costBrown: 10
   costBlue: 0
-  check: {fileID: 11400000, guid: 6a053aeb50d86d0438f7c55e36d2c45b, type: 2}
+  check: {fileID: 11400000, guid: a78b05e1b1d0c5044a4d9f4435f172cc, type: 2}
   isBougth: 0
