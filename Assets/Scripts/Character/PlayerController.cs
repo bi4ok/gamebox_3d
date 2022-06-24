@@ -56,8 +56,6 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     private LayerMask enemyMask;
     [SerializeField]
     private AudioManager audioManager;
-    [SerializeField]
-    private GameObject[] images_sh;
     
    
 
@@ -150,16 +148,9 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
 
     private void ChangeWeapon(int from, int to)
     {
-        //weapons[from].SetActive(false);
-        //weapons[to].SetActive(true);
-        images_sh[0].SetActive(false);
-        images_sh[1].SetActive(false);
-       
-        gunScript = weapons[to];
+
         gunScript.UnEquip();
-        
-        images_sh[to ].SetActive(true);
-        print(to.ToString());
+        gunScript = weapons[to];
         
         gunScript.OnEquip(damageValue, attackSpeed, gameObject, gunScript.name);
         print(gunScript.name);

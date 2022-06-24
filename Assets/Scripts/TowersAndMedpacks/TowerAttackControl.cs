@@ -14,17 +14,20 @@ public class TowerAttackControl : MonoBehaviour
     [SerializeField, Range(0, 1)]
     private float aimForwardOffset;
 
+    public AudioManager audioManager;
+
     private Collider[] monsters = new Collider[] { };
     private Collider target;
     private float attackCooldown;
     private float nextAttackTime;
 
 
-    private void Start()
+    public void OnCreate()
     {
         attackCooldown = 1 / attackSpeed;
         nextAttackTime = attackCooldown;
         gunScript.OnEquip(1, 1, gameObject, gunScript.name);
+        gunScript.ChooseAudioManager(audioManager);
     }
     private void Update()
     {

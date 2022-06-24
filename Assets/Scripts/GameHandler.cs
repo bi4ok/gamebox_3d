@@ -94,9 +94,23 @@ public class GameHandler : MonoBehaviour
     }
     private void UpdateInfo()
     {
-        red_scrtxt.text = (scrapStorage["red"] > 99 ? "99" : scrapStorage["red"].ToString());
-        blue_scrtxt.text = (scrapStorage["blue"] > 99 ? "99" : scrapStorage["blue"].ToString());
-        brown_scrtxt.text = (scrapStorage["yellow"] > 99 ? "99" : scrapStorage["yellow"].ToString());
+
+        red_scrtxt.text = CalculateScrap(scrapStorage["red"]);
+        blue_scrtxt.text = CalculateScrap(scrapStorage["blue"]);
+        brown_scrtxt.text = CalculateScrap(scrapStorage["yellow"]);
+    }
+
+    private string CalculateScrap(float scrapValue)
+    {
+        if (scrapValue <= 999)
+        {
+            return scrapValue.ToString();
+        }
+        else
+        {
+            string newScrapValue = string.Format("{0:f1}k", scrapValue/1000); ;
+            return newScrapValue;
+        }
     }
 
     private void CheckGameState()

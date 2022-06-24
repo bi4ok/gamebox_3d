@@ -36,13 +36,16 @@ public abstract class Weapon : MonoBehaviour
 
     [SerializeField]
     private AudioSource audioSource;
+
     [SerializeField]
     private AudioManager audioManager;
 
     [SerializeField]
     private GameHandler gameHandler;
     private string name_shoot;
-   
+
+    [SerializeField]
+    private GameObject scrapUI;
 
     private float baseDamage;
     private float attackSpeed;
@@ -51,12 +54,10 @@ public abstract class Weapon : MonoBehaviour
     private GameObject attacker;
     private bool _isUpgrade;
 
-    private void Start()
-    {
-        audioManager = FindObjectOfType<AudioManager>();
-    }
     public void OnEquip(float damage, float speed, GameObject player, string name)
     {
+        scrapUI.SetActive(true);
+        print(scrapUI.name + " включено");
         baseDamage = damage;
         attackSpeed = speed;
         if (glowEffect)
@@ -67,7 +68,14 @@ public abstract class Weapon : MonoBehaviour
 
     public void UnEquip()
     {
+        scrapUI.SetActive(false);
+        print(scrapUI.name + " выключено");
         Destroy(glow);
+    }
+
+    public void ChooseAudioManager(AudioManager newAudioManager)
+    {
+        audioManager = newAudioManager;
     }
 
     protected abstract void BulletSpawn(GameObject bullet, 
