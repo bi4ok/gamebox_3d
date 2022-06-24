@@ -320,7 +320,10 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         {
             _monsterInside.TakeDamage(damageAmount, damageFrom);
         }
-
+        else
+        {
+            audioManager.PlaySounds("Energy Shield");
+        }
         if (buffer)
         {
             timeToAttackCastle = Time.time + 2;

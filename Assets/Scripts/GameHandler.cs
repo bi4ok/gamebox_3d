@@ -137,6 +137,7 @@ public class GameHandler : MonoBehaviour
                 gameStateFight = false;
                 gameEnd = portalManager.GameFinished();
                 menuScript.ChangeStateToBuild();
+                audioManager.PlaySounds("Sochy Zapil");
                 audioManager.PlayDilogs();
                 audioManager.StopMusic("Battle");
                 audioManager.PlayMusic("Phase 1 ambient");
