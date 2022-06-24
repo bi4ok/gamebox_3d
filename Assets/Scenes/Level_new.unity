@@ -6870,6 +6870,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1598407847}
     - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 426206747}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
       propertyPath: towerBuyCanvas
       value: 
       objectReference: {fileID: 550903569}
@@ -8397,6 +8401,10 @@ PrefabInstance:
       propertyPath: lightOnBild
       value: 
       objectReference: {fileID: 1545835751}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 426206747}
     - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
       propertyPath: towerBuyCanvas
       value: 
@@ -12195,6 +12203,10 @@ PrefabInstance:
       propertyPath: gameHandler
       value: 
       objectReference: {fileID: 249420845}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 426206747}
     - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
       propertyPath: towerBuyCanvas
       value: 
@@ -34123,6 +34135,10 @@ PrefabInstance:
       propertyPath: lightOnBild
       value: 
       objectReference: {fileID: 1399277099}
+    - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 426206747}
     - target: {fileID: 1122606337, guid: f07fad1cef221f94dbd9bd4b2fd46562, type: 3}
       propertyPath: towerBuyCanvas
       value: 
