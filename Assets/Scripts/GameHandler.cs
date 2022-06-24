@@ -11,7 +11,7 @@ public class GameHandler : MonoBehaviour
     [SerializeField]
     private PortalManager portalManager;
     [SerializeField]
-    private Text HPBar;
+    private Image HPBar;
     [SerializeField]
     private Sprite[] hpSprites;
     [SerializeField]
@@ -80,7 +80,7 @@ public class GameHandler : MonoBehaviour
         CheckGameState();
         if (!gameStateFight)
         {
-            nextWaveText.text = ((int)(timeForStartNextWave - Time.time)).ToString();
+           // nextWaveText.text = ((int)(timeForStartNextWave - Time.time)).ToString();
         }
         if (gameEnd)
         {
@@ -130,7 +130,7 @@ public class GameHandler : MonoBehaviour
 
             if (!gameStateFight)
             {
-                if (Time.time > timeForStartNextWave)
+                if (Input.GetKey(KeyCode.N))
                 {
                     print("+++++");
                     portalManager.RunNextWave();
@@ -155,7 +155,7 @@ public class GameHandler : MonoBehaviour
         var hpAndEnergy = playerInfo.ShowCurrentStatus();
 
         // int indexOfHpSprite = GetIndexFromValue(hpAndEnergy[0]);
-        HPBar.text = playerInfo.CurrentHpcheck().ToString();
+        HPBar.fillAmount = playerInfo.CurrentHpcheck() / playerInfo.CheckStats("health");
         
        // int indexOfMpSprite = GetIndexFromValue(hpAndEnergy[1]);
       //  MPBar.sprite = mpSprites[indexOfMpSprite];

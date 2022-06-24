@@ -36,9 +36,13 @@ public abstract class Weapon : MonoBehaviour
 
     [SerializeField]
     private AudioSource audioSource;
+    [SerializeField]
+    private AudioManager audioManager;
 
     [SerializeField]
     private GameHandler gameHandler;
+    private string name_shoot;
+   
 
     private float baseDamage;
     private float attackSpeed;
@@ -47,13 +51,18 @@ public abstract class Weapon : MonoBehaviour
     private GameObject attacker;
     private bool _isUpgrade;
 
-    public void OnEquip(float damage, float speed, GameObject player)
+    private void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+    public void OnEquip(float damage, float speed, GameObject player, string name)
     {
         baseDamage = damage;
         attackSpeed = speed;
         if (glowEffect)
             glowEffect.color = glowColor;
         attacker = player;
+        name_shoot = name;
     }
 
     public void UnEquip()
@@ -73,7 +82,15 @@ public abstract class Weapon : MonoBehaviour
             if (scrapName == "tower" || (gameHandler != null && gameHandler.PlayerTryWasteScrap(scrapName, 1)))
             {
                 BulletSpawn(bulletPrefab, weaponDamage, attackSpeed, weaponRange, knockback, _isUpgrade, pointOfAttack, attacker);
-                audioSource.PlayOneShot(blasterSound, 0.1f);
+                if(name_shoot == "Vintovka")
+                {
+                    audioManager.PlaySounds(name_shoot + " " + Random.Range(1, 3).ToString());
+                }
+                else if(name_shoot == "Drobovic")
+                {
+                    audioManager.PlaySounds(name_shoot + " " + Random.Range(1, 2).ToString());
+                }
+                
                 _nextRangeAttackTime = Time.time + 1 / rangeAttackCoolDown;
             }
 

@@ -24,7 +24,7 @@ public class TowerAttackControl : MonoBehaviour
     {
         attackCooldown = 1 / attackSpeed;
         nextAttackTime = attackCooldown;
-        gunScript.OnEquip(1, 1, gameObject);
+        gunScript.OnEquip(1, 1, gameObject, gunScript.name);
     }
     private void Update()
     {
