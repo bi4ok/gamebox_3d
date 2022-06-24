@@ -51,10 +51,6 @@ public abstract class Weapon : MonoBehaviour
     private GameObject attacker;
     private bool _isUpgrade;
 
-    private void Start()
-    {
-        audioManager = FindObjectOfType<AudioManager>();
-    }
     public void OnEquip(float damage, float speed, GameObject player, string name)
     {
         baseDamage = damage;
