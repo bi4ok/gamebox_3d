@@ -7752,6 +7752,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6622bec1816e6f4bb81090bca5f4cf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &249420847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249420844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a96a04b0bf4551140b7e64951e849685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Education_panels: []
 --- !u!4 &249420849 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2256867503432670502, guid: 598be13704c905c428137e6fdd1d26b1, type: 3}
@@ -59961,26 +59974,6 @@ RectTransform:
   m_AnchoredPosition: {x: 720, y: -439.5685}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7875397932530932752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249420844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9b5f012f80d9b54baf510e9f17fb845, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  messeges:
-  - {fileID: 8300000, guid: 39095604c81ab90418349adc1dd393a2, type: 3}
-  - {fileID: 8300000, guid: 5e619e2d5fed1ee4fb7c5835cb35a70d, type: 3}
-  - {fileID: 8300000, guid: 6efb79117fb87b5489c6941e4ecbf34a, type: 3}
-  - {fileID: 8300000, guid: 006a7092db17ed84d8f019347c409fb3, type: 3}
-  audioSource: {fileID: 534162213}
-  circlemesseges: []
-  audioManager: {fileID: 426206747}
 --- !u!114 &7875397932530932780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60006,7 +59999,7 @@ MonoBehaviour:
   bonusHandler: {fileID: 249420846}
   scoreText: {fileID: 1889284336}
   inputField: {fileID: 1642474439}
-  audioManager: {fileID: 0}
+  audioManager: {fileID: 426206747}
 --- !u!114 &7875397932557261724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61872,7 +61865,7 @@ PrefabInstance:
     - target: {fileID: 2256867503432670497, guid: 598be13704c905c428137e6fdd1d26b1, type: 3}
       propertyPath: soundmessr
       value: 
-      objectReference: {fileID: 7875397932530932752}
+      objectReference: {fileID: 0}
     - target: {fileID: 2256867503432670497, guid: 598be13704c905c428137e6fdd1d26b1, type: 3}
       propertyPath: blue_scrtxt
       value: 
