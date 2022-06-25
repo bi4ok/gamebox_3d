@@ -106,7 +106,7 @@ public class AudioManager : MonoBehaviour
         PlayerPrefs.SetFloat("MasterVolume_Music", masterVolumeSlider_music.value);
         PlayerPrefs.SetFloat("MasterVolume_Sounds", masterVolumeSlider_sounds.value);
         PlayerPrefs.SetFloat("MasterVolume_Dilogs", masterVolumeSlider_dilogs.value);
-        PlayerPrefs.Save();
+       
         foreach (Sound s in sounds)
         {
             s.source.volume = PlayerPrefs.GetFloat("MasterVolume_Sounds");
@@ -120,5 +120,6 @@ public class AudioManager : MonoBehaviour
            
             s.source.volume = PlayerPrefs.GetFloat("MasterVolume_Dilogs"); 
         }
+        PlayerPrefs.Save();
     }
 }

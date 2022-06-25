@@ -7,17 +7,38 @@ public class EducationManager : MonoBehaviour
     [SerializeField]
     private GameObject[] Education_panels;
     private int i = 0;
+    private bool is_skip = false;
     private void Awake()
     {
-        foreach(GameObject g in Education_panels)
-        {
-            g.SetActive(false);
-        }
-        
+        CloseEducation();
+        NextEducationPanel();
     }
     public void NextEducationPanel()
     {
-        Education_panels[i].SetActive(true);
-        i++;
+        print(is_skip);
+        if (!is_skip)
+        {
+            CloseEducation();
+            Education_panels[i].SetActive(true);
+            i++;
+            
+            print("ѕытаюсь включить обучение ");
+        }
+    }
+    public void SkipEducation()
+    {
+        is_skip = true;
+    }
+    public void CloseEducation()
+    {
+        if(i != 0)
+        Education_panels[i - 1].SetActive(false);
+    }
+    public bool isEndEducation()
+    {
+        if (i == Education_panels.Length)
+            return true;
+        else
+            return false;
     }
 }

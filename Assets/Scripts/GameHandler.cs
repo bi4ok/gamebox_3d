@@ -39,7 +39,8 @@ public class GameHandler : MonoBehaviour
    
     [SerializeField]
     AudioManager audioManager;
-
+    [SerializeField]
+    EducationManager educationManager;
     [SerializeField]
     private MedPackCellContoller medPackFactory;
 
@@ -141,6 +142,8 @@ public class GameHandler : MonoBehaviour
                 audioManager.PlayDilogs();
                 audioManager.StopMusic("Battle");
                 audioManager.PlayMusic("Phase 1 ambient");
+                if (!educationManager.isEndEducation())
+                    educationManager.NextEducationPanel();
             }
 
             if (!gameStateFight)
