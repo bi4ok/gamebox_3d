@@ -1,10 +1,18 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MarketScript : MonoBehaviour
 {
+    [Serializable]
+    public class BarChanger
+    {
+        public GameObject bar;
+        public Vector3 shift;
+    }
+
     [SerializeField] 
     private GameObject slot;
     [SerializeField] 
@@ -13,10 +21,34 @@ public class MarketScript : MonoBehaviour
     private ProductScript[] products;
     [SerializeField] 
     private MarketInfo marketinf;
+
+    [SerializeField]
+    private BarChanger[] barsToMove;
+    [SerializeField]
+    private float shiftAmount;
+
+
+
     private void Awake()
     {
         //marketinf = marketinfobj.GetComponent<MarketInfo>();
         Slotssort();
+        print("MARKET START");
+    }
+
+    public void MoveHPBarsRight()
+    {
+        foreach (BarChanger bar in barsToMove)
+        {
+            bar.bar.transform.position += bar.shift;
+        }
+    }
+    public void MoveHPBarsLeft()
+    {
+        foreach (BarChanger bar in barsToMove)
+        {
+            bar.bar.transform.position -= bar.shift;
+        }
     }
 
     public void Slotssort()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TowerCellController : MonoBehaviour
 {
@@ -24,9 +25,14 @@ public class TowerCellController : MonoBehaviour
         towerBuyCanvas.SetActive(false);
     }
 
+    private bool IsClickAble()
+    {
+        return !gameHandler.gameStateFight && !EventSystem.current.IsPointerOverGameObject();
+    }
+
     private void OnMouseDown()
     {
-        if (!gameHandler.gameStateFight)
+        if (IsClickAble())
         {
             towerBuyCanvas.SetActive(true);
             towerBuyCanvas.GetComponent<TowerController>().GetNewCell(gameObject);
@@ -36,7 +42,7 @@ public class TowerCellController : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (!gameHandler.gameStateFight)
+        if (IsClickAble())
         {
             lightOnBild.color = colorOnMouseEnter;
         }
@@ -44,7 +50,7 @@ public class TowerCellController : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (!gameHandler.gameStateFight)
+        if (IsClickAble())
         {
             lightOnBild.color = originalColor;
         }

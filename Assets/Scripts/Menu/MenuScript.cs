@@ -48,6 +48,8 @@ public class MenuScript : MonoBehaviour
     private AudioManager audioManager;
     private bool _nameEntered = false;
 
+    private float nextClickTime;
+
     private void Awake()
     {
         Time.timeScale = 1;
@@ -57,7 +59,7 @@ public class MenuScript : MonoBehaviour
     }
     public void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
             PauseGame();
     }
 
@@ -75,8 +77,17 @@ public class MenuScript : MonoBehaviour
 
     public void PauseGame()
     {
-        PauseMenu.SetActive(true);
-        Time.timeScale = 0;
+        if (PauseMenu.activeSelf)
+        {
+            ContinueGameButton();
+
+        }
+        else if (!PauseMenu.activeSelf)
+        {
+            PauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+
     }
 
     public void ContinueGameButton()

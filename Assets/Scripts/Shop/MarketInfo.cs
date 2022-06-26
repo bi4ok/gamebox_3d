@@ -31,7 +31,18 @@ public class MarketInfo : MonoBehaviour
     private ProductScript currentproduct;
     private Slot currentSlot;
 
+    private Color myColorActive;
+    private Color myColorUnactive;
+
     private Item item;
+
+    private void Start()
+    {
+        myColorActive = new Color(0.8941177f, 0.7333333f, 0.5568628f, 1);
+        print(myColorActive);
+        myColorUnactive = new Color(1, 0, 0.2052779f, 1);
+
+    }
     public void UpdateInfo(ProductScript products, Slot slotScript)
     {
         print(this.name);
@@ -49,6 +60,8 @@ public class MarketInfo : MonoBehaviour
         currentproduct = products;
         currentSlot = slotScript;
         buttonbuy.interactable = currentSlot.CanIBuyIt();
+        Text buyText = buttonbuy.GetComponentInChildren<Text>();
+        buyText.color = buttonbuy.interactable ? myColorActive : myColorUnactive;
         print(currentproduct + "UPDATE");
     }
 
@@ -64,16 +77,29 @@ public class MarketInfo : MonoBehaviour
             //"\n\n" + "Скорость бега:" +
             //"+" + products.movementSpeedPlus.ToString() + "," + "+" + products.movementSpeedPercent.ToString() + "%" 
         ;
-        blue_pricetext.text = products.cost_blue.ToString();
-        green_pricetext.text = products.cost_brown.ToString();
-        red_pricetext.text = products.cost_red.ToString();
+        blue_pricetext.text = CalculateScrap(products.cost_blue);
+        green_pricetext.text = CalculateScrap(products.cost_brown);
+        red_pricetext.text = CalculateScrap(products.cost_red);
         
         return productInfo;
     }
 
+    private string CalculateScrap(float scrapValue)
+    {
+        if (scrapValue <= 999)
+        {
+            return scrapValue.ToString();
+        }
+        else
+        {
+            string newScrapValue = string.Format("{0:f1}k", scrapValue / 1000); ;
+            return newScrapValue;
+        }
+    }
+
     public void Buy()
     {
-        audioManager.PlaySounds("Kassa");
+        
         item = new Item(damagePlus: currentproduct.damagePlus,
             damagePercent: currentproduct.damagePercent,
             attackSpeedPlus: currentproduct.attackSpeedPlus,
@@ -96,6 +122,7 @@ public class MarketInfo : MonoBehaviour
         if (gameHandler.PlayerTryWasteScrap(cost))
         {
             //Вычитаем монеты
+            audioManager.PlaySounds("Kassa");
             playercontroller.EquipProduct(item, currentproduct.type, currentproduct.level);
             currentproduct.isbought = true;
         }

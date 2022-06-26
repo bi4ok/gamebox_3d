@@ -56,8 +56,12 @@ public abstract class Weapon : MonoBehaviour
 
     public void OnEquip(float damage, float speed, GameObject player, string name)
     {
-        scrapUI.SetActive(true);
-        print(scrapUI.name + " включено");
+        if (scrapUI != null)
+        {
+            scrapUI.SetActive(true);
+            print(scrapUI.name + " включено");
+        }
+
         baseDamage = damage;
         attackSpeed = speed;
         if (glowEffect)
@@ -68,7 +72,10 @@ public abstract class Weapon : MonoBehaviour
 
     public void UnEquip()
     {
-        scrapUI.SetActive(false);
+        if (scrapUI != null)
+        {
+            scrapUI.SetActive(false);
+        }
         print(scrapUI.name + " выключено");
         Destroy(glow);
     }
