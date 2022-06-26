@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\Soundmessegemanager.cs" />
     <Compile Include="Assets\Scripts\Shop\Slot.cs" />
     <Compile Include="Assets\Scripts\Menu\MenuScript.cs" />
+    <Compile Include="Assets\Scripts\EducationManager.cs" />
     <Compile Include="Assets\Scripts\MainMenuScript.cs" />
     <Compile Include="Assets\Scripts\TowersAndMedpacks\MedPackController.cs" />
     <Compile Include="Assets\Scripts\GameHandler.cs" />
@@ -110,7 +111,6 @@
     <Compile Include="Assets\Scripts\Bonus\Bonus.cs" />
     <Compile Include="Assets\Scripts\TowersAndMedpacks\TowerAttackControl.cs" />
     <Compile Include="Assets\Scripts\Bonus\BonusController.cs" />
-    <Compile Include="Assets\Scripts\EducationManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -729,6 +729,9 @@
     </Reference>
     <Reference Include="Unity.Searcher.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
