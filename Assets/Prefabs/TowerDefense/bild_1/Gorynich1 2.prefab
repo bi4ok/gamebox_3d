@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunScript: {fileID: 2435793486995679076}
-  attackRange: 6
+  attackRange: 9
   attackSpeed: 13
   aimForwardOffset: 0.059
   audioManager: {fileID: 0}
@@ -661,7 +661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointOfAttack: {fileID: 2758011324833890884}
   rangeAttackCoolDown: 10
-  weaponDamage: 1
+  weaponDamage: 2
   weaponRange: 0.45
   knockback: 0
   bulletPrefab: {fileID: 8171511646293749693, guid: d1c4de684a456474f88b801b94c4046d, type: 3}

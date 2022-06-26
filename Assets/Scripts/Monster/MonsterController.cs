@@ -98,7 +98,8 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
         //_castleTargetPosition =  castle.transform.position + Random.insideUnitSphere*attackRange;
         _castleTargetPosition = castle.transform.position + Random.insideUnitSphere * attackRange;
         _changeCastleRange = 8;
-        NavMesh.SamplePosition(_castleTargetPosition, out hitNavCastle, 10.0f, NavMesh.AllAreas);
+        while (!NavMesh.SamplePosition(_castleTargetPosition, out hitNavCastle, 10.0f, NavMesh.AllAreas));
+            print("position not in area");
         print(hitNavCastle.position + " HIT NAV CASTLE POSITION");
         _castle = castle;
         _castleHeart = heartOfCastle;
@@ -168,7 +169,11 @@ public class MonsterController : MonoBehaviour, IDamageAble, IDamageDealer<GameO
             {
                 _monsterAnimator.SetFloat("Speed", 0);
                 agent.isStopped = true;
-                transform.LookAt(_castleHeart.transform);
+                if (_castleHeart != null)
+                {
+                    transform.LookAt(_castleHeart.transform);
+                }
+                
                 Attack(_castle);
             }
             

@@ -68,8 +68,7 @@ public class CastleController : MonoBehaviour, IDamageAble
             if (deathEffect)
             {
                 GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
-                SpriteRenderer effectSprite = effect.GetComponent<SpriteRenderer>();
-                Destroy(effect, 3f);
+                gameObject.SetActive(false);
             }
             _alive = false;
             return true;
