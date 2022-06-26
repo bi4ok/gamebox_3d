@@ -18,17 +18,29 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private Slider masterVolumeSlider_dilogs;
 
+    private bool sourceAdded=false;
+
 
     private void Awake()
     {
-        foreach(Sound s in sounds)
+        print("янгдюмхе бяеу SOURCE");
+        print(masterVolumeSlider_dilogs + " " + masterVolumeSlider_dilogs.value);
+        float x = PlayerPrefs.GetFloat("MasterVolume_Dilogs", 0.999f);
+        print(x + " dilogs PREFS");
+        print(PlayerPrefs.GetFloat("MasterVolume_Sounds", 0.999f) + " sounds prefs");
+        print(PlayerPrefs.GetFloat("MasterVolume_Music", 0.999f) + " music prefs");
+        masterVolumeSlider_dilogs.value = x;
+        masterVolumeSlider_sounds.value = PlayerPrefs.GetFloat("MasterVolume_Sounds", 0.999f);
+        masterVolumeSlider_music.value = PlayerPrefs.GetFloat("MasterVolume_Music", 0.999f);
+
+        foreach (Sound s in sounds)
         {
             
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
 
-            s.source.volume = PlayerPrefs.GetFloat("MasterVolume_Sounds");
-            masterVolumeSlider_music.value = s.source.volume;
+            //s.source.volume = PlayerPrefs.GetFloat("MasterVolume_Sounds", 1);
+            //masterVolumeSlider_sounds.value = s.source.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
            
@@ -38,8 +50,8 @@ public class AudioManager : MonoBehaviour
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
 
-            s.source.volume = PlayerPrefs.GetFloat("MasterVolume_Music");
-            masterVolumeSlider_music.value = s.source.volume;
+            //s.source.volume = PlayerPrefs.GetFloat("MasterVolume_Music", 1);
+            //masterVolumeSlider_music.value = s.source.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
@@ -49,11 +61,14 @@ public class AudioManager : MonoBehaviour
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
 
-            s.source.volume = PlayerPrefs.GetFloat("MasterVolume_Dilogs"); ;
-            masterVolumeSlider_dilogs.value = s.source.volume;
+            //s.source.volume = PlayerPrefs.GetFloat("MasterVolume_Dilogs", 1); ;
+            //masterVolumeSlider_dilogs.value = s.source.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
+        print("янгдюмхе бяеу SOURCE опнькн сяоеьмн");
+        sourceAdded = true;
+        UpdateVolume();
 
     }
     
@@ -96,30 +111,36 @@ public class AudioManager : MonoBehaviour
         {
             print(dialogs.Length + " " + i + " " + dialogs[i]);
             Sound s = dialogs[i];
-            print(s.source);
             s.source.Play();
             i++;
         }
     }
     public void UpdateVolume()
     {
-        PlayerPrefs.SetFloat("MasterVolume_Music", masterVolumeSlider_music.value);
-        PlayerPrefs.SetFloat("MasterVolume_Sounds", masterVolumeSlider_sounds.value);
-        PlayerPrefs.SetFloat("MasterVolume_Dilogs", masterVolumeSlider_dilogs.value);
-       
-        foreach (Sound s in sounds)
+        print("UPDATE");
+
+
+        if (sourceAdded)
         {
-            s.source.volume = PlayerPrefs.GetFloat("MasterVolume_Sounds");
+            PlayerPrefs.SetFloat("MasterVolume_Music", masterVolumeSlider_music.value);
+            PlayerPrefs.SetFloat("MasterVolume_Sounds", masterVolumeSlider_sounds.value);
+            PlayerPrefs.SetFloat("MasterVolume_Dilogs", masterVolumeSlider_dilogs.value);
+            PlayerPrefs.Save();
+
+            foreach (Sound s in sounds)
+            {
+                s.source.volume = masterVolumeSlider_sounds.value;
+            }
+            foreach (Sound s in music)
+            {
+                s.source.volume = masterVolumeSlider_music.value;
+            }
+            foreach (Sound s in dialogs)
+            {
+                s.source.volume = masterVolumeSlider_dilogs.value;
+            }
         }
-        foreach (Sound s in music)
-        {
-            s.source.volume = PlayerPrefs.GetFloat("MasterVolume_Music");
-        }
-        foreach (Sound s in dialogs)
-        {
-           
-            s.source.volume = PlayerPrefs.GetFloat("MasterVolume_Dilogs"); 
-        }
-        PlayerPrefs.Save();
+
+        
     }
 }
