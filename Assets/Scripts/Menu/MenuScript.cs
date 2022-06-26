@@ -68,6 +68,7 @@ public class MenuScript : MonoBehaviour
 
     public void ChangeToSettings()
     {
+        PauseMenu.SetActive(false);
         settingsMenu.SetActive(true);
         Time.timeScale = 0;
     }

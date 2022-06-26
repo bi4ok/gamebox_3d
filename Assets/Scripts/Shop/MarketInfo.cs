@@ -25,6 +25,8 @@ public class MarketInfo : MonoBehaviour
     private PlayerController playercontroller;
     [SerializeField]
     private GameHandler gameHandler;
+    [SerializeField]
+    AudioManager audioManager;
 
     private ProductScript currentproduct;
     private Slot currentSlot;
@@ -71,7 +73,7 @@ public class MarketInfo : MonoBehaviour
 
     public void Buy()
     {
-
+        audioManager.PlaySounds("Kassa");
         item = new Item(damagePlus: currentproduct.damagePlus,
             damagePercent: currentproduct.damagePercent,
             attackSpeedPlus: currentproduct.attackSpeedPlus,
