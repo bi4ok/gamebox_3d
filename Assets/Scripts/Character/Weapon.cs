@@ -46,6 +46,8 @@ public abstract class Weapon : MonoBehaviour
 
     [SerializeField]
     private GameObject scrapUI;
+    [SerializeField]
+    TowerCellController towerCellController;
 
     private float baseDamage;
     private float attackSpeed;
@@ -94,20 +96,24 @@ public abstract class Weapon : MonoBehaviour
     {
         if (Time.time > _nextRangeAttackTime)
         {
-            if (scrapName == "tower" || (gameHandler != null && gameHandler.PlayerTryWasteScrap(scrapName, 1)))
-            {
-                BulletSpawn(bulletPrefab, weaponDamage, attackSpeed, weaponRange, knockback, _isUpgrade, pointOfAttack, attacker);
-                if(name_shoot == "Vintovka")
+          
+            
+                if (scrapName == "tower" || (gameHandler != null && gameHandler.PlayerTryWasteScrap(scrapName, 1)))
                 {
-                    audioManager.PlaySounds(name_shoot + " " + Random.Range(1, 3).ToString());
+                    BulletSpawn(bulletPrefab, weaponDamage, attackSpeed, weaponRange, knockback, _isUpgrade, pointOfAttack, attacker);
+                    if (name_shoot == "Vintovka")
+                    {
+                        audioManager.PlaySounds(name_shoot + " " + Random.Range(1, 3).ToString());
+                    }
+                    else if (name_shoot == "Drobovic")
+                    {
+                        audioManager.PlaySounds(name_shoot + " " + Random.Range(1, 2).ToString());
+                    }
+
+                    _nextRangeAttackTime = Time.time + 1 / rangeAttackCoolDown;
                 }
-                else if(name_shoot == "Drobovic")
-                {
-                    audioManager.PlaySounds(name_shoot + " " + Random.Range(1, 2).ToString());
-                }
-                
-                _nextRangeAttackTime = Time.time + 1 / rangeAttackCoolDown;
-            }
+            
+            
 
         }
     }

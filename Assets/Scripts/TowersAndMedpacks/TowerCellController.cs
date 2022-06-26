@@ -19,7 +19,7 @@ public class TowerCellController : MonoBehaviour
     private AudioManager audioManager;
 
     private GameObject _currentTower;
-
+    public bool ismouseactive = false;
     private void Start()
     {
         towerBuyCanvas.SetActive(false);
@@ -44,6 +44,7 @@ public class TowerCellController : MonoBehaviour
     {
         if (IsClickAble())
         {
+            ismouseactive = true;
             lightOnBild.color = colorOnMouseEnter;
         }
     }
@@ -52,6 +53,7 @@ public class TowerCellController : MonoBehaviour
     {
         if (IsClickAble())
         {
+            ismouseactive = false;
             lightOnBild.color = originalColor;
         }
     }

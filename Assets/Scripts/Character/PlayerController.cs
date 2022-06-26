@@ -56,6 +56,8 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
     private LayerMask enemyMask;
     [SerializeField]
     private AudioManager audioManager;
+    [SerializeField]
+    private GameObject shop;
     
    
 
@@ -148,13 +150,14 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
 
     private void ChangeWeapon(int from, int to)
     {
+        if (!shop.activeInHierarchy)
+        {
+            gunScript.UnEquip();
+            gunScript = weapons[to];
 
-        gunScript.UnEquip();
-        gunScript = weapons[to];
-        
-        gunScript.OnEquip(damageValue, attackSpeed, gameObject, gunScript.name);
-        print(gunScript.name);
-      
+            gunScript.OnEquip(damageValue, attackSpeed, gameObject, gunScript.name);
+            print(gunScript.name);
+        }
     }
 
     private void FixedUpdate()
