@@ -12071,7 +12071,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Phase 1 ambient
-    clip: {fileID: 8300000, guid: 1bc2030963471ab4286f9e66a51902ae, type: 3}
+    clip: {fileID: 8300000, guid: 340e25f173c455c428d7a39af59ec416, type: 3}
     volume: 1
     pitch: 1
     loop: 1
