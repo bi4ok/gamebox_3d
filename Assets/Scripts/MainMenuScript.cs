@@ -30,6 +30,9 @@ public class MainMenuScript : MonoBehaviour
         MainCanvas.SetActive(true);
         AuthorsCanvas.SetActive(false);
         SettingsCanvas.SetActive(false);
+        masterVolumeSlider_dilogs.value = PlayerPrefs.GetFloat("MasterVolume_Dilogs", 1);
+        masterVolumeSlider_sounds.value = PlayerPrefs.GetFloat("MasterVolume_Sounds", 1);
+        masterVolumeSlider_music.value = PlayerPrefs.GetFloat("MasterVolume_Music", 1);
     }
 
     public void StartGame()

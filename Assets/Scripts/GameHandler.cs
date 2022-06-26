@@ -38,7 +38,8 @@ public class GameHandler : MonoBehaviour
     private CastleController castle;
    
     [SerializeField]
-    AudioManager audioManager;
+    private AudioManager audioManager;
+
     [SerializeField]
     EducationManager educationManager;
     [SerializeField]
