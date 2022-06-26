@@ -48,3 +48,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: HP+Scrap
+    uniqueID: 4229295699
+    locked: 0
+  - name: Shop
+    uniqueID: 3092159989
+    locked: 0
+  - name: Education
+    uniqueID: 3999186579
+    locked: 0
