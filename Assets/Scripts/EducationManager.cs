@@ -25,6 +25,20 @@ public class EducationManager : MonoBehaviour
             print("ѕытаюсь включить обучение ");
         }
     }
+
+    public void NextEducationPanelFromShop()
+    {
+        print(i);
+        if (!is_skip && i == 10)
+        {
+            CloseEducation();
+            Education_panels[i].SetActive(true);
+            i++;
+
+            print("ѕытаюсь включить обучение ");
+        }
+    }
+
     public void SkipEducation()
     {
         is_skip = true;

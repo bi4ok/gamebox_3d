@@ -24,8 +24,6 @@ public class MarketScript : MonoBehaviour
 
     [SerializeField]
     private BarChanger[] barsToMove;
-    [SerializeField]
-    private float shiftAmount;
 
 
 
@@ -38,8 +36,10 @@ public class MarketScript : MonoBehaviour
 
     public void MoveHPBarsRight()
     {
+        print("ядбхц бопюбн");
         foreach (BarChanger bar in barsToMove)
         {
+            print($"{bar} -- { bar.bar.transform.position} -- {bar.shift}");
             bar.bar.transform.position += bar.shift;
         }
     }
