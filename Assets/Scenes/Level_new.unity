@@ -10786,12 +10786,6 @@ MonoBehaviour:
       count: 5
       spawnTimeFrom: 0
       spawned: 0
-    - name: 
-      objectPrefab: {fileID: 4000856683519419410, guid: d680493ee8f130149b8d85818141148e, type: 3}
-      scrapPrefab: {fileID: 7771788806740824112, guid: c2cf90ae9feb28e47a71131c04e2249a, type: 3}
-      count: 1
-      spawnTimeFrom: 0
-      spawned: 0
     timeToNextWave: 70
     lastWave: 1
   loopWave: 0
@@ -19895,12 +19889,6 @@ MonoBehaviour:
       count: 5
       spawnTimeFrom: 0
       spawned: 0
-    - name: 
-      objectPrefab: {fileID: 4000856683519419410, guid: d680493ee8f130149b8d85818141148e, type: 3}
-      scrapPrefab: {fileID: 7771788806740824112, guid: c2cf90ae9feb28e47a71131c04e2249a, type: 3}
-      count: 1
-      spawnTimeFrom: 0
-      spawned: 0
     timeToNextWave: 70
     lastWave: 1
   loopWave: 0
@@ -24347,7 +24335,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -0.0000076294, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -66155,7 +66143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!223 &1437623270351903860
 Canvas:
   m_ObjectHideFlags: 0
@@ -72563,7 +72551,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0.00059574994, y: 0.0024414062}
-  m_SizeDelta: {x: -607.18884, y: -631.5888}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &3415163052219283249
 GameObject:
@@ -77864,7 +77852,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 646e287443666bd4282288e903afb600, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfcc03d04df1886478e1718beadc4282, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
