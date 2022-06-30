@@ -73461,6 +73461,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4518956340531248197}
+        m_TargetAssemblyTypeName: MarketScript, Assembly-CSharp
+        m_MethodName: CheckPrices
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4518956340017539289
 GameObject:
   m_ObjectHideFlags: 0
@@ -73606,6 +73618,24 @@ MonoBehaviour:
     shift: {x: 2, y: 0, z: 0}
   - bar: {fileID: 51279958}
     shift: {x: 1, y: 0, z: 0}
+  gameHandler: {fileID: 249420845}
+  slots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!224 &4518956340531248198
 RectTransform:
   m_ObjectHideFlags: 0
@@ -79201,6 +79231,18 @@ MonoBehaviour:
       - m_Target: {fileID: 249420847}
         m_TargetAssemblyTypeName: EducationManager, Assembly-CSharp
         m_MethodName: NextEducationPanelFromShop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 4518956340531248197}
+        m_TargetAssemblyTypeName: MarketScript, Assembly-CSharp
+        m_MethodName: CheckPrices
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
