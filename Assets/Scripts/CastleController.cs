@@ -31,18 +31,23 @@ public class CastleController : MonoBehaviour, IDamageAble
     }
     void Update()
     {
-        linelife.fillAmount = _stats.health / maxhitpoints;
-      if(linelife.fillAmount < 0.75f && seventy)
+        UpdateHealthBar();
+    }
+
+    private void UpdateHealthBar()
+    {
+        linelife.fillAmount = _stats.health / _stats.statsOut["health"].Value;
+        if (linelife.fillAmount < 0.75f && seventy)
         {
             audioManager.PlaySounds("Baza v opasnosty");
             seventy = false;
         }
-      if(linelife.fillAmount < 0.5 && fifti)
+        if (linelife.fillAmount < 0.5 && fifti)
         {
             audioManager.PlaySounds("Baza 50%");
             fifti = false;
         }
-      if(linelife.fillAmount < 0.25 && twentufive)
+        if (linelife.fillAmount < 0.25 && twentufive)
         {
             audioManager.PlaySounds("Baza 25%");
             twentufive = false;

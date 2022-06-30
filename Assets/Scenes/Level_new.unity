@@ -785,11 +785,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 309522028, guid: 66182f45fccc9f442a6ae44bec7ca4a5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.2
+      value: -98.2
       objectReference: {fileID: 0}
     - target: {fileID: 309522028, guid: 66182f45fccc9f442a6ae44bec7ca4a5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 38.8
+      value: -10.3
       objectReference: {fileID: 0}
     - target: {fileID: 975406712, guid: 66182f45fccc9f442a6ae44bec7ca4a5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10787,8 +10787,8 @@ MonoBehaviour:
       spawnTimeFrom: 0
       spawned: 0
     - name: 
-      objectPrefab: {fileID: 1408723091106175317, guid: 68b9cc2940c9dc44f922e781779e61aa, type: 3}
-      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      objectPrefab: {fileID: 4000856683519419410, guid: d680493ee8f130149b8d85818141148e, type: 3}
+      scrapPrefab: {fileID: 7771788806740824112, guid: c2cf90ae9feb28e47a71131c04e2249a, type: 3}
       count: 1
       spawnTimeFrom: 0
       spawned: 0
@@ -19896,8 +19896,8 @@ MonoBehaviour:
       spawnTimeFrom: 0
       spawned: 0
     - name: 
-      objectPrefab: {fileID: 1408723091106175317, guid: 68b9cc2940c9dc44f922e781779e61aa, type: 3}
-      scrapPrefab: {fileID: 7814339019828652005, guid: f162f78b4394cc148a62c2cf4728a481, type: 3}
+      objectPrefab: {fileID: 4000856683519419410, guid: d680493ee8f130149b8d85818141148e, type: 3}
+      scrapPrefab: {fileID: 7771788806740824112, guid: c2cf90ae9feb28e47a71131c04e2249a, type: 3}
       count: 1
       spawnTimeFrom: 0
       spawned: 0
@@ -24955,7 +24955,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: -0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1124592423

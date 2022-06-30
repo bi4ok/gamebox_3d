@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
 
     private void Update()
     {
-        if (Time.timeScale > 0)
+        if (Time.timeScale > 0 && alive)
         {
             bool aimSucsess = AimOnMouse();
 
@@ -162,7 +162,7 @@ public class PlayerController : MonoBehaviour, IDamageAble, IDamageDealer<GameOb
 
     private void FixedUpdate()
     {
-        if (Time.timeScale > 0)
+        if (Time.timeScale > 0 && alive)
         {
             Move();
         }
