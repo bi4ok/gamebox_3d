@@ -129,6 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slottext: {fileID: 6197225373779682609}
+  slotbutton: {fileID: 740848486293591039}
+  slot: {fileID: 8860201016391527556}
   productScript: {fileID: 0}
 --- !u!1 &8860201016391527558
 GameObject:

@@ -24347,7 +24347,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -0.0000076294, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -24955,7 +24955,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: -0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1124592423
@@ -66155,7 +66155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!223 &1437623270351903860
 Canvas:
   m_ObjectHideFlags: 0
@@ -72563,7 +72563,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0.00059574994, y: 0.0024414062}
-  m_SizeDelta: {x: -607.18884, y: -631.5888}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &3415163052219283249
 GameObject:
@@ -73473,6 +73473,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4518956340531248197}
+        m_TargetAssemblyTypeName: MarketScript, Assembly-CSharp
+        m_MethodName: CheckPrices
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4518956340017539289
 GameObject:
   m_ObjectHideFlags: 0
@@ -73618,6 +73630,24 @@ MonoBehaviour:
     shift: {x: 2, y: 0, z: 0}
   - bar: {fileID: 51279958}
     shift: {x: 1, y: 0, z: 0}
+  gameHandler: {fileID: 249420845}
+  slots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!224 &4518956340531248198
 RectTransform:
   m_ObjectHideFlags: 0
@@ -79213,6 +79243,18 @@ MonoBehaviour:
       - m_Target: {fileID: 249420847}
         m_TargetAssemblyTypeName: EducationManager, Assembly-CSharp
         m_MethodName: NextEducationPanelFromShop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 4518956340531248197}
+        m_TargetAssemblyTypeName: MarketScript, Assembly-CSharp
+        m_MethodName: CheckPrices
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

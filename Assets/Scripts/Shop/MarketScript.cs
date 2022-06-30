@@ -24,16 +24,22 @@ public class MarketScript : MonoBehaviour
 
     [SerializeField]
     private BarChanger[] barsToMove;
-
-
-
+    [SerializeField]
+    GameHandler gameHandler;
+    [SerializeField]
+    private GameObject[] slots;
+    private int i;
     private void Awake()
     {
         //marketinf = marketinfobj.GetComponent<MarketInfo>();
         Slotssort();
+        
         print("MARKET START");
     }
-
+    private void Start()
+    {
+        CheckPrices();
+    }
     public void MoveHPBarsRight()
     {
         print("ÑÄÂÈÃ ÂÏÐÀÂÎ");
@@ -61,8 +67,17 @@ public class MarketScript : MonoBehaviour
             Button buttonSlots = newproducts.GetComponentInChildren<Button>();
             //marketinf.UpdateInfo(productscr);
             buttonSlots.onClick.AddListener(() => marketinf.UpdateInfo(productscr, slotscript));
-
+            slots[i] = newproducts;
+            i++;
         }
 
+    }
+    public void CheckPrices()
+    {
+        foreach(GameObject game in slots)
+        {
+            Slot slotscript = game.GetComponent<Slot>();
+            slotscript.CheckPrice(gameHandler.CheckScrap("yellow"), gameHandler.CheckScrap("blue"), gameHandler.CheckScrap("red"));
+        }
     }
 }
