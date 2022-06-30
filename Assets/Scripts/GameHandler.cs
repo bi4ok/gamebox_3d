@@ -64,7 +64,7 @@ public class GameHandler : MonoBehaviour
         waveInProcess = false;
         gameStateFight = false;
         playerInfo = player.GetComponent<PlayerController>();
-        scrapStorage = new Dictionary<string, float>() { { "red", 100 }, { "blue", 2500 }, { "yellow", 100} };
+        scrapStorage = new Dictionary<string, float>() { { "red", 5 }, { "blue", 250 }, { "yellow", 10} };
         UpdateInfo();
         menuScript.ChangeStateToBuild();
         timeForStartNextWave = Time.time + timeForFirstWave;
